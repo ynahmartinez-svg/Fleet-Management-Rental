@@ -1,6 +1,6 @@
 ﻿namespace Fleet_Management_Rental
 {
-    partial class Home
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Home
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Home";
-            this.Text = "DASHBOARD (ADMIN)";
-            this.ResumeLayout(false);
-
+            this.Text = "Dashboard";
         }
 
         #endregion

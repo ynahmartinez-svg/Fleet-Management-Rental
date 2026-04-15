@@ -16,7 +16,8 @@ namespace Fleet_Management_Rental
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new driveSphere_R());
+
         }
     }
 }
