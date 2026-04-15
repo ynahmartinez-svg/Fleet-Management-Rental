@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,25 @@ namespace Fleet_Management_Rental
 {
     public partial class Login : Form
     {
+        public static class DbHelper
+        {
+            public static NpgsqlConnection GetConnection()
+            {
+                return new NpgsqlConnection(DbConfig.ConnectionString);
+            }
+        }
+
+        public static class DbConfig
+        {
+            public static string ConnectionString = "Host=fleetm-2026-24709.j77.aws-ap-southeast-1.cockroachlabs.cloud;Port=26257;Database=fms_rental;Username=stephens;Password=gLId5nipIimPiL-zjB_9oA;SSL Mode = Require; Trust Server Certificate=true";
+            
+        }
+
         public Login()
         {
             InitializeComponent();
+            cbPass.Checked = true; // hidden
+ 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -34,7 +52,111 @@ namespace Fleet_Management_Rental
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            SignUp SU = new SignUp();
+            SU.Show();
+            this.Hide();
         }
+
+        private void Log1n_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            string password = txtPass.Text;
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter email and password!", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string role = ValidateUserRole(email, password);
+
+            if (role == "Admin")
+            {
+                MessageBox.Show("Admin login successful!", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Home adminForm = new Home();
+                adminForm.Show();
+                this.Close();
+            }
+            else if (role == "Client")
+            {
+                MessageBox.Show("Client login successful!", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Dashboard clientForm = new Dashboard();
+                clientForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid email or password!", "Login Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtPass.Clear();
+                txtPass.Focus();
+            }
+        }
+
+        private string ValidateUserRole(string email, string password)
+        {
+            try
+            {
+                using (NpgsqlConnection conn = DbHelper.GetConnection())
+                {
+                    conn.Open();
+
+                    string hashedPassword = ComputeSha256Hash(password);
+
+
+                    string adminQuery = "SELECT COUNT(*) FROM adminprofile WHERE LOWER(email) = LOWER(@mail) AND passwordhash = @pass";
+                    using (var cmd = new NpgsqlCommand(adminQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@mail", email);
+                        cmd.Parameters.AddWithValue("@pass", password);
+                        if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+                            return "Admin";
+                    }
+
+                    string clientQuery = "SELECT COUNT(*) FROM clientprofile WHERE LOWER(email) = LOWER(@mail) AND passwordhash = @pass";
+                    using (var cmd = new NpgsqlCommand(clientQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@mail", email);
+                        cmd.Parameters.AddWithValue("@pass", password);
+                        if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+                            return "Client";
+                    }
+
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database Error: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        private void cbPass_CheckedChanged(object sender, EventArgs e)
+        {   
+            
+            txtPass.UseSystemPasswordChar = cbPass.Checked;
+        }
+        private string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
     }
 }
