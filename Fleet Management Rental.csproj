@@ -117,11 +117,11 @@
     <Compile Include="Features.Designer.cs">
       <DependentUpon>Features.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="DriveSphereRental.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DriveSphereRental.Designer.cs">
+      <DependentUpon>DriveSphereRental.cs</DependentUpon>
     </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -129,11 +129,11 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Dashboard_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="Dashboard_Admin.Designer.cs">
+      <DependentUpon>Dashboard_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -152,11 +152,11 @@
     <EmbeddedResource Include="Features.resx">
       <DependentUpon>Features.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="DriveSphereRental.resx">
+      <DependentUpon>DriveSphereRental.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard_Admin.resx">
+      <DependentUpon>Dashboard_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
