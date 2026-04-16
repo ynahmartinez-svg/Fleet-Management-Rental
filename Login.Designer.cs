@@ -41,7 +41,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.cbPass = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -49,10 +48,9 @@
             // pb1
             // 
             this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
-            this.pb1.Location = new System.Drawing.Point(-1, -4);
-            this.pb1.Margin = new System.Windows.Forms.Padding(2);
+            this.pb1.Location = new System.Drawing.Point(-2, -6);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(641, 452);
+            this.pb1.Size = new System.Drawing.Size(962, 695);
             this.pb1.TabIndex = 0;
             this.pb1.TabStop = false;
             this.pb1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -63,10 +61,9 @@
             this.label1.BackColor = System.Drawing.Color.Gainsboro;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Georgia", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(736, 95);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1104, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 31);
+            this.label1.Size = new System.Drawing.Size(174, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOG IN";
             // 
@@ -76,10 +73,9 @@
             this.label2.BackColor = System.Drawing.Color.Gainsboro;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(682, 140);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(1023, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 23);
+            this.label2.Size = new System.Drawing.Size(94, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "Email ";
             // 
@@ -89,10 +85,9 @@
             this.label3.BackColor = System.Drawing.Color.Gainsboro;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(682, 204);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(1023, 314);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 23);
+            this.label3.Size = new System.Drawing.Size(132, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "Password";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -100,10 +95,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(638, -4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(957, -6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(337, 452);
+            this.pictureBox2.Size = new System.Drawing.Size(506, 695);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -111,20 +105,18 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmail.Location = new System.Drawing.Point(686, 165);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Location = new System.Drawing.Point(1029, 254);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(214, 28);
+            this.txtEmail.Size = new System.Drawing.Size(319, 41);
             this.txtEmail.TabIndex = 5;
             // 
             // txtPass
             // 
             this.txtPass.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPass.Location = new System.Drawing.Point(686, 229);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPass.Location = new System.Drawing.Point(1029, 352);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(214, 20);
+            this.txtPass.Size = new System.Drawing.Size(319, 26);
             this.txtPass.TabIndex = 6;
             // 
             // Log1n
@@ -135,10 +127,9 @@
             this.Log1n.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Log1n.Font = new System.Drawing.Font("Georgia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Log1n.ForeColor = System.Drawing.Color.Black;
-            this.Log1n.Location = new System.Drawing.Point(758, 300);
-            this.Log1n.Margin = new System.Windows.Forms.Padding(2);
+            this.Log1n.Location = new System.Drawing.Point(1137, 462);
             this.Log1n.Name = "Log1n";
-            this.Log1n.Size = new System.Drawing.Size(88, 34);
+            this.Log1n.Size = new System.Drawing.Size(132, 52);
             this.Log1n.TabIndex = 7;
             this.Log1n.Text = "LOG IN";
             this.Log1n.UseVisualStyleBackColor = false;
@@ -150,10 +141,9 @@
             this.label4.BackColor = System.Drawing.Color.Gainsboro;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(707, 340);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(1060, 523);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 15);
+            this.label4.Size = new System.Drawing.Size(197, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "Don\'t have an account?";
             // 
@@ -165,10 +155,9 @@
             this.linkLabel1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(831, 340);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(1246, 523);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(50, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(74, 21);
             this.linkLabel1.TabIndex = 9;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Sign Up";
@@ -183,10 +172,9 @@
             this.linkLabel2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel2.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.linkLabel2.Location = new System.Drawing.Point(801, 267);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel2.Location = new System.Drawing.Point(1202, 411);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(112, 15);
+            this.linkLabel2.Size = new System.Drawing.Size(165, 21);
             this.linkLabel2.TabIndex = 11;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Forgot Password";
@@ -197,31 +185,20 @@
             this.cbPass.AutoSize = true;
             this.cbPass.BackColor = System.Drawing.Color.Gainsboro;
             this.cbPass.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPass.Location = new System.Drawing.Point(677, 267);
-            this.cbPass.Margin = new System.Windows.Forms.Padding(2);
+            this.cbPass.Location = new System.Drawing.Point(1016, 411);
             this.cbPass.Name = "cbPass";
-            this.cbPass.Size = new System.Drawing.Size(120, 19);
+            this.cbPass.Size = new System.Drawing.Size(175, 25);
             this.cbPass.TabIndex = 12;
             this.cbPass.Text = "Hide Password";
             this.cbPass.UseVisualStyleBackColor = false;
             this.cbPass.CheckedChanged += new System.EventHandler(this.cbPass_CheckedChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(758, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(946, 446);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1419, 686);
             this.Controls.Add(this.cbPass);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.linkLabel2);
@@ -234,7 +211,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pb1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -259,6 +235,5 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.CheckBox cbPass;
-        private System.Windows.Forms.Button button1;
     }
 }

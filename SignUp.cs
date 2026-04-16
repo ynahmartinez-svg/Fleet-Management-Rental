@@ -31,6 +31,12 @@ namespace Fleet_Management_Rental
         public SignUp()
         {
             InitializeComponent();
+            this .FormClosed += SignUp_FormClosed;
+        }
+
+        private void SignUp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

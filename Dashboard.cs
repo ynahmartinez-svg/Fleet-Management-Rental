@@ -15,6 +15,17 @@ namespace Fleet_Management_Rental
         public Dashboard()
         {
             InitializeComponent();
+            this.FormClosed += Dashboard_FormClosed;
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

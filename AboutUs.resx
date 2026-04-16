@@ -121,7 +121,7 @@
   <data name="button4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKMAAABKCAYAAADXJ+TKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAADd5JREFUeF7tnQlsHFcZxyltuFtoC6UcoagHPWgpUKDctBwFhGgRajlUaBFqU4qQ
+        vAAADrwBlbxySQAADd5JREFUeF7tnQlsHFcZxyltuFtoC6UcoagHPWgpUKDctBwFhGgRajlUaBFqU4qQ
         iqAtKUUE1CvFeN6b2dPedfew4zjb2E7iOI7j7TrBXnsv7znHnnZsJ4QmwThxYid17Q99q5loMo2bpPUm
         sf3+0k+zMzvz5ns7/30z8+a9N295CxMTExMTExMTExMTExMTExMT05vSeQDwhsHtjRjXYZw+xoO02KWZ
         h+kc1aI2pi5z5QwCwDIA+BgA3AwAtwDAFwDgKwBwGwB8CwC+rU5vB4CvA8CXAeBzAHATAFwPANcAwNUA
@@ -186,7 +186,7 @@
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUMAAAGoCAYAAADcsIdGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
+        vwAADr8BOAVTJAAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
         LYpq0fxHz9f0cXN0Zr7NnXvvc8+P1+K1Oec45zmb9+qzsrq6WgDGbuXvCwBjJIYAYggQYggghgAhhgBi
         CBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggg
         hgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYA
@@ -224,7 +224,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUMAAAGoCAYAAADcsIdGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
+        vwAADr8BOAVTJAAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
         LYpq0fxHz9f0cXN0Zr7NnXvvc8+P1+K1Oec45zmb9+qzsrq6WgDGbuXvCwBjJIYAYggQYggghgAhhgBi
         CBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggg
         hgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYA
@@ -265,7 +265,7 @@
   <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUMAAAGoCAYAAADcsIdGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
+        vgAADr4B6kKxwAAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
         LYpq0fxHz9f0cXN0Zr7NnXvvc8+P1+K1Oec45zmb9+qzsrq6WgDGbuXvCwBjJIYAYggQYggghgAhhgBi
         CBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggg
         hgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYA
@@ -303,7 +303,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUMAAAGoCAYAAADcsIdGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
+        vgAADr4B6kKxwAAAB5FJREFUeF7t2s+HVW8Ax/H52yZmMZIWGSISiUQMkbRIIiIyZMgQw2iRkRaZxcwi
         LYpq0fxHz9f0cXN0Zr7NnXvvc8+P1+K1Oec45zmb9+qzsrq6WgDGbuXvCwBjJIYAYggQYggghgAhhgBi
         CBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggg
         hgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYAYggQYggghgAhhgBiCBBiCCCGACGGAGIIEGIIIIYAIYYA
@@ -341,7 +341,7 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAb8AAAHICAYAAADeNOQLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/XeUZQlV9413V7j55HRzzrdu5Zxz6u7q6tyTemZ6MhMZhjDknIMS
+        vwAADr8BOAVTJAAA/7JJREFUeF7s/XeUZQlV9413V7j55HRzzrdu5Zxz6u7q6tyTemZ6MhMZhjDknIMS
         RAVEHwcDoCIGFFBEUFARQUBEBBERFESSMAL6fN61z63q6RnwfXU96+fy+U398V2n6tatdMP5nL33d+99
         6CMf+QgHOtCBDnSgAz2adOiRNxzoQAc60IEO9P/vOoDfgQ50oAMd6FGnA/gd6EAHOtCBHnU6gN+BDnSg
         Ax3oUacD+B3oQAc60IEedTqA34EOdKADHehRpwP4HehABzrQgR51OoDfgQ50oAMd6FGn/2vh9+EPf5jX
@@ -5228,5 +5228,12 @@
         rSf/H3e7z9/9PE3k96lsXXpaT116XZwDe7cycrk8rVt8t7LTeIkhl0/lUtm6spU5X5xP3px80jCVqSt3
         Ofk61NWXg/g6Asrl0rhupEWYamp1+U3Ly6hLzzU/8P8BzVm/sydslFUAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>We provide a reliable Motorcycle Rental service designed for convenience, safety, and efficiency. 
+Our system includes real-time Motorcycle Tracking, Fuel Monitoring, and Automated Reminders 
+to ensure every ride is secure, well-maintained, and hassle-free. 
+Whether for daily use or long trips,
+ we make motorcycle renting smarter and easier for you.</value>
   </data>
 </root>

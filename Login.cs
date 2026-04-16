@@ -32,7 +32,12 @@ namespace Fleet_Management_Rental
         {
             InitializeComponent();
             cbPass.Checked = true; // hidden
- 
+            this.FormClosed += Login_FormClosed;
+
+        }
+         private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
