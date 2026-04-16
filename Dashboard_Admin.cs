@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fleet_Management_Rental
 {
-    public partial class Home : Form
+    public partial class Dashboard_Admin : Form
     {
-        public Home()
+        public Dashboard_Admin()
         {
             InitializeComponent();
             this.FormClosed += Home_FormClosed;

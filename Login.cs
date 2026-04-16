@@ -81,7 +81,7 @@ namespace Fleet_Management_Rental
                 MessageBox.Show("Admin login successful!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Home adminForm = new Home();
+                Dashboard_Admin adminForm = new Dashboard_Admin();
                 adminForm.Show();
                 this.Close();
             }

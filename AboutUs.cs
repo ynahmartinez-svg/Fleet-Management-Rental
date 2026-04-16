@@ -46,10 +46,10 @@ namespace Fleet_Management_Rental
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
-            home.Show();
+            driveSphere_R dsr = new driveSphere_R();
+            dsr.Show();
             this.Hide();
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)

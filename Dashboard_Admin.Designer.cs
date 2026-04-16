@@ -1,6 +1,6 @@
 ﻿namespace Fleet_Management_Rental
 {
-    partial class Home
+    partial class Dashboard_Admin
     {
         /// <summary>
         /// Required designer variable.
