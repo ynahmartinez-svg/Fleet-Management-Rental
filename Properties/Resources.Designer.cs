@@ -59,5 +59,335 @@ namespace Fleet_Management_Rental.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_15273_www_bing_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_15273_www.bing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_15273_www_bing1 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_15273_www.bing1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_16359_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_16359_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_21252_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_21252_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_22342_www_bing_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_22342_www.bing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_231433_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_231433_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_231724_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_231724_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_23217_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_23217_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_234643_www_bing_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_234643_www.bing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_21_4_2026_235037_www_bing_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_21-4-2026_235037_www.bing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_24_4_2026_02411_www_bing_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_24-4-2026_02411_www.bing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_24_4_2026_231817_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_24-4-2026_231817_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_24_4_2026_233131_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_24-4-2026_233131_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_02537_web_nen_wfglobal_org {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_02537_web.nen.wfglobal.org", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_215253_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_215253_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_215828_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_215828_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_22039_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_22039_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_223546_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_223546_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_224033_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_224033_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_224222_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_224222_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_224539_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_224539_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_22582_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_22582_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_22582_www_canva1 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_22582_www.canva1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_26_4_2026_231633_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_26-4-2026_231633_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_01152_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_01152_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_01326_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_01326_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_01454_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_01454_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_01549_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_01549_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_01640_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_01640_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_01821_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_01821_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_01952_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_01952_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_02241_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_02241_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_27_4_2026_0225_www_canva_com {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_27-4-2026_0225_www.canva.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
