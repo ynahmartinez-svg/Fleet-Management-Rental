@@ -88,6 +88,7 @@
       <HintPath>packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -104,6 +105,48 @@
     </Compile>
     <Compile Include="AboutUs.Designer.cs">
       <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Active_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Active_Client.Designer.cs">
+      <DependentUpon>Active_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Accounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Accounts.Designer.cs">
+      <DependentUpon>Admin_Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_DashBoard.Designer.cs">
+      <DependentUpon>Admin_DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="booking.Designer.cs">
+      <DependentUpon>booking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking_Details.Designer.cs">
+      <DependentUpon>Booking_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_Dashboard.Designer.cs">
+      <DependentUpon>Client_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Completed_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Completed_Client.Designer.cs">
+      <DependentUpon>Completed_Client.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -122,6 +165,54 @@
     </Compile>
     <Compile Include="DriveSphereRental.Designer.cs">
       <DependentUpon>DriveSphereRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motorcycle_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motorcycle_Management.Designer.cs">
+      <DependentUpon>Motorcycle_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motorcycle_management2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motorcycle_management2.Designer.cs">
+      <DependentUpon>Motorcycle_management2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="My_rentals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My_rentals.Designer.cs">
+      <DependentUpon>My_rentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments_and_Billing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments_and_Billing.Designer.cs">
+      <DependentUpon>Payments_and_Billing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Billing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment_Billing.Designer.cs">
+      <DependentUpon>Payment_Billing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renatl_Management_client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renatl_Management_client.Designer.cs">
+      <DependentUpon>Renatl_Management_client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rental_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rental_Management.Designer.cs">
+      <DependentUpon>Rental_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_Analytics1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_Analytics1.Designer.cs">
+      <DependentUpon>Reports_Analytics1.cs</DependentUpon>
     </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -143,8 +234,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Upcoming_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upcoming_Client.Designer.cs">
+      <DependentUpon>Upcoming_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Management.Designer.cs">
+      <DependentUpon>User_Management.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Active_Client.resx">
+      <DependentUpon>Active_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Accounts.resx">
+      <DependentUpon>Admin_Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_DashBoard.resx">
+      <DependentUpon>Admin_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="booking.resx">
+      <DependentUpon>booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking_Details.resx">
+      <DependentUpon>Booking_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client_Dashboard.resx">
+      <DependentUpon>Client_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Completed_Client.resx">
+      <DependentUpon>Completed_Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -157,6 +281,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard_Admin.resx">
       <DependentUpon>Dashboard_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motorcycle_Management.resx">
+      <DependentUpon>Motorcycle_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motorcycle_management2.resx">
+      <DependentUpon>Motorcycle_management2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My_rentals.resx">
+      <DependentUpon>My_rentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments_and_Billing.resx">
+      <DependentUpon>Payments_and_Billing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment_Billing.resx">
+      <DependentUpon>Payment_Billing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renatl_Management_client.resx">
+      <DependentUpon>Renatl_Management_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rental_Management.resx">
+      <DependentUpon>Rental_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_Analytics1.resx">
+      <DependentUpon>Reports_Analytics1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
@@ -174,6 +322,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Upcoming_Client.resx">
+      <DependentUpon>Upcoming_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Management.resx">
+      <DependentUpon>User_Management.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -190,6 +344,105 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_15273_www.bing.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_15273_www.bing.com1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_16359_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_21252_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_22342_www.bing.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_231433_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_231724_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_23217_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_234643_www.bing.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_21-4-2026_235037_www.bing.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_24-4-2026_02411_www.bing.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_24-4-2026_231817_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_24-4-2026_233131_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_215253_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_215828_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_22039_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_02537_web.nen.wfglobal.org.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_223546_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_224033_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_224222_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_224539_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_22582_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_22582_www.canva.com1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_26-4-2026_231633_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_01326_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_01152_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_01454_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_01549_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_01640_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_01821_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_01952_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_0225_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_27-4-2026_02241_www.canva.com.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />
