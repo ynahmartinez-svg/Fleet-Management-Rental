@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fleet_Management_Rental
 {
-    public partial class Renatl_Management_client : Form
+    public partial class ForgotPassw : Form
     {
-        public Renatl_Management_client()
+        public ForgotPassw()
         {
             InitializeComponent();
         }

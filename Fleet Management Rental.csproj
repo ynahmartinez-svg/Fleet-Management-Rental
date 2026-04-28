@@ -124,11 +124,23 @@
     <Compile Include="Admin_DashBoard.Designer.cs">
       <DependentUpon>Admin_DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Notification.Designer.cs">
+      <DependentUpon>Admin_Notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="booking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="booking.Designer.cs">
       <DependentUpon>booking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingReq.Designer.cs">
+      <DependentUpon>BookingReq.cs</DependentUpon>
     </Compile>
     <Compile Include="Booking_Details.cs">
       <SubType>Form</SubType>
@@ -136,23 +148,29 @@
     <Compile Include="Booking_Details.Designer.cs">
       <DependentUpon>Booking_Details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client_Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_Account.Designer.cs">
+      <DependentUpon>Client_Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Client_Dashboard.Designer.cs">
       <DependentUpon>Client_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client_Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_Notification.Designer.cs">
+      <DependentUpon>Client_Notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Completed_Client.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Completed_Client.Designer.cs">
       <DependentUpon>Completed_Client.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Features.cs">
       <SubType>Form</SubType>
@@ -165,6 +183,12 @@
     </Compile>
     <Compile Include="DriveSphereRental.Designer.cs">
       <DependentUpon>DriveSphereRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassw.Designer.cs">
+      <DependentUpon>ForgotPassw.cs</DependentUpon>
     </Compile>
     <Compile Include="Motorcycle_Management.cs">
       <SubType>Form</SubType>
@@ -196,12 +220,6 @@
     <Compile Include="Payment_Billing.Designer.cs">
       <DependentUpon>Payment_Billing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Renatl_Management_client.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Renatl_Management_client.Designer.cs">
-      <DependentUpon>Renatl_Management_client.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rental_Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,12 +237,6 @@
     </Compile>
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard_Admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dashboard_Admin.Designer.cs">
-      <DependentUpon>Dashboard_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -258,20 +270,29 @@
     <EmbeddedResource Include="Admin_DashBoard.resx">
       <DependentUpon>Admin_DashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Notification.resx">
+      <DependentUpon>Admin_Notification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="booking.resx">
       <DependentUpon>booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingReq.resx">
+      <DependentUpon>BookingReq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking_Details.resx">
       <DependentUpon>Booking_Details.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Client_Account.resx">
+      <DependentUpon>Client_Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client_Dashboard.resx">
       <DependentUpon>Client_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Client_Notification.resx">
+      <DependentUpon>Client_Notification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Completed_Client.resx">
       <DependentUpon>Completed_Client.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features.resx">
       <DependentUpon>Features.cs</DependentUpon>
@@ -279,8 +300,8 @@
     <EmbeddedResource Include="DriveSphereRental.resx">
       <DependentUpon>DriveSphereRental.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard_Admin.resx">
-      <DependentUpon>Dashboard_Admin.cs</DependentUpon>
+    <EmbeddedResource Include="ForgotPassw.resx">
+      <DependentUpon>ForgotPassw.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Motorcycle_Management.resx">
       <DependentUpon>Motorcycle_Management.cs</DependentUpon>
@@ -296,9 +317,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payment_Billing.resx">
       <DependentUpon>Payment_Billing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Renatl_Management_client.resx">
-      <DependentUpon>Renatl_Management_client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rental_Management.resx">
       <DependentUpon>Rental_Management.cs</DependentUpon>
