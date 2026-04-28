@@ -30,12 +30,10 @@ namespace Fleet_Management_Rental
 
         public Login()
         {
-            InitializeComponent();
-            cbPass.Checked = true; // hidden
-            this.FormClosed += Login_FormClosed;
-
+            InitializeComponent();              
         }
-         private void Login_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
@@ -47,7 +45,8 @@ namespace Fleet_Management_Rental
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            txtPass.UseSystemPasswordChar = true;
+            cbPass.Checked = true;               
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -81,17 +80,18 @@ namespace Fleet_Management_Rental
                 MessageBox.Show("Admin login successful!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Dashboard_Admin adminForm = new Dashboard_Admin();
-                adminForm.Show();
+                Admin_DashBoard Dashboard_Admin = new Admin_DashBoard();
+                Dashboard_Admin.Show();
                 this.Close();
+
             }
             else if (role == "Client")
             {
                 MessageBox.Show("Client login successful!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Dashboard clientForm = new Dashboard();
-                clientForm.Show();
+                Client_Dashboard Dashboard = new Client_Dashboard();
+                Dashboard.Show();
                 this.Close();
             }
             else
@@ -145,8 +145,8 @@ namespace Fleet_Management_Rental
         }
 
         private void cbPass_CheckedChanged(object sender, EventArgs e)
-        {   
-            
+        {
+
             txtPass.UseSystemPasswordChar = cbPass.Checked;
         }
         private string ComputeSha256Hash(string rawData)
