@@ -53,15 +53,16 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button11 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +94,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.button11);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.label1);
@@ -161,7 +163,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(101, 581);
+            this.button8.Location = new System.Drawing.Point(101, 677);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(103, 45);
             this.button8.TabIndex = 9;
@@ -187,7 +189,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(-6, 528);
+            this.button7.Location = new System.Drawing.Point(-6, 624);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(306, 47);
             this.button7.TabIndex = 10;
@@ -243,11 +245,11 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(444, 354);
+            this.dataGridView1.Location = new System.Drawing.Point(414, 354);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(678, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(658, 272);
             this.dataGridView1.TabIndex = 19;
             // 
             // Column1
@@ -290,7 +292,7 @@
             this.button9.BackColor = System.Drawing.Color.LawnGreen;
             this.button9.Location = new System.Drawing.Point(315, 354);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(123, 33);
+            this.button9.Size = new System.Drawing.Size(93, 33);
             this.button9.TabIndex = 20;
             this.button9.Text = "Add User";
             this.button9.UseVisualStyleBackColor = false;
@@ -300,7 +302,7 @@
             this.button10.BackColor = System.Drawing.Color.DarkGray;
             this.button10.Location = new System.Drawing.Point(315, 393);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(123, 32);
+            this.button10.Size = new System.Drawing.Size(93, 32);
             this.button10.TabIndex = 21;
             this.button10.Text = "Edit";
             this.button10.UseVisualStyleBackColor = false;
@@ -320,6 +322,50 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(887, 121);
             this.panel2.TabIndex = 22;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(718, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(28, 27);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(516, 64);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 27);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(308, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 27);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(107, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(28, 27);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "0";
             // 
             // label6
             // 
@@ -369,50 +415,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Active user";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(107, 64);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 27);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(308, 64);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 27);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(516, 64);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 27);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(718, 64);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 27);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "0";
-            // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.Gainsboro;
@@ -425,23 +427,36 @@
             legend1.Name = "Legend1";
             legend1.TitleBackColor = System.Drawing.Color.Gainsboro;
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(1128, 370);
+            this.chart1.Location = new System.Drawing.Point(1093, 354);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(217, 256);
+            this.chart1.Size = new System.Drawing.Size(267, 272);
             this.chart1.TabIndex = 23;
             this.chart1.Text = "chart1";
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(-3, 457);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(306, 47);
+            this.button11.TabIndex = 18;
+            this.button11.Text = "Notification";
+            this.button11.UseVisualStyleBackColor = false;
             // 
             // User_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1355, 702);
+            this.ClientSize = new System.Drawing.Size(1355, 734);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button10);
@@ -498,5 +513,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button button11;
     }
 }

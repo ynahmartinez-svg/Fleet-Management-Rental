@@ -26,5 +26,10 @@ namespace Fleet_Management_Rental
         {
 
         }
+
+        private void label40_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

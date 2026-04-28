@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
@@ -62,6 +63,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button12);
             this.panel1.Controls.Add(this.button11);
@@ -88,19 +90,6 @@
             this.button1.Text = "Booking";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(0, 438);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(306, 70);
-            this.button11.TabIndex = 84;
-            this.button11.Text = "Payments and Billing";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
             // button12
             // 
             this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -114,39 +103,31 @@
             this.button12.Text = "My Rentals";
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // button11
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(15, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
-            this.label7.TabIndex = 86;
-            this.label7.Text = "Drive Sphere";
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(0, 438);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(306, 70);
+            this.button11.TabIndex = 84;
+            this.button11.Text = "Payments and Billing";
+            this.button11.UseVisualStyleBackColor = false;
             // 
-            // pictureBox3
+            // button8
             // 
-            this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
-            this.pictureBox3.Location = new System.Drawing.Point(225, 36);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(74, 59);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 87;
-            this.pictureBox3.TabStop = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(6, 746);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(306, 49);
-            this.button7.TabIndex = 83;
-            this.button7.Text = "My Profile";
-            this.button7.UseVisualStyleBackColor = false;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(107, 816);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(103, 47);
+            this.button8.TabIndex = 82;
+            this.button8.Text = "Logout";
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -161,18 +142,39 @@
             this.button10.Text = "Home";
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // label7
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(107, 816);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 47);
-            this.button8.TabIndex = 82;
-            this.button8.Text = "Logout";
-            this.button8.UseVisualStyleBackColor = false;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(15, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(203, 32);
+            this.label7.TabIndex = 86;
+            this.label7.Text = "Drive Sphere";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(6, 746);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(306, 49);
+            this.button7.TabIndex = 83;
+            this.button7.Text = "My Profile";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
+            this.pictureBox3.Location = new System.Drawing.Point(225, 36);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(74, 59);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 87;
+            this.pictureBox3.TabStop = false;
             // 
             // panel3
             // 
@@ -332,6 +334,19 @@
             this.panel4.Size = new System.Drawing.Size(793, 59);
             this.panel4.TabIndex = 35;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(-6, 538);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(306, 68);
+            this.button3.TabIndex = 110;
+            this.button3.Text = "Notification";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // Completed_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -392,5 +407,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button3;
     }
 }
