@@ -21,5 +21,10 @@ namespace Fleet_Management_Rental
         {
 
         }
+
+        private void Booking_Details_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

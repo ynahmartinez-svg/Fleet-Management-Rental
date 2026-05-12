@@ -24,13 +24,20 @@ namespace Fleet_Management_Rental
 
         public static class DbConfig
         {
-            public static string ConnectionString = "Host=fleetm-2026-24709.j77.aws-ap-southeast-1.cockroachlabs.cloud;Port=26257;Database=fms_rental;Username=stephens;Password=gLId5nipIimPiL-zjB_9oA;SSL Mode = Require; Trust Server Certificate=true";
-            
+            public static string ConnectionString = "Host=smart1-fleetdb-25755.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +
+        "Port=26257;" +
+        "Database=fms_rental;" +
+        "Username=joohn;" +
+        "Password=XANnoM1UEQoQ2IJ2-Jp5aw;" +
+        "SSL Mode=VerifyFull;" +
+              "Trust Server Certificate=true";
+
         }
 
         public Login()
         {
-            InitializeComponent();              
+            InitializeComponent();
+            this.FormClosed += Login_FormClosed;
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
@@ -46,7 +53,8 @@ namespace Fleet_Management_Rental
         private void Login_Load(object sender, EventArgs e)
         {
             txtPass.UseSystemPasswordChar = true;
-            cbPass.Checked = true;               
+            cbPass.Checked = true;
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -82,7 +90,7 @@ namespace Fleet_Management_Rental
 
                 Admin_DashBoard Dashboard_Admin = new Admin_DashBoard();
                 Dashboard_Admin.Show();
-                this.Close();
+                this.Hide();
 
             }
             else if (role == "Client")
@@ -92,7 +100,7 @@ namespace Fleet_Management_Rental
 
                 Client_Dashboard Dashboard = new Client_Dashboard();
                 Dashboard.Show();
-                this.Close();
+                this.Hide();
             }
             else
             {
@@ -128,7 +136,7 @@ namespace Fleet_Management_Rental
                     using (var cmd = new NpgsqlCommand(clientQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@mail", email);
-                        cmd.Parameters.AddWithValue("@pass", password);
+                        NpgsqlParameter npgsqlParameter = cmd.Parameters.AddWithValue("@pass", password);
                         if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                             return "Client";
                     }

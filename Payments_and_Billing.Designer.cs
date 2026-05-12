@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button11 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -45,13 +47,11 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,9 +67,25 @@
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 984);
+            this.panel1.Size = new System.Drawing.Size(338, 1230);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(-7, 660);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(344, 88);
+            this.button2.TabIndex = 105;
+            this.button2.Text = "Notification";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -77,12 +93,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-6, 338);
+            this.button1.Location = new System.Drawing.Point(-7, 422);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(306, 70);
+            this.button1.Size = new System.Drawing.Size(344, 88);
             this.button1.TabIndex = 104;
             this.button1.Text = "Booking";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button10
             // 
@@ -90,12 +108,14 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(0, 159);
+            this.button10.Location = new System.Drawing.Point(0, 199);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(306, 70);
+            this.button10.Size = new System.Drawing.Size(344, 88);
             this.button10.TabIndex = 101;
             this.button10.Text = "Home";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button12
             // 
@@ -103,12 +123,25 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(0, 248);
+            this.button12.Location = new System.Drawing.Point(0, 310);
+            this.button12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(306, 70);
+            this.button12.Size = new System.Drawing.Size(344, 88);
             this.button12.TabIndex = 97;
             this.button12.Text = "My Rentals";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
+            this.pictureBox3.Location = new System.Drawing.Point(253, 39);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(83, 74);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 103;
+            this.pictureBox3.TabStop = false;
             // 
             // button11
             // 
@@ -116,12 +149,14 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(0, 433);
+            this.button11.Location = new System.Drawing.Point(0, 541);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(306, 70);
+            this.button11.Size = new System.Drawing.Size(344, 88);
             this.button11.TabIndex = 100;
             this.button11.Text = "Payments and Billing";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button7
             // 
@@ -129,12 +164,14 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(6, 741);
+            this.button7.Location = new System.Drawing.Point(-6, 926);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(306, 49);
+            this.button7.Size = new System.Drawing.Size(344, 61);
             this.button7.TabIndex = 99;
             this.button7.Text = "My Profile";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -142,21 +179,23 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(107, 811);
+            this.button8.Location = new System.Drawing.Point(111, 1004);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 47);
+            this.button8.Size = new System.Drawing.Size(125, 59);
             this.button8.TabIndex = 98;
             this.button8.Text = "Logout";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(15, 39);
+            this.label7.Location = new System.Drawing.Point(17, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
+            this.label7.Size = new System.Drawing.Size(240, 38);
             this.label7.TabIndex = 102;
             this.label7.Text = "Drive Sphere";
             // 
@@ -164,9 +203,10 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(293, 1);
+            this.panel3.Location = new System.Drawing.Point(330, 1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1077, 100);
+            this.panel3.Size = new System.Drawing.Size(1212, 125);
             this.panel3.TabIndex = 8;
             // 
             // label4
@@ -174,9 +214,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Constantia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(289, 31);
+            this.label4.Location = new System.Drawing.Point(325, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(423, 49);
+            this.label4.Size = new System.Drawing.Size(508, 59);
             this.label4.TabIndex = 7;
             this.label4.Text = "Payments and Billing";
             // 
@@ -184,9 +224,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(365, 191);
+            this.panel2.Location = new System.Drawing.Point(411, 239);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(860, 66);
+            this.panel2.Size = new System.Drawing.Size(968, 82);
             this.panel2.TabIndex = 9;
             // 
             // label10
@@ -195,9 +236,9 @@
             this.label10.BackColor = System.Drawing.Color.Silver;
             this.label10.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(14, 18);
+            this.label10.Location = new System.Drawing.Point(16, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(197, 28);
+            this.label10.Size = new System.Drawing.Size(236, 35);
             this.label10.TabIndex = 26;
             this.label10.Text = "Payment History";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -211,11 +252,12 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(538, 312);
+            this.dataGridView1.Location = new System.Drawing.Point(605, 390);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(622, 400);
             this.dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -250,49 +292,28 @@
             this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(-6, 528);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(306, 70);
-            this.button2.TabIndex = 105;
-            this.button2.Text = "Notification";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
-            this.pictureBox3.Location = new System.Drawing.Point(225, 31);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(74, 59);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 103;
-            this.pictureBox3.TabStop = false;
-            // 
             // Payments_and_Billing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1354, 892);
+            this.ClientSize = new System.Drawing.Size(1523, 1050);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Payments_and_Billing";
             this.Text = "Payments_and_Billing";
+            this.Load += new System.EventHandler(this.Payments_and_Billing_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

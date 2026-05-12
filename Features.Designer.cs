@@ -154,6 +154,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.button4);
@@ -163,7 +165,7 @@
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1436, 88);
+            this.panel1.Size = new System.Drawing.Size(1434, 88);
             this.panel1.TabIndex = 14;
             // 
             // label6
@@ -187,7 +189,7 @@
             this.button4.Location = new System.Drawing.Point(1266, 24);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 46);
+            this.button4.Size = new System.Drawing.Size(118, 46);
             this.button4.TabIndex = 4;
             this.button4.Text = "Login";
             this.button4.UseVisualStyleBackColor = false;
@@ -267,6 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1420, 686);
             this.Controls.Add(this.label4);

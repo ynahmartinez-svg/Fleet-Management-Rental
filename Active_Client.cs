@@ -15,6 +15,17 @@ namespace Fleet_Management_Rental
         public Active_Client()
         {
             InitializeComponent();
+            this.FormClosed += Active_Client_FormClosed;
+        }
+        private void Active_Client_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Client_Dashboard cd = new Client_Dashboard();
+            cd.Show();
+            this.Hide();
+        }
+        private void Active_Client_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

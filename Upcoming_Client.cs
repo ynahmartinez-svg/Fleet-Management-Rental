@@ -15,6 +15,79 @@ namespace Fleet_Management_Rental
         public Upcoming_Client()
         {
             InitializeComponent();
+            this.FormClosed += Upcoming_Client_FormClosed;
+        }
+        private void Upcoming_Client_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Client_Dashboard cd = new Client_Dashboard();
+            cd.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Client_Dashboard cd = new Client_Dashboard();
+            cd.Show();
+            this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            My_rentals r = new My_rentals();
+            r.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            booking b = new booking();
+            b.Show();
+            this.Hide();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Payments_and_Billing pAB = new Payments_and_Billing();
+            pAB.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Client_Notification cn = new Client_Notification();
+            cn.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Client_Account ca = new Client_Account();
+            ca.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+              "Do you want to log out?",
+              "Logout Confirmation",
+              MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Logged out successfully!");
+                this.Close();
+
+                Login loginForm = new Login();
+                loginForm.ShowDialog();
+                this.Hide();
+            }
+        }
+
+        private void Upcoming_Client_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
