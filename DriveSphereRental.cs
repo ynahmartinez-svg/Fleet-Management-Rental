@@ -18,6 +18,11 @@ namespace Fleet_Management_Rental
             this.FormClosed += driveSphere_R_FormClosed;
         }
 
+        private void driveSphere_R_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         private void driveSphere_R_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
