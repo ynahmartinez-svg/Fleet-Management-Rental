@@ -16,5 +16,10 @@ namespace Fleet_Management_Rental
         {
             InitializeComponent();
         }
+
+        private void ForgotPassw_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

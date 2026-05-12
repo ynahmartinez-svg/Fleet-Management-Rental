@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -40,6 +42,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -63,21 +66,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.button15 = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -87,9 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -113,8 +113,32 @@
             this.panel1.Controls.Add(this.button12);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 984);
+            this.panel1.Size = new System.Drawing.Size(327, 984);
             this.panel1.TabIndex = 0;
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.Color.White;
+            this.button15.Location = new System.Drawing.Point(0, 383);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(330, 47);
+            this.button15.TabIndex = 18;
+            this.button15.Text = "Notification";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
+            this.pictureBox3.Location = new System.Drawing.Point(213, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(74, 57);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
             // 
             // label7
             // 
@@ -123,7 +147,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
+            this.label7.Size = new System.Drawing.Size(240, 38);
             this.label7.TabIndex = 16;
             this.label7.Text = "Drive Sphere";
             // 
@@ -135,10 +159,11 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(101, 637);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 45);
+            this.button8.Size = new System.Drawing.Size(119, 45);
             this.button8.TabIndex = 9;
             this.button8.Text = "Logout";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -148,10 +173,11 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(-6, 584);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(306, 47);
+            this.button7.Size = new System.Drawing.Size(336, 47);
             this.button7.TabIndex = 10;
             this.button7.Text = "Admin Account";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -159,12 +185,13 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(-6, 386);
+            this.button6.Location = new System.Drawing.Point(0, 349);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(306, 47);
+            this.button6.Size = new System.Drawing.Size(327, 47);
             this.button6.TabIndex = 15;
             this.button6.Text = "Reports & Analytics";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -172,12 +199,13 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(-6, 333);
+            this.button5.Location = new System.Drawing.Point(-6, 310);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(306, 47);
+            this.button5.Size = new System.Drawing.Size(333, 47);
             this.button5.TabIndex = 11;
             this.button5.Text = "Payment Billing";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button9
             // 
@@ -185,12 +213,13 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(-6, 280);
+            this.button9.Location = new System.Drawing.Point(-6, 267);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(306, 47);
+            this.button9.Size = new System.Drawing.Size(339, 47);
             this.button9.TabIndex = 12;
             this.button9.Text = "Rental Management";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -198,12 +227,13 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(-6, 121);
+            this.button10.Location = new System.Drawing.Point(0, 125);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(306, 47);
+            this.button10.Size = new System.Drawing.Size(333, 47);
             this.button10.TabIndex = 14;
             this.button10.Text = "Home";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -211,9 +241,9 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(-6, 227);
+            this.button11.Location = new System.Drawing.Point(-16, 212);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(306, 47);
+            this.button11.Size = new System.Drawing.Size(359, 60);
             this.button11.TabIndex = 13;
             this.button11.Text = "Motorcycle Management";
             this.button11.UseVisualStyleBackColor = false;
@@ -224,12 +254,13 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(-6, 174);
+            this.button12.Location = new System.Drawing.Point(-6, 178);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(306, 47);
+            this.button12.Size = new System.Drawing.Size(343, 47);
             this.button12.TabIndex = 8;
             this.button12.Text = "Customer Management";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // panel2
             // 
@@ -250,16 +281,24 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 50);
+            this.label1.Size = new System.Drawing.Size(88, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mio\r\n438XCI";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(-115, -180);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(384, 272);
+            this.pictureBox6.TabIndex = 25;
+            this.pictureBox6.TabStop = false;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(53, 14);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 2;
             // 
             // button1
@@ -272,6 +311,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -284,6 +324,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -301,7 +342,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(277, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(487, 49);
+            this.label4.Size = new System.Drawing.Size(587, 59);
             this.label4.TabIndex = 7;
             this.label4.Text = "Motorcycle Management";
             // 
@@ -316,6 +357,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -345,7 +387,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(-5, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 50);
+            this.label6.Size = new System.Drawing.Size(162, 60);
             this.label6.TabIndex = 0;
             this.label6.Text = "Honda Giorno\r\n135VIX";
             // 
@@ -365,7 +407,7 @@
             "Use: Short trips / daily rental"});
             this.comboBox2.Location = new System.Drawing.Point(1019, 421);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.Size = new System.Drawing.Size(121, 28);
             this.comboBox2.TabIndex = 2;
             // 
             // button13
@@ -396,7 +438,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 50);
+            this.label2.Size = new System.Drawing.Size(133, 60);
             this.label2.TabIndex = 11;
             this.label2.Text = "NMAX 150 \r\n769XVB";
             // 
@@ -415,7 +457,7 @@
             "Use: Daily commute / long rides"});
             this.comboBox3.Location = new System.Drawing.Point(446, 846);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
+            this.comboBox3.Size = new System.Drawing.Size(121, 28);
             this.comboBox3.TabIndex = 2;
             // 
             // button14
@@ -446,7 +488,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 50);
+            this.label3.Size = new System.Drawing.Size(139, 60);
             this.label3.TabIndex = 15;
             this.label3.Text = "AEROX 155 \n334YXT";
             // 
@@ -465,7 +507,7 @@
             "Design: Sporty and aggressive look"});
             this.comboBox4.Location = new System.Drawing.Point(831, 846);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
+            this.comboBox4.Size = new System.Drawing.Size(121, 28);
             this.comboBox4.TabIndex = 2;
             // 
             // button16
@@ -496,7 +538,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 4);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 50);
+            this.label5.Size = new System.Drawing.Size(154, 60);
             this.label5.TabIndex = 22;
             this.label5.Text = "KEEWAY 152 \n383CVIT";
             // 
@@ -515,7 +557,7 @@
             "Use: Short trips / everyday rental"});
             this.comboBox5.Location = new System.Drawing.Point(1185, 846);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 24);
+            this.comboBox5.Size = new System.Drawing.Size(121, 28);
             this.comboBox5.TabIndex = 2;
             // 
             // comboBox6
@@ -534,21 +576,8 @@
             "Use: Short trips / daily rental"});
             this.comboBox6.Location = new System.Drawing.Point(611, 419);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 24);
+            this.comboBox6.Size = new System.Drawing.Size(121, 28);
             this.comboBox6.TabIndex = 28;
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(-6, 441);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(306, 47);
-            this.button15.TabIndex = 18;
-            this.button15.Text = "Notification";
-            this.button15.UseVisualStyleBackColor = false;
             // 
             // pictureBox7
             // 
@@ -593,14 +622,6 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(-115, -180);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(384, 272);
-            this.pictureBox6.TabIndex = 25;
-            this.pictureBox6.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_26_4_2026_224222_www_canva_com;
@@ -610,16 +631,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
-            this.pictureBox3.Location = new System.Drawing.Point(213, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(74, 57);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -673,7 +684,7 @@
             // 
             // Motorcycle_Management
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1514, 1003);
@@ -712,8 +723,10 @@
             this.Load += new System.EventHandler(this.Motorcycle_Management_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -728,9 +741,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();

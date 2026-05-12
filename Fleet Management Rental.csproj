@@ -130,17 +130,17 @@
     <Compile Include="Admin_Notification.Designer.cs">
       <DependentUpon>Admin_Notification.cs</DependentUpon>
     </Compile>
-    <Compile Include="booking.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="booking.Designer.cs">
-      <DependentUpon>booking.cs</DependentUpon>
-    </Compile>
     <Compile Include="BookingReq.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BookingReq.Designer.cs">
       <DependentUpon>BookingReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="booking_05122026.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="booking_05122026.Designer.cs">
+      <DependentUpon>booking_05122026.cs</DependentUpon>
     </Compile>
     <Compile Include="Booking_Details.cs">
       <SubType>Form</SubType>
@@ -172,17 +172,17 @@
     <Compile Include="Completed_Client.Designer.cs">
       <DependentUpon>Completed_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriveSphereRental_upd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriveSphereRental_upd.Designer.cs">
+      <DependentUpon>DriveSphereRental_upd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Features.Designer.cs">
       <DependentUpon>Features.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DriveSphereRental.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DriveSphereRental.Designer.cs">
-      <DependentUpon>DriveSphereRental.cs</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassw.cs">
       <SubType>Form</SubType>
@@ -273,11 +273,11 @@
     <EmbeddedResource Include="Admin_Notification.resx">
       <DependentUpon>Admin_Notification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="booking.resx">
-      <DependentUpon>booking.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BookingReq.resx">
       <DependentUpon>BookingReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="booking_05122026.resx">
+      <DependentUpon>booking_05122026.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking_Details.resx">
       <DependentUpon>Booking_Details.cs</DependentUpon>
@@ -294,11 +294,11 @@
     <EmbeddedResource Include="Completed_Client.resx">
       <DependentUpon>Completed_Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DriveSphereRental_upd.resx">
+      <DependentUpon>DriveSphereRental_upd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Features.resx">
       <DependentUpon>Features.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DriveSphereRental.resx">
-      <DependentUpon>DriveSphereRental.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassw.resx">
       <DependentUpon>ForgotPassw.cs</DependentUpon>
