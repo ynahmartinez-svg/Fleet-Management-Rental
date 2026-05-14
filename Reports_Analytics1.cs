@@ -69,9 +69,7 @@ namespace Fleet_Management_Rental
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin_Notification an = new Admin_Notification();
-            an.Show();
-            this.Hide();
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -101,6 +99,16 @@ namespace Fleet_Management_Rental
         }
 
         private void Reports_Analytics1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

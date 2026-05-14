@@ -15,6 +15,14 @@ namespace Fleet_Management_Rental
         public Booking_Details()
         {
             InitializeComponent();
+            this.FormClosed += Booking_Details_FormClosed;
+        }
+
+        private void Booking_Details_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Client_Dashboard cd = new Client_Dashboard();   
+            cd.Show();
+            this.Hide();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -23,6 +31,11 @@ namespace Fleet_Management_Rental
         }
 
         private void Booking_Details_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
         {
 
         }

@@ -91,12 +91,13 @@ namespace Fleet_Management_Rental
                         }
                     }
 
-                    string sql = "INSERT INTO clientprofile (name, email, passwordhash) VALUES (@name, @mail, @pass)";
+                    string sql = "INSERT INTO clientprofile (name, email, passwordhash, role) VALUES (@name, @mail, @pass, @role)";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", name);
                         cmd.Parameters.AddWithValue("@mail", email);
                         cmd.Parameters.AddWithValue("@pass", password);
+                        cmd.Parameters.AddWithValue("@pass", "Client");
                         cmd.ExecuteNonQuery();
                     }
                 }

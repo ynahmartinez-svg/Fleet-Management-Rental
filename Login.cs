@@ -31,7 +31,6 @@ namespace Fleet_Management_Rental
         "Password=XANnoM1UEQoQ2IJ2-Jp5aw;" +
         "SSL Mode=VerifyFull;" +
               "Trust Server Certificate=true";
-
         }
 
         public Login()
@@ -174,6 +173,13 @@ namespace Fleet_Management_Rental
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassw FP = new ForgotPassw();
+            FP.Show();
+            this.Hide();
         }
     }
 }

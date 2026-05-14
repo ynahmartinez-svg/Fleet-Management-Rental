@@ -124,23 +124,17 @@
     <Compile Include="Admin_DashBoard.Designer.cs">
       <DependentUpon>Admin_DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Notification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin_Notification.Designer.cs">
-      <DependentUpon>Admin_Notification.cs</DependentUpon>
-    </Compile>
     <Compile Include="BookingReq.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BookingReq.Designer.cs">
       <DependentUpon>BookingReq.cs</DependentUpon>
     </Compile>
-    <Compile Include="booking_05122026.cs">
+    <Compile Include="bookings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="booking_05122026.Designer.cs">
-      <DependentUpon>booking_05122026.cs</DependentUpon>
+    <Compile Include="bookings.Designer.cs">
+      <DependentUpon>bookings.cs</DependentUpon>
     </Compile>
     <Compile Include="Booking_Details.cs">
       <SubType>Form</SubType>
@@ -159,12 +153,6 @@
     </Compile>
     <Compile Include="Client_Dashboard.Designer.cs">
       <DependentUpon>Client_Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Client_Notification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Client_Notification.Designer.cs">
-      <DependentUpon>Client_Notification.cs</DependentUpon>
     </Compile>
     <Compile Include="Completed_Client.cs">
       <SubType>Form</SubType>
@@ -270,14 +258,11 @@
     <EmbeddedResource Include="Admin_DashBoard.resx">
       <DependentUpon>Admin_DashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Notification.resx">
-      <DependentUpon>Admin_Notification.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BookingReq.resx">
       <DependentUpon>BookingReq.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="booking_05122026.resx">
-      <DependentUpon>booking_05122026.cs</DependentUpon>
+    <EmbeddedResource Include="bookings.resx">
+      <DependentUpon>bookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking_Details.resx">
       <DependentUpon>Booking_Details.cs</DependentUpon>
@@ -287,9 +272,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Dashboard.resx">
       <DependentUpon>Client_Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Client_Notification.resx">
-      <DependentUpon>Client_Notification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Completed_Client.resx">
       <DependentUpon>Completed_Client.cs</DependentUpon>
@@ -461,6 +443,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot_27-4-2026_02241_www.canva.com.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2026-05-12 183545.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2026-05-12 183648.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2026-05-12 183724.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2026-05-12 205119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\national-ID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2026-05-12 222107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2026-05-12 222258.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2026-05-12 222623.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />

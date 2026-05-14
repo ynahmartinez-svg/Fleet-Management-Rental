@@ -20,8 +20,8 @@ namespace Fleet_Management_Rental
         
         private void BookingReq_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Client_Dashboard cd = new Client_Dashboard();
-            cd.Show();
+            Admin_DashBoard ad = new Admin_DashBoard();
+            ad.Show();
             this.Hide();
         }
 

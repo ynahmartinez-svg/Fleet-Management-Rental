@@ -87,9 +87,7 @@ namespace Fleet_Management_Rental
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Admin_Notification an = new Admin_Notification();
-            an.Show();
-            this.Show();
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -137,6 +135,11 @@ namespace Fleet_Management_Rental
             Motorcycle_management2 mm2 = new Motorcycle_management2();
             mm2.Show();
             this.Hide();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
