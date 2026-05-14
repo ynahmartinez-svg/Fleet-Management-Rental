@@ -127,6 +127,12 @@
   <data name="Screenshot_26-4-2026_22582_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_26-4-2026_22582_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Screenshot 2026-05-12 183724" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2026-05-12 183724.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2026-05-12 222258" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2026-05-12 222258.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Screenshot_26-4-2026_224539_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_26-4-2026_224539_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,11 +142,17 @@
   <data name="Screenshot_27-4-2026_01821_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_27-4-2026_01821_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Screenshot_21-4-2026_231724_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_21-4-2026_231724_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Screenshot_21-4-2026_15273_www.bing.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_21-4-2026_15273_www.bing.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_27-4-2026_01952_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_27-4-2026_01952_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2026-05-12 183648" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2026-05-12 183648.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_27-4-2026_01326_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_27-4-2026_01326_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,14 +178,23 @@
   <data name="Screenshot_24-4-2026_02411_www.bing.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_24-4-2026_02411_www.bing.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Screenshot 2026-05-12 183545" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2026-05-12 183545.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Screenshot_26-4-2026_231633_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_26-4-2026_231633_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Screenshot_21-4-2026_231724_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot_21-4-2026_231724_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Screenshot_27-4-2026_02241_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_27-4-2026_02241_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_26-4-2026_224033_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_26-4-2026_224033_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="national-ID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\national-ID.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2026-05-12 222107" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2026-05-12 222107.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_26-4-2026_215253_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_26-4-2026_215253_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +217,9 @@
   <data name="Screenshot_26-4-2026_22582_www.canva1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_26-4-2026_22582_www.canva.com1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Screenshot 2026-05-12 205119" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2026-05-12 205119.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Screenshot_21-4-2026_15273_www.bing1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_21-4-2026_15273_www.bing.com1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,7 +238,7 @@
   <data name="Screenshot_21-4-2026_235037_www.bing.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_21-4-2026_235037_www.bing.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Screenshot_27-4-2026_02241_www.canva.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot_27-4-2026_02241_www.canva.com.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Screenshot 2026-05-12 222623" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2026-05-12 222623.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

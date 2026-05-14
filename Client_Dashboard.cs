@@ -49,20 +49,6 @@ namespace Fleet_Management_Rental
             this.Hide();
         }
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-            My_rentals r = new My_rentals();
-            r.Show();
-            this.Hide();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            booking b = new booking();
-            b.Show();
-            this.Hide();
-        }
-
         private void button11_Click(object sender, EventArgs e)
         {
             Payments_and_Billing pAB = new Payments_and_Billing();
@@ -72,42 +58,83 @@ namespace Fleet_Management_Rental
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Client_Notification cn = new Client_Notification();
-            cn.Show();  
+           
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Booking_Details bd = new Booking_Details();
+            bd.Show();  
             this.Hide();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            My_rentals r = new My_rentals();
+            r.Show();
+            this.Hide();
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            booking b = new booking();
+            b.Show();
+            this.Hide();
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            Payments_and_Billing PB = new Payments_and_Billing();
+            PB.Show();
+            this.Hide();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
         {
             Client_Account ca = new Client_Account();
             ca.Show();
             this.Hide();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-              "Do you want to log out?",
-              "Logout Confirmation",
-              MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question);
+                "Do you want to log out?",
+                "Logout Confirmation",
+                 MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
-                this.Close();
 
                 Login loginForm = new Login();
-                loginForm.ShowDialog();
                 this.Hide();
+                loginForm.ShowDialog();
+                this.Close();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            BookingReq br = new BookingReq();
-            br.Show();  
-            this.Hide();
         }
     }
 }

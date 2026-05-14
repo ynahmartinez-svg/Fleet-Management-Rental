@@ -84,9 +84,7 @@ namespace Fleet_Management_Rental
 
         private void button13_Click(object sender, EventArgs e)
         {
-            Admin_Notification an = new Admin_Notification();
-             an.Show();
-            this.Hide();
+         
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -113,6 +111,21 @@ namespace Fleet_Management_Rental
                 loginForm.ShowDialog();
                 this.Hide();
             }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
