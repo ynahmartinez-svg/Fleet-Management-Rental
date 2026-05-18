@@ -119,13 +119,14 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(4, 327);
+            this.button8.Location = new System.Drawing.Point(-11, 326);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(230, 38);
             this.button8.TabIndex = 53;
             this.button8.Text = "Booking Request";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox11
             // 
@@ -147,7 +148,7 @@
             this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button17.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold);
+            this.button17.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ForeColor = System.Drawing.Color.White;
             this.button17.Location = new System.Drawing.Point(-11, 201);
             this.button17.Margin = new System.Windows.Forms.Padding(2);
@@ -156,6 +157,7 @@
             this.button17.TabIndex = 42;
             this.button17.Text = "Customer Management";
             this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button16
             // 
@@ -164,7 +166,7 @@
             this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button16.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold);
+            this.button16.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button16.ForeColor = System.Drawing.Color.White;
             this.button16.Location = new System.Drawing.Point(-11, 243);
             this.button16.Margin = new System.Windows.Forms.Padding(2);
@@ -184,7 +186,7 @@
             this.label7.Location = new System.Drawing.Point(27, 23);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
+            this.label7.Size = new System.Drawing.Size(160, 27);
             this.label7.TabIndex = 50;
             this.label7.Text = "Drive Sphere";
             // 
@@ -197,13 +199,14 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(4, 146);
+            this.button15.Location = new System.Drawing.Point(-68, 159);
             this.button15.Margin = new System.Windows.Forms.Padding(2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(230, 38);
             this.button15.TabIndex = 48;
             this.button15.Text = "Home";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click_1);
             // 
             // button9
             // 
@@ -221,6 +224,7 @@
             this.button9.TabIndex = 43;
             this.button9.Text = "Logout";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button14
             // 
@@ -231,13 +235,14 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(4, 285);
+            this.button14.Location = new System.Drawing.Point(-11, 284);
             this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(230, 38);
             this.button14.TabIndex = 46;
             this.button14.Text = "Rental Management";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button10
             // 
@@ -255,6 +260,7 @@
             this.button10.TabIndex = 44;
             this.button10.Text = "Admin Account";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button12
             // 
@@ -265,13 +271,14 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(0, 369);
+            this.button12.Location = new System.Drawing.Point(-11, 368);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(230, 38);
             this.button12.TabIndex = 45;
             this.button12.Text = "Payment Billing";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
@@ -282,13 +289,14 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(3, 411);
+            this.button11.Location = new System.Drawing.Point(-11, 410);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(230, 38);
             this.button11.TabIndex = 49;
             this.button11.Text = "Reports Analytics";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // panel2
             // 
@@ -310,7 +318,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 50);
+            this.label1.Size = new System.Drawing.Size(61, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mio\r\n438XCI";
             // 
@@ -362,7 +370,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(276, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(487, 49);
+            this.label4.Size = new System.Drawing.Size(388, 39);
             this.label4.TabIndex = 7;
             this.label4.Text = "Motorcycle Management";
             // 
@@ -390,7 +398,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 50);
+            this.label6.Size = new System.Drawing.Size(115, 40);
             this.label6.TabIndex = 0;
             this.label6.Text = "Honda Giorno\r\n135VIX";
             // 
@@ -402,7 +410,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 50);
+            this.label3.Size = new System.Drawing.Size(98, 40);
             this.label3.TabIndex = 15;
             this.label3.Text = "AEROX 155 \n334YXT";
             // 
@@ -414,7 +422,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 50);
+            this.label5.Size = new System.Drawing.Size(109, 40);
             this.label5.TabIndex = 22;
             this.label5.Text = "KEEWAY 152 \n383CVIT";
             // 
@@ -453,7 +461,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 50);
+            this.label2.Size = new System.Drawing.Size(93, 40);
             this.label2.TabIndex = 11;
             this.label2.Text = "NMAX 150 \r\n769XVB";
             // 
@@ -687,7 +695,7 @@
             // 
             // Motorcycle_Management
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1192, 782);

@@ -426,7 +426,7 @@
             this.linkLabel6.ForeColor = System.Drawing.Color.White;
             this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel6.LinkColor = System.Drawing.Color.White;
-            this.linkLabel6.Location = new System.Drawing.Point(323, 138);
+            this.linkLabel6.Location = new System.Drawing.Point(323, 145);
             this.linkLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(270, 236);

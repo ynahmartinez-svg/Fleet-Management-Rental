@@ -25,7 +25,23 @@ namespace Fleet_Management_Rental
             this.Hide();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+
+        private void Reports_Analytics1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
         {
             Admin_DashBoard ad = new Admin_DashBoard();
             ad.Show();
@@ -53,23 +69,18 @@ namespace Fleet_Management_Rental
             this.Hide();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            BookingReq bq = new BookingReq();
+            bq.Show();
+            this.Hide();
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             Payment_Billing pb = new Payment_Billing();
             pb.Show();
             this.Hide();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Reports_Analytics1 ra = new Reports_Analytics1();
-            ra.Show();
-            this.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -82,35 +93,23 @@ namespace Fleet_Management_Rental
         private void button8_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-              "Do you want to log out?",
-              "Logout Confirmation",
-              MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question);
+            "Do you want to log out?", "Logout Confirmation",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
-                this.Close();
 
                 Login loginForm = new Login();
-                loginForm.ShowDialog();
                 this.Hide();
+                loginForm.ShowDialog();
+                this.Close();
             }
-        }
-
-        private void Reports_Analytics1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
+            else
+            {
+                MessageBox.Show("Logout cancelled.", "Info",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

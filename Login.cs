@@ -9,29 +9,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Fleet_Management_Rental.Client_Dashboard;
 
 namespace Fleet_Management_Rental
 {
     public partial class Login : Form
     {
-        public static class DbHelper
-        {
-            public static NpgsqlConnection GetConnection()
-            {
-                return new NpgsqlConnection(DbConfig.ConnectionString);
-            }
-        }
-
-        public static class DbConfig
-        {
-            public static string ConnectionString = "Host=smart1-fleetdb-25755.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +
-        "Port=26257;" +
-        "Database=fms_rental;" +
-        "Username=joohn;" +
-        "Password=XANnoM1UEQoQ2IJ2-Jp5aw;" +
-        "SSL Mode=VerifyFull;" +
-              "Trust Server Certificate=true";
-        }
 
         public Login()
         {
@@ -41,7 +24,7 @@ namespace Fleet_Management_Rental
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -119,9 +102,7 @@ namespace Fleet_Management_Rental
                 {
                     conn.Open();
 
-                    string hashedPassword = ComputeSha256Hash(password);
-
-
+                    // Check Admin
                     string adminQuery = "SELECT COUNT(*) FROM adminprofile WHERE LOWER(email) = LOWER(@mail) AND passwordhash = @pass";
                     using (var cmd = new NpgsqlCommand(adminQuery, conn))
                     {
@@ -131,14 +112,23 @@ namespace Fleet_Management_Rental
                             return "Admin";
                     }
 
-                    string clientQuery = "SELECT COUNT(*) FROM clientprofile WHERE LOWER(email) = LOWER(@mail) AND passwordhash = @pass";
+                    // Check Client
+                    string clientQuery = @"SELECT client_id FROM clientprofile 
+                       WHERE LOWER(email) = LOWER(@mail) AND passwordhash = @pass";
                     using (var cmd = new NpgsqlCommand(clientQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@mail", email);
-                        NpgsqlParameter npgsqlParameter = cmd.Parameters.AddWithValue("@pass", password);
-                        if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+                        cmd.Parameters.AddWithValue("@pass", password);
+
+                        var result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            SessionData.LoggedInRole = "Client";
+                            SessionData.LoggedInClientId = Convert.ToInt64(result);
                             return "Client";
+                        }
                     }
+
 
                     return null;
                 }
@@ -151,23 +141,11 @@ namespace Fleet_Management_Rental
             }
         }
 
+
         private void cbPass_CheckedChanged(object sender, EventArgs e)
         {
 
             txtPass.UseSystemPasswordChar = cbPass.Checked;
-        }
-        private string ComputeSha256Hash(string rawData)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
-            }
         }
 
         private void label4_Click(object sender, EventArgs e)

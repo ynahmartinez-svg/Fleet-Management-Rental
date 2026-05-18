@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,47 +26,64 @@ namespace Fleet_Management_Rental
         }
         private void Active_Client_Load(object sender, EventArgs e)
         {
+            long clientId = SessionData.LoggedInClientId;
 
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Booking_Details bd = new Booking_Details();
-            bd.Show();
-            this.Hide();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Client_Account ca = new Client_Account();
-            ca.Show();
-            this.Hide();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(
-            "Do you want to log out?",
-            "Logout Confirmation",
-            MessageBoxButtons.YesNo,
-               MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            using (var conn = DbHelper.GetConnection())
             {
-                MessageBox.Show("Logged out successfully!");
-                this.Close();
+                conn.Open();
 
-                Login loginForm = new Login();
-                loginForm.ShowDialog();
-                this.Hide();
+                string sqlUpdate = @"UPDATE rentals
+                             SET status = 'Active'
+                             WHERE client_id = @cid
+                               AND status = 'Approved'
+                               AND start_date <= CURRENT_DATE";
+                using (var cmdUpdate = new NpgsqlCommand(sqlUpdate, conn))
+                {
+                    cmdUpdate.Parameters.AddWithValue("@cid", clientId);
+                    cmdUpdate.ExecuteNonQuery();
+                }
+
+                string sql = @"SELECT r.start_date, r.return_date, r.duration_days,
+                              m.model_name, m.plate_num, m.image_path, r.status
+                       FROM rentals r
+                       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+                       WHERE r.client_id = @cid AND (r.status = 'Active' OR (r.status = 'Approved' AND r.start_date <= CURRENT_DATE))";
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", clientId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        flowLayoutPanel2.Controls.Clear();
+
+                        while (reader.Read())
+                        {
+                            string model = reader.GetString(3);
+                            string plate = reader.GetString(4);
+                            string imagePath = reader.GetString(5);
+                            DateTime startDate = reader.GetDateTime(0);
+                            DateTime endDate = reader.GetDateTime(1);
+                            long duration = reader.IsDBNull(2) ? 0 : reader.GetInt64(2);
+                            string rentalStatus = reader.GetString(6);
+
+                            Panel rentalPanel = new Panel { Width = 410, Height = 150, BorderStyle = BorderStyle.FixedSingle, Margin = new Padding(5) };
+
+                            PictureBox pic = new PictureBox { Width = 150, Height = 120, Dock = DockStyle.Left, SizeMode = PictureBoxSizeMode.Zoom };
+                            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+                                pic.Image = Image.FromFile(imagePath);
+
+                            Label lblInfo = new Label { Dock = DockStyle.Fill, Padding = new Padding(10), TextAlign = ContentAlignment.MiddleLeft };
+                            lblInfo.Text = $"{model} {plate}\nStart: {startDate:d}\nEnd: {endDate:d}\nDuration: {duration} days\nStatus: {rentalStatus}";
+
+                            rentalPanel.Controls.Add(lblInfo);
+                            rentalPanel.Controls.Add(pic);
+
+                            flowLayoutPanel2.Controls.Add(rentalPanel);
+                        }
+                    }
+                }
             }
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Client_Dashboard cd = new Client_Dashboard();
-            cd.Show();
-            this.Hide();
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -75,11 +93,6 @@ namespace Fleet_Management_Rental
             this.Hide();
         }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Payments_and_Billing pAB = new Payments_and_Billing();
-            pAB.Show();
-            this.Hide();
-        }
+
     }
 }

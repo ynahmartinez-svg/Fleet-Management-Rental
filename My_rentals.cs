@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Fleet_Management_Rental
 {
     public partial class My_rentals : Form
     {
+
         public My_rentals()
         {
             InitializeComponent();
@@ -39,7 +41,92 @@ namespace Fleet_Management_Rental
 
         private void My_rentals_Load(object sender, EventArgs e)
         {
+            long clientId = SessionData.LoggedInClientId; // ✅ use shared SessionData.cs
 
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"SELECT m.motorcycle_id, m.model_name, m.plate_num, m.image_path,
+                                      r.rental_id, r.start_date, r.return_date, r.duration_days, r.status AS rental_status
+                               FROM rentals r
+                               JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+                               WHERE r.client_id = @cid
+                               ORDER BY r.start_date DESC";
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", clientId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        flowLayoutPanel2.Controls.Clear();
+
+                        while (reader.Read())
+                        {
+                            long motorcycleId = reader.GetInt64(0);
+                            string model = reader.GetString(1);
+                            string plate = reader.GetString(2);
+                            string imagePath = reader.GetString(3);
+
+                            long rentalId = reader.IsDBNull(4) ? 0 : reader.GetInt64(4);
+                            string startDate = reader.IsDBNull(5) ? "N/A" : reader.GetDateTime(5).ToShortDateString();
+                            string endDate = reader.IsDBNull(6) ? "N/A" : reader.GetDateTime(6).ToShortDateString();
+                            string duration = reader.IsDBNull(7) ? "0" : reader.GetInt64(7).ToString();
+                            string rentalStatus = reader.IsDBNull(8) ? "Not Rented" : reader.GetString(8);
+
+                            // Panel for each rental
+                            Panel motorPanel = new Panel
+                            {
+                                Width = 420,
+                                Height = 160,
+                                BorderStyle = BorderStyle.FixedSingle,
+                                Margin = new Padding(5)
+                            };
+
+                            PictureBox pic = new PictureBox
+                            {
+                                Width = 150,
+                                Height = 120,
+                                Dock = DockStyle.Left,
+                                SizeMode = PictureBoxSizeMode.Zoom
+                            };
+                            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+                                pic.Image = Image.FromFile(imagePath);
+                            else
+                                pic.BackColor = Color.LightGray;
+
+                            Label lblInfo = new Label
+                            {
+                                Dock = DockStyle.Fill,
+                                TextAlign = ContentAlignment.MiddleLeft,
+                                Padding = new Padding(10),
+                                AutoSize = false,
+                                Text = $"{model} ({plate})\n" +
+                                       $"Start: {startDate}\n" +
+                                       $"End: {endDate}\n" +
+                                       $"Duration: {duration} days\n" +
+                                       $"Status: {rentalStatus}"
+                            };
+
+                            Button btnAction = new Button
+                            {
+                                Text = rentalId > 0 ? "Extend Rental" : "Rent Now",
+                                Dock = DockStyle.Bottom,
+                                Enabled = true
+                            };
+                            btnAction.Tag = new { MotorcycleId = motorcycleId, RentalId = rentalId };
+                            btnAction.Click += BtnExtend_Click_1;
+
+                            motorPanel.Controls.Add(lblInfo);
+                            motorPanel.Controls.Add(pic);
+                            motorPanel.Controls.Add(btnAction);
+
+                            flowLayoutPanel2.Controls.Add(motorPanel);
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -80,9 +167,7 @@ namespace Fleet_Management_Rental
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Booking_Details bd = new Booking_Details();
-            bd.Show();
-            this.Hide();
+
         }
 
         private void button10_Click_1(object sender, EventArgs e)
@@ -121,47 +206,74 @@ namespace Fleet_Management_Rental
         private void button9_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-             "Do you want to log out?",
-             "Logout Confirmation",
-              MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question);
+                       "Do you want to log out?", "Logout Confirmation",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
-                this.Close();
 
                 Login loginForm = new Login();
-                loginForm.ShowDialog();
                 this.Hide();
+                loginForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Logout cancelled.", "Info",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            Booking_Details bd = new Booking_Details();
-            bd.Show();
-            this.Hide();
+
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Booking_Details bd = new Booking_Details();
-            bd.Show();
-            this.Hide();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Booking_Details bd = new Booking_Details();
-            bd.Show();
-            this.Hide();
+
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            Booking_Details bd = new Booking_Details();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnExtend_Click_1(object sender, EventArgs e)
+        {
+            dynamic tag = ((Button)sender).Tag;
+            long motorcycleId = tag.MotorcycleId;
+            long rentalId = tag.RentalId;
+            long clientId = SessionData.LoggedInClientId;
+
+            Booking_Details bd = new Booking_Details(motorcycleId, clientId, rentalId);
             bd.Show();
+            this.Hide();
+
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            Client_Notification cn = new Client_Notification();
+            cn.Show();
+            this.Hide();
+        }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+            Client_Map cm = new Client_Map();
+            cm.Show();
             this.Hide();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,48 +27,70 @@ namespace Fleet_Management_Rental
 
         private void Completed_Client_Load(object sender, EventArgs e)
         {
+            long clientId = SessionData.LoggedInClientId;
 
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"SELECT r.start_date, r.return_date, r.duration_days,
+                              m.model_name, m.plate_num, m.image_path
+                       FROM rentals r
+                       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+                       WHERE r.client_id = @cid AND r.status = 'Completed'";
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", clientId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        flowLayoutPanel1.Controls.Clear();
+
+                        while (reader.Read())
+                        {
+                            string model = reader.GetString(3);
+                            string plate = reader.GetString(4);
+                            string imagePath = reader.GetString(5);
+                            DateTime startDate = reader.GetDateTime(0);
+                            DateTime endDate = reader.GetDateTime(1);
+                            long duration = reader.IsDBNull(2) ? 0 : reader.GetInt64(2);
+
+                            Panel rentalPanel = new Panel { Width = 420, Height = 160, BorderStyle = BorderStyle.FixedSingle, Margin = new Padding(5) };
+
+                            PictureBox pic = new PictureBox { Width = 150, Height = 120, Dock = DockStyle.Left, SizeMode = PictureBoxSizeMode.Zoom };
+                            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+                                pic.Image = Image.FromFile(imagePath);
+
+                            Label lblInfo = new Label { Dock = DockStyle.Fill, Padding = new Padding(10), TextAlign = ContentAlignment.MiddleLeft };
+                            lblInfo.Text = $"{model} {plate}\nStart: {startDate:d}\nEnd: {endDate:d}\nDuration: {duration} days\nStatus: Completed";
+
+                            rentalPanel.Controls.Add(lblInfo);
+                            rentalPanel.Controls.Add(pic);
+
+                            flowLayoutPanel1.Controls.Add(rentalPanel);
+                        }
+                    }
+                }
+            }
         }
+        
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Client_Dashboard cd = new Client_Dashboard();
-            cd.Show();  
-            this.Hide();
+
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            My_rentals  r = new My_rentals();
-            r.Show();
-            this.Hide();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            booking b = new booking();
-            b.Show();
-            this.Hide();
+
         }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Payments_and_Billing pAB = new Payments_and_Billing();
-            pAB.Show();
-            this.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Client_Account ca = new Client_Account();   
-            ca.Show();
-            this.Hide();
-        }
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -95,16 +118,12 @@ namespace Fleet_Management_Rental
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Booking_Details bd = new Booking_Details();
-            bd.Show();
-            this.Hide();
+
         }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            Client_Dashboard cd = new Client_Dashboard();
-            cd.Show();
-            this.Hide();
+
         }
 
         private void button12_Click_1(object sender, EventArgs e)
@@ -116,16 +135,12 @@ namespace Fleet_Management_Rental
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            Payments_and_Billing pAB = new Payments_and_Billing();
-            pAB.Show();
-            this.Hide();
+
         }
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            Client_Account ca = new Client_Account();
-            ca.Show();
-            this.Hide();
+
         }
 
         private void button8_Click_1(object sender, EventArgs e)
@@ -145,6 +160,11 @@ namespace Fleet_Management_Rental
                 loginForm.ShowDialog();
                 this.Hide();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
