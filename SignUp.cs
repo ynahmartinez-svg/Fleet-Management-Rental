@@ -31,7 +31,7 @@ namespace Fleet_Management_Rental
         public SignUp()
         {
             InitializeComponent();
-            this .FormClosed += SignUp_FormClosed;
+            this.FormClosed += SignUp_FormClosed;
         }
 
         private void SignUp_FormClosed(object sender, FormClosedEventArgs e)
@@ -61,11 +61,11 @@ namespace Fleet_Management_Rental
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text.Trim();
+
             string email = txtEmail.Text.Trim();
             string password = txtPass.Text.Trim();
 
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if ( string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("All fields are required!", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -74,7 +74,7 @@ namespace Fleet_Management_Rental
             
             try
             {
-                using (var conn = Login.DbHelper.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
                     conn.Open();
 
@@ -91,13 +91,13 @@ namespace Fleet_Management_Rental
                         }
                     }
 
-                    string sql = "INSERT INTO clientprofile (name, email, passwordhash, role) VALUES (@name, @mail, @pass, @role)";
+                    string sql = "INSERT INTO clientprofile ( email, passwordhash, role) VALUES ( @mail, @pass, @role)";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@name", name);
+
                         cmd.Parameters.AddWithValue("@mail", email);
                         cmd.Parameters.AddWithValue("@pass", password);
-                        cmd.Parameters.AddWithValue("@pass", "Client");
+                        cmd.Parameters.AddWithValue("@role", "Client");
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -107,7 +107,7 @@ namespace Fleet_Management_Rental
 
                 Login loginForm = new Login();
                 loginForm.Show();
-                this.Close();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -121,6 +121,17 @@ namespace Fleet_Management_Rental
             Login log = new Login();
             log.Show();
             this.Hide();
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = true;
+            cbPass.Checked = true;
+        }
+
+        private void cbPass_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = cbPass.Checked;
         }
     }
 }

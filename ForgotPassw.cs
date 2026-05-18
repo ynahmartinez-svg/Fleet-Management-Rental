@@ -13,27 +13,7 @@ namespace Fleet_Management_Rental
 {
     public partial class ForgotPassw : Form
     {
-        private bool isNavigatingToLogin = false;
 
-        public static class DbHelper
-        {
-            public static NpgsqlConnection GetConnection()
-            {
-
-                return new NpgsqlConnection(DbConfig.ConnectionString);
-            }
-        }
-
-        public static class DbConfig
-        {
-            public static string ConnectionString = "Host=smart1-fleetdb-25755.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +
-                "Port=26257;" +
-                "Database=fms_rental;" +
-                "Username=joohn;" +
-                "Password=XANnoM1UEQoQ2IJ2-Jp5aw;" + // <--- CHANGE THIS IMMEDIATELY
-                "SSL Mode=VerifyFull;" +
-                "Trust Server Certificate=true";
-        }
         public ForgotPassw()
         {
             InitializeComponent();
@@ -69,7 +49,6 @@ namespace Fleet_Management_Rental
             {
                 using (var conn = DbHelper.GetConnection())
                 {
-                    // 1. You must explicitly open the pipeline before building commands
                     conn.Open();
 
                     string sql = "UPDATE clientprofile SET passwordhash = @pass WHERE LOWER(email) = LOWER(@mail)";
@@ -78,7 +57,6 @@ namespace Fleet_Management_Rental
                         cmd.Parameters.AddWithValue("@pass", txtNewPass.Text);
                         cmd.Parameters.AddWithValue("@mail", txtEmail.Text.Trim());
 
-                        // 2. This execution will now succeed because the pipeline is open
                         int rows = cmd.ExecuteNonQuery();
 
                         if (rows > 0)
@@ -86,14 +64,14 @@ namespace Fleet_Management_Rental
                             MessageBox.Show("Password reset successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Login log = new Login();
                             log.Show();
-                            this.Close();
+                            this.Hide();
                         }
                         else
                         {
                             MessageBox.Show("Email address not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                } // 3. The using block automatically closes and disposes the connection here
+                } 
             }
             catch (Exception ex)
             {

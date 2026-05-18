@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Philippine Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    #map { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    // Center on Philippines
+    var map = L.map('map').setView([12.8797, 121.7740], 6);
+
+    // Free OSM tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Track the current marker
+    var currentMarker = null;
+
+    // Example marker: Bulacan
+    currentMarker = L.marker([14.794, 120.878]).addTo(map).bindPopup("Bulacan");
+
+    // Allow user to click and add marker
+    map.on('click', function(e) {
+      var lat = e.latlng.lat;
+      var lng = e.latlng.lng;
+
+      // Remove previous marker if it exists
+      if (currentMarker) {
+        map.removeLayer(currentMarker);
+      }
+
+      // Add new marker
+      currentMarker = L.marker([lat, lng]).addTo(map)
+        .bindPopup("You clicked here: " + lat + ", " + lng)
+        .openPopup();
+
+      // Send coordinates back to C#
+      window.chrome?.webview?.postMessage({ lat: lat, lng: lng });
+    });
+  </script>
+</body>
+</html>
