@@ -203,6 +203,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(917, 200);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(281, 22);
             this.txtEmail.TabIndex = 46;
@@ -210,6 +211,7 @@
             // txtNewPass
             // 
             this.txtNewPass.Location = new System.Drawing.Point(917, 266);
+            this.txtNewPass.MaxLength = 30;
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(281, 22);
             this.txtNewPass.TabIndex = 47;
@@ -217,6 +219,7 @@
             // txtConfirmedPass
             // 
             this.txtConfirmedPass.Location = new System.Drawing.Point(917, 344);
+            this.txtConfirmedPass.MaxLength = 30;
             this.txtConfirmedPass.Name = "txtConfirmedPass";
             this.txtConfirmedPass.Size = new System.Drawing.Size(281, 22);
             this.txtConfirmedPass.TabIndex = 48;
@@ -226,6 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1292, 548);
+            this.ControlBox = false;
             this.Controls.Add(this.txtConfirmedPass);
             this.Controls.Add(this.txtNewPass);
             this.Controls.Add(this.txtEmail);
@@ -242,7 +246,9 @@
             this.Controls.Add(this.pb1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ForgotPassw";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgotPassw";
             this.Load += new System.EventHandler(this.ForgotPassw_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

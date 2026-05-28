@@ -22,9 +22,7 @@ namespace Fleet_Management_Rental
 
         private void Payments_and_Billing_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Client_Dashboard cd = new Client_Dashboard();
-            cd.Show();
-            this.Hide();
+
         }
 
         private void Payments_and_Billing_Load(object sender, EventArgs e)
@@ -36,13 +34,14 @@ namespace Fleet_Management_Rental
                 conn.Open();
 
                 string sql = @"SELECT r.start_date AS transaction_date,
-                                      (m.price_per_day * r.duration_days) AS motorcycle_price,
-                                      m.model_name AS motorcycle_unit,
-                                      r.duration_days AS duration
-                               FROM rentals r
-                               JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                               WHERE r.client_id = @cid
-                               ORDER BY r.start_date DESC";
+                                     (m.price_per_day * r.duration_days) AS motorcycle_price,
+                                     m.model_name AS motorcycle_unit,
+                                     r.duration_days AS duration,
+                                     r.status AS rental_status
+                              FROM rentals r
+                              JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+                              WHERE r.client_id = @cid
+                              ORDER BY r.start_date DESC";
 
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
@@ -53,8 +52,14 @@ namespace Fleet_Management_Rental
                     {
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
-                        dgvPayment.DataSource = dt; // bind to DataGridView
+                        dgvPayment.DataSource = dt;
                     }
+                    dgvPayment.Columns["transaction_date"].HeaderText = "Transaction Date";
+                    dgvPayment.Columns["motorcycle_price"].HeaderText = "Total Price";
+                    dgvPayment.Columns["motorcycle_unit"].HeaderText = "Motorcycle Unit";
+                    dgvPayment.Columns["duration"].HeaderText = "Duration (Days)";
+                    dgvPayment.Columns["rental_status"].HeaderText = "Status";
+
                 }
             }
         }
@@ -100,22 +105,23 @@ namespace Fleet_Management_Rental
         private void button8_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                       "Do you want to log out?", "Logout Confirmation",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             "Do you want to log out?",
+             "Logout Confirmation",
+            MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
 
                 Login loginForm = new Login();
-                this.Hide();
-                loginForm.ShowDialog();
-                this.Close();
+                loginForm.Show();
+
+                this.Dispose();
             }
-            else
+            else if (result == DialogResult.No)
             {
-                MessageBox.Show("Logout cancelled.", "Info",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
@@ -131,6 +137,16 @@ namespace Fleet_Management_Rental
             Client_Map map = new Client_Map();
             map.Show();
             this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

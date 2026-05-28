@@ -67,10 +67,10 @@
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 669);
+            this.panel1.Size = new System.Drawing.Size(332, 823);
             this.panel1.TabIndex = 1;
             // 
             // btnMap
@@ -80,10 +80,10 @@
             this.btnMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMap.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMap.ForeColor = System.Drawing.Color.White;
-            this.btnMap.Location = new System.Drawing.Point(-63, 420);
-            this.btnMap.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnMap.Location = new System.Drawing.Point(-84, 517);
+            this.btnMap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMap.Name = "btnMap";
-            this.btnMap.Size = new System.Drawing.Size(229, 55);
+            this.btnMap.Size = new System.Drawing.Size(306, 68);
             this.btnMap.TabIndex = 68;
             this.btnMap.Text = "Map";
             this.btnMap.UseVisualStyleBackColor = false;
@@ -95,29 +95,31 @@
             this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotification.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotification.ForeColor = System.Drawing.Color.White;
-            this.btnNotification.Location = new System.Drawing.Point(-40, 370);
-            this.btnNotification.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNotification.Location = new System.Drawing.Point(-53, 455);
+            this.btnNotification.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNotification.Name = "btnNotification";
-            this.btnNotification.Size = new System.Drawing.Size(229, 55);
+            this.btnNotification.Size = new System.Drawing.Size(306, 68);
             this.btnNotification.TabIndex = 67;
             this.btnNotification.Text = "Notification";
             this.btnNotification.UseVisualStyleBackColor = false;
+            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(4, 527);
+            this.panel6.Location = new System.Drawing.Point(5, 649);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(235, 2);
+            this.panel6.Size = new System.Drawing.Size(313, 2);
             this.panel6.TabIndex = 66;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
-            this.pictureBox3.Location = new System.Drawing.Point(69, 74);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(118, 90);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 46);
+            this.pictureBox3.Size = new System.Drawing.Size(73, 57);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 64;
             this.pictureBox3.TabStop = false;
@@ -129,23 +131,23 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(4, 311);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button11.Location = new System.Drawing.Point(5, 382);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(223, 53);
+            this.button11.Size = new System.Drawing.Size(297, 66);
             this.button11.TabIndex = 61;
             this.button11.Text = "Payments and Billing";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(38, 26);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(51, 32);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 27);
+            this.label7.Size = new System.Drawing.Size(203, 32);
             this.label7.TabIndex = 63;
             this.label7.Text = "Drive Sphere";
             // 
@@ -156,13 +158,14 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(-45, 201);
-            this.button12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button12.Location = new System.Drawing.Point(-60, 247);
+            this.button12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(234, 55);
+            this.button12.Size = new System.Drawing.Size(312, 68);
             this.button12.TabIndex = 57;
             this.button12.Text = "My Rentals";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button8
             // 
@@ -171,10 +174,10 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(69, 572);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button8.Location = new System.Drawing.Point(92, 704);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(97, 36);
+            this.button8.Size = new System.Drawing.Size(130, 44);
             this.button8.TabIndex = 58;
             this.button8.Text = "Logout";
             this.button8.UseVisualStyleBackColor = false;
@@ -187,10 +190,10 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(-62, 140);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button10.Location = new System.Drawing.Point(-83, 172);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(230, 55);
+            this.button10.Size = new System.Drawing.Size(307, 68);
             this.button10.TabIndex = 62;
             this.button10.Text = "Home";
             this.button10.UseVisualStyleBackColor = false;
@@ -203,13 +206,14 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(4, 535);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button7.Location = new System.Drawing.Point(5, 658);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(229, 38);
+            this.button7.Size = new System.Drawing.Size(306, 46);
             this.button7.TabIndex = 59;
             this.button7.Text = "My Profile";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button9
             // 
@@ -218,13 +222,14 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(-51, 262);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button9.Location = new System.Drawing.Point(-68, 322);
+            this.button9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(229, 55);
+            this.button9.Size = new System.Drawing.Size(306, 68);
             this.button9.TabIndex = 60;
             this.button9.Text = "Booking";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // panel3
             // 
@@ -232,10 +237,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(243, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel3.Location = new System.Drawing.Point(324, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(745, 92);
+            this.panel3.Size = new System.Drawing.Size(994, 114);
             this.panel3.TabIndex = 8;
             // 
             // label4
@@ -243,10 +248,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Constantia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(305, 26);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(407, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 39);
+            this.label4.Size = new System.Drawing.Size(104, 49);
             this.label4.TabIndex = 7;
             this.label4.Text = "Map";
             // 
@@ -256,9 +260,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_2026_05_12_222623;
-            this.pictureBox2.Location = new System.Drawing.Point(-52, -2);
+            this.pictureBox2.Location = new System.Drawing.Point(-69, -2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1083, 695);
+            this.pictureBox2.Size = new System.Drawing.Size(1444, 855);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 56;
             this.pictureBox2.TabStop = false;
@@ -268,23 +273,28 @@
             this.webMap.AllowExternalDrop = true;
             this.webMap.CreationProperties = null;
             this.webMap.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webMap.Location = new System.Drawing.Point(246, 91);
+            this.webMap.Location = new System.Drawing.Point(328, 112);
+            this.webMap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.webMap.Name = "webMap";
-            this.webMap.Size = new System.Drawing.Size(739, 578);
+            this.webMap.Size = new System.Drawing.Size(985, 711);
             this.webMap.TabIndex = 57;
             this.webMap.ZoomFactor = 1D;
             // 
             // Client_Map
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 671);
+            this.ClientSize = new System.Drawing.Size(1316, 826);
+            this.ControlBox = false;
             this.Controls.Add(this.webMap);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Client_Map";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client_Map";
             this.Load += new System.EventHandler(this.Client_Map_Load);
             this.panel1.ResumeLayout(false);

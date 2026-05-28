@@ -38,7 +38,9 @@ namespace Fleet_Management_Rental
                               m.model_name, m.plate_num, m.image_path
                        FROM rentals r
                        JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                       WHERE r.client_id = @cid AND r.start_date > CURRENT_DATE";
+                       WHERE r.client_id = @cid 
+                         AND r.start_date > CURRENT_DATE
+                         AND r.status = 'Approved'";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {

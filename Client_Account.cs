@@ -6,26 +6,6 @@ namespace Fleet_Management_Rental
 {
     public partial class Client_Account : Form
     {
-
-        public static class DbHelper
-        {
-            public static NpgsqlConnection GetConnection()
-            {
-                return new NpgsqlConnection(DbConfig.ConnectionString);
-            }
-        }
-
-        public static class DbConfig
-        {
-            public static string ConnectionString = "Host=smart1-fleetdb-25755.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +
-            "Port=26257;" +
-            "Database=fms_rental;" +
-            "Username=joohn;" +
-            "Password=XANnoM1UEQoQ2IJ2-Jp5aw;" +
-            "SSL Mode=VerifyFull;" +
-            "Trust Server Certificate=true;" +
-            "Pooling=false;";
-        }
         public Client_Account()
         {
             InitializeComponent();
@@ -109,31 +89,31 @@ namespace Fleet_Management_Rental
         private void button8_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                       "Do you want to log out?", "Logout Confirmation",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             "Do you want to log out?",
+             "Logout Confirmation",
+            MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
 
                 Login loginForm = new Login();
-                this.Hide();
-                loginForm.ShowDialog();
-                this.Close();
+                loginForm.Show();
+
+                this.Dispose();
             }
-            else
+            else if (result == DialogResult.No)
             {
-                MessageBox.Show("Logout cancelled.", "Info",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             Client_Dashboard cd = new Client_Dashboard();
-            this.Hide();
             cd.ShowDialog();
-            this.Show();
+            this.Hide();
         }
 
         private void button12_Click(object sender, EventArgs e)

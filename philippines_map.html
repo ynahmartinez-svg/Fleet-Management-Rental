@@ -2,47 +2,140 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Philippine Map</title>
+  <title>Philippine Map with Routing</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
   <style>
     #map { width: 100%; height: 100vh; }
+    #info {
+      position: absolute;
+      bottom: 10px;   /* move to bottom */
+      left: 10px;     /* align left */
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      max-width: 300px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
+  <div id="info">Click to set pickup and return points inside Luzon.</div>
   <script>
-    // Center on Philippines
-    var map = L.map('map').setView([12.8797, 121.7740], 6);
+    // Define Luzon bounds (approximate box)
+    var luzonBounds = L.latLngBounds(
+      [12.0, 118.0], // southwest corner
+      [19.0, 123.0]  // northeast corner
+    );
+
+    // Center on Luzon
+var map = L.map('map', {
+  minZoom: 7,   // don't allow zooming out too far
+  maxZoom: 16,  // reasonable max zoom in
+  maxBounds: luzonBounds, // restrict panning
+  maxBoundsViscosity: 1.0 // "rubber-band" effect to keep inside bounds
+});
+
+// Fit map to Luzon bounds
+map.fitBounds(luzonBounds);
 
     // Free OSM tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Track the current marker
-    var currentMarker = null;
+    var startMarker = null;
+    var endMarker = null;
+    var routingControl = null;
 
-    // Example marker: Bulacan
-    currentMarker = L.marker([14.794, 120.878]).addTo(map).bindPopup("Bulacan");
+    // Reverse geocoding helper
+    function getLocationName(lat, lng, callback) {
+      var url = "https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + lng;
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          var name = data && data.display_name ? data.display_name : "Unknown location";
+          callback(name + ", Luzon, Philippines");
+        })
+        .catch(() => callback("Error fetching location, Luzon, Philippines"));
+    }
 
-    // Allow user to click and add marker
+    // Update info panel
+    function updateInfo(startName, endName, summary) {
+      var infoDiv = document.getElementById("info");
+      infoDiv.innerHTML = `
+        <strong>Pickup:</strong> ${startName}<br>
+        <strong>Return:</strong> ${endName}<br>
+        <strong>Distance:</strong> ${(summary.totalDistance/1000).toFixed(1)} km<br>
+        <strong>Duration:</strong> ${(summary.totalTime/60).toFixed(0)} mins
+      `;
+    }
+
+    // Click handler
     map.on('click', function(e) {
       var lat = e.latlng.lat;
       var lng = e.latlng.lng;
 
-      // Remove previous marker if it exists
-      if (currentMarker) {
-        map.removeLayer(currentMarker);
+      if (!luzonBounds.contains([lat, lng])) {
+        alert("Please select points inside Luzon only.");
+        return;
       }
 
-      // Add new marker
-      currentMarker = L.marker([lat, lng]).addTo(map)
-        .bindPopup("You clicked here: " + lat + ", " + lng)
-        .openPopup();
+      if (!startMarker) {
+        // First click → Pickup
+        getLocationName(lat, lng, function(name) {
+          startMarker = L.marker([lat, lng]).addTo(map)
+            .bindPopup("Pickup Location: " + name)
+            .openPopup();
 
-      // Send coordinates back to C#
-      window.chrome?.webview?.postMessage({ lat: lat, lng: lng });
+          window.chrome?.webview?.postMessage({ pickup_lat: lat, pickup_lng: lng, pickup_name: name });
+        });
+      } else if (!endMarker) {
+        // Second click → Return
+        getLocationName(lat, lng, function(name) {
+          endMarker = L.marker([lat, lng]).addTo(map)
+            .bindPopup("Return Location: " + name)
+            .openPopup();
+
+          if (routingControl) map.removeControl(routingControl);
+
+          routingControl = L.Routing.control({
+            waypoints: [
+              startMarker.getLatLng(),
+              endMarker.getLatLng()
+            ],
+            router: L.Routing.osrmv1({
+              serviceUrl: 'https://router.project-osrm.org/route/v1'
+            }),
+            routeWhileDragging: false,
+            show: false
+          }).on('routesfound', function(e) {
+            var summary = e.routes[0].summary;
+            getLocationName(startMarker.getLatLng().lat, startMarker.getLatLng().lng, function(startName) {
+              getLocationName(endMarker.getLatLng().lat, endMarker.getLatLng().lng, function(endName) {
+                updateInfo(startName, endName, summary);
+              });
+            });
+          }).addTo(map);
+
+          window.chrome?.webview?.postMessage({ return_lat: lat, return_lng: lng, return_name: name });
+        });
+      } else {
+        // Reset
+        map.removeLayer(startMarker);
+        map.removeLayer(endMarker);
+        if (routingControl) map.removeControl(routingControl);
+
+        startMarker = null;
+        endMarker = null;
+        routingControl = null;
+        document.getElementById("info").innerHTML = "Click to set pickup and return points inside Luzon.";
+      }
     });
   </script>
 </body>

@@ -133,6 +133,12 @@
     <Compile Include="Admin_DashBoard.Designer.cs">
       <DependentUpon>Admin_DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Notifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Notifications.Designer.cs">
+      <DependentUpon>Admin_Notifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookingReq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,12 @@
     <Compile Include="ForgotPassw.Designer.cs">
       <DependentUpon>ForgotPassw.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_Motorcycle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Motorcycle.Designer.cs">
+      <DependentUpon>Add_Motorcycle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Motorcycle_Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,17 +242,11 @@
     <Compile Include="Payment_Billing.Designer.cs">
       <DependentUpon>Payment_Billing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rental_Management.cs">
+    <Compile Include="Fuel Cost Management.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rental_Management.Designer.cs">
-      <DependentUpon>Rental_Management.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports_Analytics1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports_Analytics1.Designer.cs">
-      <DependentUpon>Reports_Analytics1.cs</DependentUpon>
+    <Compile Include="Fuel Cost Management.Designer.cs">
+      <DependentUpon>Fuel Cost Management.cs</DependentUpon>
     </Compile>
     <Compile Include="SessionData.cs" />
     <Compile Include="SignUp.cs">
@@ -263,11 +269,11 @@
     <Compile Include="Upcoming_Client.Designer.cs">
       <DependentUpon>Upcoming_Client.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Management.cs">
+    <Compile Include="Update_Motorcycle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User_Management.Designer.cs">
-      <DependentUpon>User_Management.cs</DependentUpon>
+    <Compile Include="Update_Motorcycle.Designer.cs">
+      <DependentUpon>Update_Motorcycle.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
@@ -275,11 +281,17 @@
     <EmbeddedResource Include="Active_Client.resx">
       <DependentUpon>Active_Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add_Motorcycle.resx">
+      <DependentUpon>Add_Motorcycle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Accounts.resx">
       <DependentUpon>Admin_Accounts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_DashBoard.resx">
       <DependentUpon>Admin_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Notifications.resx">
+      <DependentUpon>Admin_Notifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookingReq.resx">
       <DependentUpon>BookingReq.cs</DependentUpon>
@@ -329,11 +341,8 @@
     <EmbeddedResource Include="Payment_Billing.resx">
       <DependentUpon>Payment_Billing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rental_Management.resx">
-      <DependentUpon>Rental_Management.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports_Analytics1.resx">
-      <DependentUpon>Reports_Analytics1.cs</DependentUpon>
+    <EmbeddedResource Include="Fuel Cost Management.resx">
+      <DependentUpon>Fuel Cost Management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
@@ -354,8 +363,8 @@
     <EmbeddedResource Include="Upcoming_Client.resx">
       <DependentUpon>Upcoming_Client.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Management.resx">
-      <DependentUpon>User_Management.cs</DependentUpon>
+    <EmbeddedResource Include="Update_Motorcycle.resx">
+      <DependentUpon>Update_Motorcycle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

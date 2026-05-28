@@ -71,24 +71,27 @@
                     }
                 }
 
-                LoadClientValidIds();
+            LoadClientValidIds();
 
-                if (cmbLisense.Items.Count == 0)
-                {
-                    cmbLisense.Items.Add("Driver’s License");
-                    cmbLisense.Items.Add("Passport");
-                    cmbLisense.Items.Add("PhilSys");
-                    cmbLisense.Items.Add("National ID");
-                    cmbLisense.Items.Add("UMID (SSS/GSIS ID)");
-                    cmbLisense.Items.Add("PRC ID");
-                    cmbLisense.Items.Add("Voter’s ID");
-                    cmbLisense.Items.Add("Postal ID");
-                    cmbLisense.Items.Add("Company ID");
-                }
-
-                if (cmbLisense.Items.Count > 0)
-                    cmbLisense.SelectedIndex = 0;
+            if (cmbLisense.Items.Count == 0)
+            {
+                cmbLisense.Items.Add("Driver’s License");
+                cmbLisense.Items.Add("Passport");
+                cmbLisense.Items.Add("PhilSys");
+                cmbLisense.Items.Add("National ID");
+                cmbLisense.Items.Add("UMID (SSS/GSIS ID)");
+                cmbLisense.Items.Add("PRC ID");
+                cmbLisense.Items.Add("Voter’s ID");
+                cmbLisense.Items.Add("Postal ID");
+                cmbLisense.Items.Add("Company ID");
             }
+
+            if (cmbLisense.Items.Count > 0)
+                cmbLisense.SelectedIndex = 0;
+
+            dtpStart.MinDate = DateTime.Today;
+            dtpEnd.MinDate = DateTime.Today;
+        }
 
         private void LoadClientValidIds()
         {
@@ -140,15 +143,15 @@
         {
             if (string.IsNullOrEmpty(uploadedIdPath))
             {
-                MessageBox.Show("Please fill in all required fields and upload your ID.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in all required fields and upload your ID.",
+                                "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbLisense.SelectedItem == null)
             {
-                MessageBox.Show("Please select a valid ID type.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a valid ID type.",
+                                "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -158,8 +161,8 @@
 
             if (endDate <= startDate)
             {
-                MessageBox.Show("Return date must be after start date.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Return date must be after start date.",
+                                "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -167,13 +170,40 @@
             {
                 conn.Open();
 
+                //  Check availability before booking
+                string sqlCheck = @"SELECT COUNT(*) 
+                            FROM rentals 
+                            WHERE motorcycle_id = @mid 
+                              AND status IN ('Approved','Pending')
+                              AND ((@start BETWEEN start_date AND return_date)
+                                OR (@end BETWEEN start_date AND return_date)
+                                OR (start_date BETWEEN @start AND @end)
+                                OR (return_date BETWEEN @start AND @end))";
+
+                using (var cmdCheck = new NpgsqlCommand(sqlCheck, conn))
+                {
+                    cmdCheck.Parameters.AddWithValue("@mid", motorcycleId);
+                    cmdCheck.Parameters.AddWithValue("@start", startDate);
+                    cmdCheck.Parameters.AddWithValue("@end", endDate);
+
+                    int conflictCount = Convert.ToInt32(cmdCheck.ExecuteScalar());
+                    if (conflictCount > 0)
+                    {
+                        
+                        MessageBox.Show("This motorcycle is unavailable for the selected dates.",
+                                        "Booking Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
                 if (rentalId == 0)
                 {
+                    // Insert new rental
                     string sql = @"INSERT INTO rentals 
-                (client_id, motorcycle_id, start_date, return_date, status, 
-                 pickup_location, pickup_time, return_location, return_time, valid_id, id_image_path)
-                VALUES (@cid, @mid, @start, @end, 'Pending', 
-                        @pickup, @pickuptime, @return, @returntime, @validid, @idimage)";
+            (client_id, motorcycle_id, start_date, return_date, status, 
+            pickup_location, pickup_time, return_location, return_time, valid_id, id_image_path)
+            VALUES (@cid, @mid, @start, @end, 'Pending', 
+            @pickup, @pickuptime, @return, @returntime, @validid, @idimage)";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -190,20 +220,26 @@
 
                         cmd.ExecuteNonQuery();
                     }
+
                     MessageBox.Show("Rental request submitted successfully! Please wait for admin approval.",
                         "Booking Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
+                    booking b = new booking();
+                    b.Show();
                 }
                 else
                 {
+                    // Update rental
                     string sql = @"UPDATE rentals 
-                           SET return_date = @end, 
-                               pickup_location = @pickup, 
-                               pickup_time = @pickuptime, 
-                               return_location = @return, 
-                               return_time = @returntime, 
-                               valid_id = @validid,
-                               id_image_path = @idimage
-                           WHERE rental_id = @rid AND client_id = @cid";
+         SET return_date = @end, 
+         pickup_location = @pickup, 
+         pickup_time = @pickuptime, 
+         return_location = @return, 
+         return_time = @returntime, 
+         valid_id = @validid,
+         id_image_path = @idimage
+         WHERE rental_id = @rid AND client_id = @cid";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -219,8 +255,9 @@
 
                         cmd.ExecuteNonQuery();
                     }
+
                     MessageBox.Show("Rental updated successfully! Please wait for admin approval.",
-                "Booking Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        "Booking Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Hide();
                     booking b = new booking();
@@ -228,7 +265,8 @@
                 }
             }
         }
-            private void btnEdit_Click(object sender, EventArgs e)
+
+        private void btnEdit_Click(object sender, EventArgs e)
             {
                 timePickup.Enabled = true;
                 timeReturn.Enabled = true;
@@ -276,6 +314,11 @@
             booking bk = new booking();
             bk.Show();
             this.Hide();
+        }
+
+        private void pictureMotor_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

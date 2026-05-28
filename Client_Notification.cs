@@ -20,9 +20,7 @@ namespace Fleet_Management_Rental
         }
         private void Client_Notification_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Client_Dashboard ad = new Client_Dashboard();
-            ad.Show();
-            this.Hide();
+
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -64,22 +62,23 @@ namespace Fleet_Management_Rental
         private void button8_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                       "Do you want to log out?", "Logout Confirmation",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             "Do you want to log out?",
+             "Logout Confirmation",
+            MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
 
                 Login loginForm = new Login();
-                this.Hide();
-                loginForm.ShowDialog();
-                this.Close();
+                loginForm.Show();
+
+                this.Dispose();
             }
-            else
+            else if (result == DialogResult.No)
             {
-                MessageBox.Show("Logout cancelled.", "Info",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
@@ -91,7 +90,7 @@ namespace Fleet_Management_Rental
             {
                 conn.Open();
 
-                string sql = @"SELECT message, created_at, is_read
+                string sql = @"SELECT message, created_at
                        FROM notifications
                        WHERE client_id = @cid
                        ORDER BY created_at DESC";
@@ -109,6 +108,8 @@ namespace Fleet_Management_Rental
                         dgvNotifications.RowHeadersVisible = false;
 
                     }
+                    dgvNotifications.Columns["message"].HeaderText = "Notification:";
+                    dgvNotifications.Columns["created_at"].HeaderText = "Date:";
                 }
             }
         }

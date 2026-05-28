@@ -25,8 +25,13 @@ namespace Fleet_Management_Rental
 
         public static class DbConfig
         {
-            public static string ConnectionString = "Host=fleetm-2026-24709.j77.aws-ap-southeast-1.cockroachlabs.cloud;Port=26257;Database=fms_rental;Username=stephens;Password=gLId5nipIimPiL-zjB_9oA;SSL Mode = Require; Trust Server Certificate=true";
-
+            public static string ConnectionString = "Host=fmsrental-26507.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +  // ✅ updated host
+            "Port=26257;" +
+            "Database=fms_rental;" +
+            "Username=stephen;" +
+            "Password=jQPj8FQl2JF4afGOR37QxQ;" +  // ✅ updated password
+            "SSL Mode=VerifyFull;" +
+            "Trust Server Certificate=true";
         }
         public SignUp()
         {

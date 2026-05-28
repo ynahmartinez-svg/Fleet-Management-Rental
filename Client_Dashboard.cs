@@ -18,14 +18,9 @@ namespace Fleet_Management_Rental
         public Client_Dashboard()
         {
             InitializeComponent();
-            this.FormClosed += Client_Dashboard_FormClosed;
         }
         private void Client_Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (this.Owner != null)
-            {
-                this.Owner.Show();
-            }
         }
 
         private void label22_Click(object sender, EventArgs e)
@@ -51,20 +46,23 @@ namespace Fleet_Management_Rental
             {
                 conn.Open();
 
-                // 🔧 Auto-transition Approved → Active if start_date is today or earlier
+                // Transition Approved → Active ONLY if start_date = today
                 string sqlUpdate = @"UPDATE rentals
-                             SET status = 'Active'
-                             WHERE client_id = @cid
-                               AND status = 'Approved'
-                               AND start_date <= CURRENT_DATE";
+                     SET status = 'Active'
+                     WHERE client_id = @cid
+                       AND status = 'Approved'
+                       AND start_date = CURRENT_DATE";
                 using (var cmdUpdate = new NpgsqlCommand(sqlUpdate, conn))
                 {
                     cmdUpdate.Parameters.AddWithValue("@cid", clientId);
                     cmdUpdate.ExecuteNonQuery();
                 }
 
-                // Total rentals for this client
-                string sqlTotal = "SELECT COUNT(*) FROM rentals WHERE client_id = @cid";
+                // Total rentals for this client (exclude deleted/cancelled if needed)
+                string sqlTotal = @"SELECT COUNT(*) 
+            FROM rentals 
+            WHERE client_id = @cid 
+              AND status = 'Active'";
                 using (var cmdTotal = new NpgsqlCommand(sqlTotal, conn))
                 {
                     cmdTotal.Parameters.AddWithValue("@cid", clientId);
@@ -78,14 +76,16 @@ namespace Fleet_Management_Rental
                     lblActive.Text = Convert.ToInt32(cmdAvail.ExecuteScalar()).ToString();
                 }
 
-                // Current rental details (Active or Approved)
+
+
+                // Current rental (Active today)
                 string sqlCurrent = @"SELECT m.model_name, m.plate_num, r.start_date, r.return_date, r.status, m.image_path
-                              FROM rentals r
-                              JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                              WHERE r.client_id = @cid 
-                                AND (r.status = 'Active' OR r.status = 'Approved')
-                              ORDER BY r.start_date ASC
-                              LIMIT 1";
+              FROM rentals r
+              JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+              WHERE r.client_id = @cid 
+                AND r.status = 'Active'
+              ORDER BY r.start_date ASC
+              LIMIT 1";
 
                 using (var cmd = new NpgsqlCommand(sqlCurrent, conn))
                 {
@@ -118,42 +118,79 @@ namespace Fleet_Management_Rental
                     }
                 }
 
-                // Most rented sample buttons
-                string sqlMio = "SELECT motorcycle_id FROM motorcycle_management WHERE model_name ILIKE '%MIO%' LIMIT 1";
-                using (var cmdMio = new NpgsqlCommand(sqlMio, conn))
+                //  Upcoming rental (Approved but future start_date)
+                string sqlUpcoming = @"SELECT m.model_name, r.start_date, r.return_date
+                       FROM rentals r
+                       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+                       WHERE r.client_id = @cid 
+                         AND r.status = 'Approved'
+                         AND r.start_date > CURRENT_DATE
+                       ORDER BY r.start_date ASC
+                       LIMIT 1";
+
+                using (var cmdUpcoming = new NpgsqlCommand(sqlUpcoming, conn))
                 {
-                    var result = cmdMio.ExecuteScalar();
-                    if (result != null)
+                    cmdUpcoming.Parameters.AddWithValue("@cid", clientId);
+                    using (var reader = cmdUpcoming.ExecuteReader())
                     {
-                        btnRent1.Tag = Convert.ToInt64(result);
+                        if (reader.Read())
+                        {
+                            lblUpcoming.Text = $"Upcoming: {reader.GetString(0)} " +
+                                               $"({reader.GetDateTime(1).ToShortDateString()} → {reader.GetDateTime(2).ToShortDateString()})";
+                        }
+                        else
+                        {
+                            lblUpcoming.Text = "Upcoming: none";
+                        }
                     }
                 }
+                string sql = @"SELECT motorcycle_id, model_name
+               FROM motorcycle_management
+               WHERE status = 'Available'
+               LIMIT 2";
 
-                string sqlKeeway = "SELECT motorcycle_id FROM motorcycle_management WHERE model_name ILIKE '%KEEWAY%' LIMIT 1";
-                using (var cmdKeeway = new NpgsqlCommand(sqlKeeway, conn))
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
                 {
-                    var result = cmdKeeway.ExecuteScalar();
-                    if (result != null)
+                    if (reader.Read())
                     {
-                        btnRent2.Tag = Convert.ToInt64(result);
+                        btnRent1.Tag = reader.GetInt64(0);
+                    }
+                    if (reader.Read())
+                    {
+                        btnRent2.Tag = reader.GetInt64(0);
                     }
                 }
             }
         }
 
-
-        private void button10_Click(object sender, EventArgs e)
+        private bool IsClientProfileComplete(long clientId)
         {
-            Client_Dashboard cd = new Client_Dashboard();   
-            cd.Show();
-            this.Hide();
-        }
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = @"SELECT first_name, last_name, date_of_birth, phone_no, valid_id,
+                       street, city, postal_code
+                FROM clientprofile
+                WHERE client_id = @cid";
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Payments_and_Billing pAB = new Payments_and_Billing();
-            pAB.Show();
-            this.Hide();    
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", clientId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Check if any required field is empty/null
+                            return !(reader.IsDBNull(0) || reader.IsDBNull(1) || reader.IsDBNull(2) ||
+                                     reader.IsDBNull(3) || reader.IsDBNull(4) ||
+                                     reader.IsDBNull(5) || reader.IsDBNull(6) || reader.IsDBNull(7));
+                        }
+                    }
+                }
+            }
+            return false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -164,10 +201,33 @@ namespace Fleet_Management_Rental
 
         private void button1_Click(object sender, EventArgs e)
         {
+            long clientId = SessionData.LoggedInClientId;
+
+            if (!IsClientProfileComplete(clientId))
+            {
+                MessageBox.Show("Please complete your profile information before renting a motorcycle.",
+                                "Profile Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+
+                // Query Mio motorcycle_id
+                string sqlMio = "SELECT motorcycle_id FROM motorcycle_management WHERE model_name ILIKE '%MIO%' LIMIT 1";
+                using (var cmdMio = new NpgsqlCommand(sqlMio, conn))
+                {
+                    var result = cmdMio.ExecuteScalar();
+                    if (result != null)
+                    {
+                        ((Button)sender).Tag = Convert.ToInt64(result);
+                    }
+                }
+            }
+
             if (((Button)sender).Tag != null)
             {
                 long motorcycleId = Convert.ToInt64(((Button)sender).Tag);
-                long clientId = SessionData.LoggedInClientId; // always logged-in client
 
                 Booking_Details bd = new Booking_Details(motorcycleId, clientId);
                 bd.Show();
@@ -224,30 +284,30 @@ namespace Fleet_Management_Rental
         private void button7_Click_1(object sender, EventArgs e)
         {
             Client_Account ca = new Client_Account();
-            this.Hide(); 
-            ca.ShowDialog();
-            this.Show();
+            ca.Show();
+            this.Hide();
         }
 
         private void button8_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                       "Do you want to log out?", "Logout Confirmation",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                "Do you want to log out?",
+                "Logout Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
 
                 Login loginForm = new Login();
-                this.Hide();
-                loginForm.ShowDialog();
-                this.Close();
+                loginForm.Show();
+
+                this.Dispose();
             }
-            else
+            else if (result == DialogResult.No)
             {
-                MessageBox.Show("Logout cancelled.", "Info",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
@@ -258,10 +318,34 @@ namespace Fleet_Management_Rental
 
         private void btnRent2_Click(object sender, EventArgs e)
         {
+            long clientId = SessionData.LoggedInClientId;
+
+            if (!IsClientProfileComplete(clientId))
+            {
+                MessageBox.Show("Please complete your profile information before renting a motorcycle.",
+                                "Profile Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+
+                // Query Keeway motorcycle_id
+                string sqlKeeway = "SELECT motorcycle_id FROM motorcycle_management WHERE model_name ILIKE '%KEEWAY%' LIMIT 1";
+                using (var cmdKeeway = new NpgsqlCommand(sqlKeeway, conn))
+                {
+                    var result = cmdKeeway.ExecuteScalar();
+                    if (result != null)
+                    {
+                        ((Button)sender).Tag = Convert.ToInt64(result);
+                    }
+                }
+            }
+
             if (((Button)sender).Tag != null)
             {
                 long motorcycleId = Convert.ToInt64(((Button)sender).Tag);
-                long clientId = SessionData.LoggedInClientId; // always logged-in client
 
                 Booking_Details bd = new Booking_Details(motorcycleId, clientId);
                 bd.Show();

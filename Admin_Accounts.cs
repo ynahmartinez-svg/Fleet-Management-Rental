@@ -20,9 +20,7 @@ namespace Fleet_Management_Rental
 
         private void Admin_Accounts_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Admin_DashBoard ad = new Admin_DashBoard();
-            ad.Show();
-            this.Hide();
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -40,12 +38,7 @@ namespace Fleet_Management_Rental
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            User_Management um = new User_Management();
-            um.Show();
-            this.Hide();
-        }
+    
 
         private void button12_Click_1(object sender, EventArgs e)
         {
@@ -63,8 +56,8 @@ namespace Fleet_Management_Rental
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            Rental_Management rm = new Rental_Management();
-            rm.Show();
+            Fuel_Cost_Management fcm = new Fuel_Cost_Management();
+            fcm.Show();
             this.Hide();
         }
 
@@ -82,13 +75,7 @@ namespace Fleet_Management_Rental
             this.Hide();
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-            Reports_Analytics1 ra = new Reports_Analytics1();
-            ra.Show();
-            this.Hide();
-        }
-
+        
         private void button8_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -109,6 +96,18 @@ namespace Fleet_Management_Rental
                 MessageBox.Show("Logout cancelled.", "Info",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Admin_Notifications an = new Admin_Notifications();
+            an.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

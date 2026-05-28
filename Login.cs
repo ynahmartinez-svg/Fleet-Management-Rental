@@ -24,7 +24,7 @@ namespace Fleet_Management_Rental
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
+           Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

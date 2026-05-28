@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,6 @@ namespace Fleet_Management_Rental
         }
         private void booking_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Client_Dashboard cd = new Client_Dashboard();
-            cd.Show();
-            this.Hide();
 
         }
 
@@ -53,14 +51,50 @@ namespace Fleet_Management_Rental
             this.Hide();
         }
 
+        private bool IsClientProfileComplete(long clientId)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = @"SELECT first_name, last_name, date_of_birth, phone_no, valid_id,
+                       street, city, postal_code
+                FROM clientprofile
+                WHERE client_id = @cid";
 
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", clientId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Check if any required field is empty/null
+                            return !(reader.IsDBNull(0) || reader.IsDBNull(1) || reader.IsDBNull(2) ||
+                                     reader.IsDBNull(3) || reader.IsDBNull(4) ||
+                                     reader.IsDBNull(5) || reader.IsDBNull(6) || reader.IsDBNull(7));
+                        }
+                    }
+                }
+            }
+            return false;
+        }
 
         private void button15_Click(object sender, EventArgs e)
         {
+            long clientId = SessionData.LoggedInClientId;
+
+            if (!IsClientProfileComplete(clientId))
+            {
+                MessageBox.Show("Please complete your profile information before renting a motorcycle.",
+                                "Profile Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+
+            }
+
             if (((Button)sender).Tag != null)
             {
                 long motorcycleId = Convert.ToInt64(((Button)sender).Tag);
-                long clientId = SessionData.LoggedInClientId; // always logged-in client
 
                 Booking_Details bd = new Booking_Details(motorcycleId, clientId);
                 bd.Show();
@@ -71,6 +105,7 @@ namespace Fleet_Management_Rental
                 MessageBox.Show("No motorcycle available for booking.",
                                 "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
@@ -187,10 +222,18 @@ namespace Fleet_Management_Rental
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
 
-            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
-                pic.Image = Image.FromFile(imagePath);
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                string fullPath = Path.Combine(Application.StartupPath, imagePath);
+                if (File.Exists(fullPath))
+                    pic.Image = Image.FromFile(fullPath);
+                else
+                    pic.BackColor = Color.LightGray;
+            }
             else
+            {
                 pic.BackColor = Color.LightGray;
+            }
 
             Label lblModel = new Label { Text = "Model: " + model, Top = 130, Left = 10, Width = 200 };
             Label lblPlate = new Label { Text = "Plate: " + plate, Top = 160, Left = 10, Width = 200 };
@@ -234,6 +277,11 @@ namespace Fleet_Management_Rental
             Client_Map cm = new Client_Map();
             cm.Show();
             this.Hide();
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

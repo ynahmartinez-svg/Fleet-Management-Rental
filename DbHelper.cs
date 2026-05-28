@@ -7,22 +7,23 @@ using Npgsql;
 
 namespace Fleet_Management_Rental
 {
+    public static class DbConfig
+    {
+        public static string ConnectionString =
+            "Host=fmsrental-26507.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +  // ✅ updated host
+            "Port=26257;" +
+            "Database=fms_rental;" +
+            "Username=stephen;" +
+            "Password=jQPj8FQl2JF4afGOR37QxQ;" +  // ✅ updated password
+            "SSL Mode=VerifyFull;" +
+            "Trust Server Certificate=true";
+    }
+
     public static class DbHelper
     {
         public static NpgsqlConnection GetConnection()
         {
             return new NpgsqlConnection(DbConfig.ConnectionString);
         }
-    }
-
-    public static class DbConfig
-    {
-        public static string ConnectionString = "Host=smart1-fleetdb-25755.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +
-                "Port=26257;" +
-                "Database=fms_rental;" +
-                "Username=joohn;" +
-                "Password=XANnoM1UEQoQ2IJ2-Jp5aw;" +
-                "SSL Mode=VerifyFull;" +
-                "Trust Server Certificate=true";
     }
 }

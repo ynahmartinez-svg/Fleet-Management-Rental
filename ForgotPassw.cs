@@ -50,6 +50,25 @@ namespace Fleet_Management_Rental
                 using (var conn = DbHelper.GetConnection())
                 {
                     conn.Open();
+                    string checkSql = "SELECT passwordhash FROM clientprofile WHERE LOWER(email) = LOWER(@mail)";
+                    using (var checkCmd = new NpgsqlCommand(checkSql, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@mail", txtEmail.Text.Trim());
+                        var dbPass = checkCmd.ExecuteScalar();
+
+                        if (dbPass == null)
+                        {
+                            MessageBox.Show("Email address not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        if (dbPass.ToString() == txtNewPass.Text)
+                        {
+                            MessageBox.Show("New password cannot be the same as the old password.",
+                                            "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
 
                     string sql = "UPDATE clientprofile SET passwordhash = @pass WHERE LOWER(email) = LOWER(@mail)";
                     using (var cmd = new NpgsqlCommand(sql, conn))

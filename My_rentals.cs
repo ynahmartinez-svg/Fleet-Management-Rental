@@ -22,11 +22,7 @@ namespace Fleet_Management_Rental
         }
         private void My_rentals_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
-              Client_Dashboard cd = new Client_Dashboard();
-               cd.Show();
-               this.Hide();
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -206,22 +202,23 @@ namespace Fleet_Management_Rental
         private void button9_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                       "Do you want to log out?", "Logout Confirmation",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             "Do you want to log out?",
+             "Logout Confirmation",
+            MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!");
 
                 Login loginForm = new Login();
-                this.Hide();
-                loginForm.ShowDialog();
-                this.Close();
+                loginForm.Show();
+
+                this.Dispose();
             }
-            else
+            else if (result == DialogResult.No)
             {
-                MessageBox.Show("Logout cancelled.", "Info",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
