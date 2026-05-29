@@ -37,16 +37,27 @@ namespace Fleet_Management_Rental
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
-                string sql = @"SELECT r.rental_id, r.client_id, r.motorcycle_id,
-                       r.start_date, r.return_date, r.duration_days,
-                       r.valid_id, r.pickup_location, r.return_location, r.id_image_path,
-                       c.first_name, c.last_name, c.phone_no, c.email,
-                       c.street, c.city, c.postal_code,
-                       m.model_name
-                FROM rentals r
-                JOIN clientprofile c ON r.client_id = c.client_id
-                JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                WHERE r.status = 'Pending'";
+                string sql = @"
+            SELECT r.rental_id, r.client_id, r.motorcycle_id,
+                   r.start_date, r.return_date, r.duration_days,
+                   r.valid_id, r.pickup_location, r.return_location, r.id_image_path,
+                   c.first_name, c.last_name, c.phone_no, c.email,
+                   c.street, c.city, c.postal_code,
+                   m.model_name,
+                   CASE 
+                       WHEN EXISTS (
+                           SELECT 1 FROM rentals r2
+                           WHERE r2.client_id = r.client_id
+                             AND r2.motorcycle_id = r.motorcycle_id
+                             AND r2.status = 'Approved'
+                       )
+                       THEN 'Extension Request'
+                       ELSE 'New Booking'
+                   END AS request_type
+            FROM rentals r
+            JOIN clientprofile c ON r.client_id = c.client_id
+            JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+            WHERE r.status = 'Pending';";
 
                 // Load all pending rentals into the DataGridView
                 using (var da = new NpgsqlDataAdapter(sql, conn))
@@ -116,20 +127,27 @@ namespace Fleet_Management_Rental
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
-                string sql = @"SELECT r.rental_id, r.client_id, r.motorcycle_id,
-       r.start_date, r.return_date, r.duration_days,
-       r.valid_id, r.pickup_location, r.return_location, r.id_image_path,
-       c.first_name, c.last_name, c.phone_no, c.email,
-       c.street, c.city, c.postal_code,
-       m.model_name,
-       CASE 
-           WHEN r.status = 'Pending' AND r.return_date > CURRENT_DATE THEN 'Extension Request'
-           ELSE 'New Booking'
-       END AS request_type
-       FROM rentals r
-       JOIN clientprofile c ON r.client_id = c.client_id
-       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-       WHERE r.status = 'Pending';";
+                string sql = @"
+            SELECT r.rental_id, r.client_id, r.motorcycle_id,
+                   r.start_date, r.return_date, r.duration_days,
+                   r.valid_id, r.pickup_location, r.return_location, r.id_image_path,
+                   c.first_name, c.last_name, c.phone_no, c.email,
+                   c.street, c.city, c.postal_code,
+                   m.model_name,
+                   CASE 
+                       WHEN EXISTS (
+                           SELECT 1 FROM rentals r2
+                           WHERE r2.client_id = r.client_id
+                             AND r2.motorcycle_id = r.motorcycle_id
+                             AND r2.status = 'Approved'
+                       )
+                       THEN 'Extension Request'
+                       ELSE 'New Booking'
+                   END AS request_type
+            FROM rentals r
+            JOIN clientprofile c ON r.client_id = c.client_id
+            JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+            WHERE r.status = 'Pending';";
 
                 using (var da = new NpgsqlDataAdapter(sql, conn))
                 {
@@ -153,43 +171,68 @@ namespace Fleet_Management_Rental
 
             if (result == DialogResult.Yes)
             {
+                long rentalId = currentRentalId;
                 long clientId = currentClientId;
                 long motorcycleId = currentMotorcycleId;
-                DateTime startDate = currentStartDate;
-                DateTime returnDate = currentReturnDate;
 
                 using (var conn = DbHelper.GetConnection())
                 {
                     conn.Open();
 
-                    // ✅ Update rental status
+                    // Approve rental
                     string sqlRental = @"UPDATE rentals 
-                     SET status = 'Approved'
-                     WHERE rental_id = @rid";
+                                 SET status = 'Approved'
+                                 WHERE rental_id = @rid";
                     using (var cmdRental = new NpgsqlCommand(sqlRental, conn))
                     {
-                        cmdRental.Parameters.AddWithValue("@rid", currentRentalId);
+                        cmdRental.Parameters.AddWithValue("@rid", rentalId);
                         cmdRental.ExecuteNonQuery();
                     }
 
-
-                    // ✅ Motorcycle stays Available until rental actually starts
-                    // (optional: mark as Rented immediately if that’s your business rule)
-                    string sqlMotor = @"UPDATE motorcycle_management
-                                SET status = 'Rented'
-                                WHERE motorcycle_id = @mid";
-                    using (var cmdMotor = new NpgsqlCommand(sqlMotor, conn))
+                    // Check request type (same logic as LoadPendingRentals)
+                    string sqlCheck = @"SELECT CASE 
+                                    WHEN EXISTS (
+                                        SELECT 1 FROM rentals r2
+                                        WHERE r2.client_id = r.client_id
+                                          AND r2.motorcycle_id = r.motorcycle_id
+                                          AND r2.status = 'Approved'
+                                          AND r2.rental_id <> r.rental_id
+                                    )
+                                    THEN 'Extension Request'
+                                    ELSE 'New Booking'
+                                END
+                                FROM rentals r
+                                WHERE r.rental_id = @rid";
+                    string requestType;
+                    using (var cmdCheck = new NpgsqlCommand(sqlCheck, conn))
                     {
-                        cmdMotor.Parameters.AddWithValue("@mid", motorcycleId);
-                        cmdMotor.ExecuteNonQuery();
+                        cmdCheck.Parameters.AddWithValue("@rid", rentalId);
+                        requestType = cmdCheck.ExecuteScalar()?.ToString();
                     }
 
-                    // ✅ Notify client
+                    if (requestType == "New Booking")
+                    {
+                        // Mark motorcycle as rented for new bookings
+                        string sqlMotor = @"UPDATE motorcycle_management
+                                    SET status = 'Rented'
+                                    WHERE motorcycle_id = @mid";
+                        using (var cmdMotor = new NpgsqlCommand(sqlMotor, conn))
+                        {
+                            cmdMotor.Parameters.AddWithValue("@mid", motorcycleId);
+                            cmdMotor.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Notify client
+                    string message = (requestType == "Extension Request")
+                        ? "Your extension request has been approved!"
+                        : "Your booking has been approved!";
                     string sqlNotif = @"INSERT INTO notifications (client_id, message)
-                                VALUES (@cid, 'Your booking has been approved!')";
+                                VALUES (@cid, @msg)";
                     using (var cmdNotif = new NpgsqlCommand(sqlNotif, conn))
                     {
                         cmdNotif.Parameters.AddWithValue("@cid", clientId);
+                        cmdNotif.Parameters.AddWithValue("@msg", message);
                         cmdNotif.ExecuteNonQuery();
                     }
                 }
@@ -198,6 +241,7 @@ namespace Fleet_Management_Rental
                 LoadPendingRentals();
             }
         }
+
 
 
         private void btnReject_Click(object sender, EventArgs e)
@@ -209,37 +253,38 @@ namespace Fleet_Management_Rental
 
             if (result == DialogResult.Yes)
             {
+                long rentalId = currentRentalId;
                 long clientId = currentClientId;
                 long motorcycleId = currentMotorcycleId;
-                long rentalId = currentRentalId;   // ✅ use rental_id directly
 
                 using (var conn = DbHelper.GetConnection())
                 {
                     conn.Open();
 
-                    // ✅ Reject only this request
+                    // Reject rental
                     string sqlRental = @"UPDATE rentals 
-                     SET status = 'Rejected'
-                     WHERE rental_id = @rid";
+                                 SET status = 'Rejected'
+                                 WHERE rental_id = @rid";
                     using (var cmdRental = new NpgsqlCommand(sqlRental, conn))
                     {
-                        cmdRental.Parameters.AddWithValue("@rid", currentRentalId);
+                        cmdRental.Parameters.AddWithValue("@rid", rentalId);
                         cmdRental.ExecuteNonQuery();
                     }
 
-                    // ✅ Check if this was a NEW booking or an extension
-                    string sqlCheck = @"SELECT request_type 
-                                FROM (
-                                    SELECT rental_id,
-                                           CASE 
-                                               WHEN status = 'Pending' 
-                                                    AND return_date > CURRENT_DATE 
-                                               THEN 'Extension Request'
-                                               ELSE 'New Booking'
-                                           END AS request_type
-                                    FROM rentals
-                                    WHERE rental_id = @rid
-                                ) sub";
+                    // Check request type (same logic as LoadPendingRentals)
+                    string sqlCheck = @"SELECT CASE 
+                                    WHEN EXISTS (
+                                        SELECT 1 FROM rentals r2
+                                        WHERE r2.client_id = r.client_id
+                                          AND r2.motorcycle_id = r.motorcycle_id
+                                          AND r2.status = 'Approved'
+                                          AND r2.rental_id <> r.rental_id
+                                    )
+                                    THEN 'Extension Request'
+                                    ELSE 'New Booking'
+                                END
+                                FROM rentals r
+                                WHERE r.rental_id = @rid";
                     string requestType;
                     using (var cmdCheck = new NpgsqlCommand(sqlCheck, conn))
                     {
@@ -249,7 +294,7 @@ namespace Fleet_Management_Rental
 
                     if (requestType == "New Booking")
                     {
-                        // ✅ Reset motorcycle only for new bookings
+                        // Reset motorcycle only for new bookings
                         string sqlReset = @"UPDATE motorcycle_management
                                     SET status = 'Available'
                                     WHERE motorcycle_id = @mid";
@@ -259,13 +304,12 @@ namespace Fleet_Management_Rental
                             cmdReset.ExecuteNonQuery();
                         }
                     }
-                    // For extension requests → do NOT reset motorcycle, keep it Rented
+                    // For extension requests → motorcycle stays rented
 
-                    // ✅ Notify client with proper message
+                    // Notify client
                     string message = (requestType == "Extension Request")
                         ? "Your extension request has been rejected."
                         : "Your booking request has been rejected.";
-
                     string sqlNotif = @"INSERT INTO notifications (client_id, message)
                                 VALUES (@cid, @msg)";
                     using (var cmdNotif = new NpgsqlCommand(sqlNotif, conn))
@@ -277,9 +321,10 @@ namespace Fleet_Management_Rental
                 }
 
                 MessageBox.Show("Booking rejected and client notified.");
-                LoadPendingRentals(); // Refresh grid
+                LoadPendingRentals();
             }
         }
+
 
 
         private void button11_Click(object sender, EventArgs e)

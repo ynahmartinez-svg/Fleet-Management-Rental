@@ -34,17 +34,18 @@ namespace Fleet_Management_Rental
                 conn.Open();
 
                 // ✅ Show all completed rentals for admin
-                string sql = @"SELECT r.start_date AS transaction_date,
-                              (m.price_per_day * r.duration_days) AS motorcycle_price,
-                              m.model_name AS motorcycle_unit,
-                              r.duration_days AS duration, 
-                              r.status AS rental_status,
-                              (c.first_name || ' ' || c.last_name) AS client_name
-                       FROM rentals r
-                       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                       JOIN clientprofile c ON r.client_id = c.client_id
-                       WHERE r.status = 'Completed'
-                       ORDER BY r.start_date DESC";
+                string sql = @"
+            SELECT r.start_date AS transaction_date,
+                   (m.price_per_day * (r.return_date - r.start_date)) AS motorcycle_price,
+                   m.model_name AS motorcycle_unit,
+                   (r.return_date - r.start_date) AS duration,
+                   r.status AS rental_status,
+                   (c.first_name || ' ' || c.last_name) AS client_name
+            FROM rentals r
+            JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+            JOIN clientprofile c ON r.client_id = c.client_id
+            WHERE r.status = 'Completed'
+            ORDER BY r.start_date DESC";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 using (var adapter = new NpgsqlDataAdapter(cmd))
@@ -63,7 +64,7 @@ namespace Fleet_Management_Rental
 
                 // --- Annual Revenue ---
                 string sqlAnnual = @"
-            SELECT COALESCE(SUM(m.price_per_day * r.duration_days), 0)
+            SELECT COALESCE(SUM(m.price_per_day * (r.return_date - r.start_date)), 0)
             FROM rentals r
             JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
             WHERE r.status = 'Completed'
@@ -78,7 +79,7 @@ namespace Fleet_Management_Rental
 
                 // --- Monthly Revenue ---
                 string sqlMonthly = @"
-            SELECT COALESCE(SUM(m.price_per_day * r.duration_days), 0)
+            SELECT COALESCE(SUM(m.price_per_day * (r.return_date - r.start_date)), 0)
             FROM rentals r
             JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
             WHERE r.status = 'Completed'
@@ -93,9 +94,6 @@ namespace Fleet_Management_Rental
                 }
             }
         }
-
-
-
 
 
 

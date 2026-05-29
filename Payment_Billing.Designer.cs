@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@
             this.button4.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(-34, 362);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(230, 37);
             this.button4.TabIndex = 44;
@@ -100,7 +100,7 @@
             this.button3.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(-14, 281);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(230, 37);
             this.button3.TabIndex = 41;
@@ -112,7 +112,7 @@
             // 
             this.pictureBox1.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
             this.pictureBox1.Location = new System.Drawing.Point(82, 94);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,7 +139,7 @@
             this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(64, 637);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(88, 37);
             this.button8.TabIndex = 31;
@@ -155,7 +155,7 @@
             this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(0, 596);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(230, 37);
             this.button7.TabIndex = 32;
@@ -171,7 +171,7 @@
             this.button5.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(-22, 322);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(230, 37);
             this.button5.TabIndex = 33;
@@ -187,7 +187,7 @@
             this.button9.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Location = new System.Drawing.Point(2, 237);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(230, 37);
             this.button9.TabIndex = 34;
@@ -203,7 +203,7 @@
             this.button10.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Location = new System.Drawing.Point(-64, 156);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(230, 37);
             this.button10.TabIndex = 36;
@@ -219,7 +219,7 @@
             this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Location = new System.Drawing.Point(-22, 197);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(296, 37);
             this.button11.TabIndex = 35;
@@ -266,12 +266,12 @@
             // 
             this.lblMonthlyRev.AutoSize = true;
             this.lblMonthlyRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblMonthlyRev.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthlyRev.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonthlyRev.ForeColor = System.Drawing.Color.White;
-            this.lblMonthlyRev.Location = new System.Drawing.Point(304, 46);
+            this.lblMonthlyRev.Location = new System.Drawing.Point(247, 46);
             this.lblMonthlyRev.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMonthlyRev.Name = "lblMonthlyRev";
-            this.lblMonthlyRev.Size = new System.Drawing.Size(23, 23);
+            this.lblMonthlyRev.Size = new System.Drawing.Size(20, 23);
             this.lblMonthlyRev.TabIndex = 28;
             this.lblMonthlyRev.Text = "0";
             // 
@@ -292,12 +292,12 @@
             // 
             this.lblAnnualRev.AutoSize = true;
             this.lblAnnualRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblAnnualRev.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnnualRev.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblAnnualRev.ForeColor = System.Drawing.Color.White;
-            this.lblAnnualRev.Location = new System.Drawing.Point(99, 46);
+            this.lblAnnualRev.Location = new System.Drawing.Point(51, 46);
             this.lblAnnualRev.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnnualRev.Name = "lblAnnualRev";
-            this.lblAnnualRev.Size = new System.Drawing.Size(23, 23);
+            this.lblAnnualRev.Size = new System.Drawing.Size(20, 23);
             this.lblAnnualRev.TabIndex = 26;
             this.lblAnnualRev.Text = "0";
             this.lblAnnualRev.Click += new System.EventHandler(this.label6_Click);
@@ -335,8 +335,8 @@
             this.dgvPmt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvPmt.Name = "dgvPmt";
             this.dgvPmt.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvPmt.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPmt.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPmt.RowTemplate.Height = 24;
             this.dgvPmt.Size = new System.Drawing.Size(650, 306);
             this.dgvPmt.TabIndex = 9;
