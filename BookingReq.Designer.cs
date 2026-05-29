@@ -61,7 +61,6 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnReset = new System.Windows.Forms.Button();
             this.pictureBoxID = new System.Windows.Forms.PictureBox();
             this.lblValidID = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -101,10 +100,10 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(380, 122);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(285, 99);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(498, 500);
+            this.panel2.Size = new System.Drawing.Size(374, 406);
             this.panel2.TabIndex = 16;
             // 
             // lblDuration
@@ -113,9 +112,10 @@
             this.lblDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDuration.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDuration.ForeColor = System.Drawing.Color.White;
-            this.lblDuration.Location = new System.Drawing.Point(273, 425);
+            this.lblDuration.Location = new System.Drawing.Point(205, 345);
+            this.lblDuration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(40, 29);
+            this.lblDuration.Size = new System.Drawing.Size(31, 23);
             this.lblDuration.TabIndex = 52;
             this.lblDuration.Text = "---";
             // 
@@ -125,9 +125,10 @@
             this.lblReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblReturn.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturn.ForeColor = System.Drawing.Color.White;
-            this.lblReturn.Location = new System.Drawing.Point(254, 389);
+            this.lblReturn.Location = new System.Drawing.Point(190, 316);
+            this.lblReturn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturn.Name = "lblReturn";
-            this.lblReturn.Size = new System.Drawing.Size(40, 29);
+            this.lblReturn.Size = new System.Drawing.Size(31, 23);
             this.lblReturn.TabIndex = 51;
             this.lblReturn.Text = "---";
             // 
@@ -137,9 +138,10 @@
             this.lblPickUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPickUp.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPickUp.ForeColor = System.Drawing.Color.White;
-            this.lblPickUp.Location = new System.Drawing.Point(254, 349);
+            this.lblPickUp.Location = new System.Drawing.Point(190, 284);
+            this.lblPickUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPickUp.Name = "lblPickUp";
-            this.lblPickUp.Size = new System.Drawing.Size(40, 29);
+            this.lblPickUp.Size = new System.Drawing.Size(31, 23);
             this.lblPickUp.TabIndex = 50;
             this.lblPickUp.Text = "---";
             // 
@@ -149,9 +151,10 @@
             this.lblMotorUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblMotorUnit.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMotorUnit.ForeColor = System.Drawing.Color.White;
-            this.lblMotorUnit.Location = new System.Drawing.Point(254, 314);
+            this.lblMotorUnit.Location = new System.Drawing.Point(190, 255);
+            this.lblMotorUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMotorUnit.Name = "lblMotorUnit";
-            this.lblMotorUnit.Size = new System.Drawing.Size(40, 29);
+            this.lblMotorUnit.Size = new System.Drawing.Size(31, 23);
             this.lblMotorUnit.TabIndex = 49;
             this.lblMotorUnit.Text = "---";
             // 
@@ -161,9 +164,10 @@
             this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label15.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(55, 425);
+            this.label15.Location = new System.Drawing.Point(41, 345);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(188, 29);
+            this.label15.Size = new System.Drawing.Size(147, 23);
             this.label15.TabIndex = 34;
             this.label15.Text = "Rental Duration:";
             // 
@@ -173,9 +177,10 @@
             this.lblLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLocation.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocation.ForeColor = System.Drawing.Color.White;
-            this.lblLocation.Location = new System.Drawing.Point(162, 203);
+            this.lblLocation.Location = new System.Drawing.Point(122, 165);
+            this.lblLocation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(66, 29);
+            this.lblLocation.Size = new System.Drawing.Size(51, 23);
             this.lblLocation.TabIndex = 48;
             this.lblLocation.Text = "none";
             // 
@@ -185,9 +190,10 @@
             this.lblReturnLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblReturnLocation.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnLocation.ForeColor = System.Drawing.Color.White;
-            this.lblReturnLocation.Location = new System.Drawing.Point(55, 389);
+            this.lblReturnLocation.Location = new System.Drawing.Point(41, 316);
+            this.lblReturnLocation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnLocation.Name = "lblReturnLocation";
-            this.lblReturnLocation.Size = new System.Drawing.Size(147, 29);
+            this.lblReturnLocation.Size = new System.Drawing.Size(116, 23);
             this.lblReturnLocation.TabIndex = 33;
             this.lblReturnLocation.Text = "Return Date:";
             // 
@@ -197,9 +203,10 @@
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblEmail.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(179, 160);
+            this.lblEmail.Location = new System.Drawing.Point(134, 130);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(66, 29);
+            this.lblEmail.Size = new System.Drawing.Size(51, 23);
             this.lblEmail.TabIndex = 47;
             this.lblEmail.Text = "none";
             // 
@@ -209,9 +216,10 @@
             this.lblPickupLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPickupLocation.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPickupLocation.ForeColor = System.Drawing.Color.White;
-            this.lblPickupLocation.Location = new System.Drawing.Point(55, 349);
+            this.lblPickupLocation.Location = new System.Drawing.Point(41, 284);
+            this.lblPickupLocation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPickupLocation.Name = "lblPickupLocation";
-            this.lblPickupLocation.Size = new System.Drawing.Size(146, 29);
+            this.lblPickupLocation.Size = new System.Drawing.Size(116, 23);
             this.lblPickupLocation.TabIndex = 32;
             this.lblPickupLocation.Text = "Pickup Date:";
             // 
@@ -220,9 +228,10 @@
             this.lblPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPhone.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.White;
-            this.lblPhone.Location = new System.Drawing.Point(183, 121);
+            this.lblPhone.Location = new System.Drawing.Point(137, 98);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(226, 28);
+            this.lblPhone.Size = new System.Drawing.Size(170, 23);
             this.lblPhone.TabIndex = 46;
             this.lblPhone.Text = "none";
             // 
@@ -232,9 +241,10 @@
             this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label18.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(55, 314);
+            this.label18.Location = new System.Drawing.Point(41, 255);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(184, 29);
+            this.label18.Size = new System.Drawing.Size(146, 23);
             this.label18.TabIndex = 31;
             this.label18.Text = "Motorcycle unit:";
             // 
@@ -243,9 +253,10 @@
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblName.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(137, 85);
+            this.lblName.Location = new System.Drawing.Point(103, 69);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(270, 28);
+            this.lblName.Size = new System.Drawing.Size(202, 23);
             this.lblName.TabIndex = 45;
             this.lblName.Text = "none";
             // 
@@ -255,9 +266,10 @@
             this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label19.Font = new System.Drawing.Font("Constantia", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(24, 265);
+            this.label19.Location = new System.Drawing.Point(18, 215);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(160, 33);
+            this.label19.Size = new System.Drawing.Size(123, 26);
             this.label19.TabIndex = 8;
             this.label19.Text = "Rental Info";
             // 
@@ -267,9 +279,10 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label13.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(44, 203);
+            this.label13.Location = new System.Drawing.Point(33, 165);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 29);
+            this.label13.Size = new System.Drawing.Size(87, 23);
             this.label13.TabIndex = 34;
             this.label13.Text = "Location:";
             // 
@@ -279,9 +292,10 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(44, 160);
+            this.label5.Location = new System.Drawing.Point(33, 130);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 29);
+            this.label5.Size = new System.Drawing.Size(97, 23);
             this.label5.TabIndex = 33;
             this.label5.Text = "Email add:";
             // 
@@ -291,9 +305,10 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(48, 121);
+            this.label3.Location = new System.Drawing.Point(36, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 29);
+            this.label3.Size = new System.Drawing.Size(97, 23);
             this.label3.TabIndex = 32;
             this.label3.Text = "Phone no.:";
             // 
@@ -303,9 +318,10 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(48, 85);
+            this.label2.Location = new System.Drawing.Point(36, 69);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 29);
+            this.label2.Size = new System.Drawing.Size(63, 23);
             this.label2.TabIndex = 31;
             this.label2.Text = "Name:";
             // 
@@ -315,9 +331,10 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Constantia", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 27);
+            this.label1.Location = new System.Drawing.Point(18, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 33);
+            this.label1.Size = new System.Drawing.Size(154, 26);
             this.label1.TabIndex = 8;
             this.label1.Text = "Customer Info";
             // 
@@ -325,10 +342,10 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(328, 2);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(246, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1324, 100);
+            this.panel3.Size = new System.Drawing.Size(993, 81);
             this.panel3.TabIndex = 14;
             // 
             // label4
@@ -338,9 +355,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Constantia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(442, 25);
+            this.label4.Location = new System.Drawing.Point(332, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(345, 49);
+            this.label4.Size = new System.Drawing.Size(275, 39);
             this.label4.TabIndex = 7;
             this.label4.Text = "Booking Request";
             // 
@@ -357,10 +375,10 @@
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Location = new System.Drawing.Point(-16, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(-12, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(343, 985);
+            this.panel1.Size = new System.Drawing.Size(257, 800);
             this.panel1.TabIndex = 13;
             // 
             // button4
@@ -370,10 +388,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-36, 450);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Location = new System.Drawing.Point(-27, 366);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(307, 46);
+            this.button4.Size = new System.Drawing.Size(230, 37);
             this.button4.TabIndex = 53;
             this.button4.Text = "Notifications";
             this.button4.UseVisualStyleBackColor = false;
@@ -388,10 +406,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(13, 350);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(10, 284);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 46);
+            this.button1.Size = new System.Drawing.Size(187, 37);
             this.button1.TabIndex = 52;
             this.button1.Text = "Booking Request";
             this.button1.UseVisualStyleBackColor = false;
@@ -402,10 +420,10 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
-            this.pictureBox1.Location = new System.Drawing.Point(133, 120);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(100, 98);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(56, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 51;
             this.pictureBox1.TabStop = false;
@@ -417,9 +435,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(68, 70);
+            this.label7.Location = new System.Drawing.Point(51, 57);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
+            this.label7.Size = new System.Drawing.Size(160, 27);
             this.label7.TabIndex = 50;
             this.label7.Text = "Drive Sphere";
             // 
@@ -432,10 +451,10 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(-14, 238);
-            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button12.Location = new System.Drawing.Point(-10, 193);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(395, 46);
+            this.button12.Size = new System.Drawing.Size(296, 37);
             this.button12.TabIndex = 47;
             this.button12.Text = "Motorcycle Management";
             this.button12.UseVisualStyleBackColor = false;
@@ -450,10 +469,10 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(108, 730);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Location = new System.Drawing.Point(81, 593);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(117, 46);
+            this.button8.Size = new System.Drawing.Size(88, 37);
             this.button8.TabIndex = 43;
             this.button8.Text = "Logout";
             this.button8.UseVisualStyleBackColor = false;
@@ -468,10 +487,10 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(-72, 189);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button11.Location = new System.Drawing.Point(-54, 154);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(307, 46);
+            this.button11.Size = new System.Drawing.Size(230, 37);
             this.button11.TabIndex = 48;
             this.button11.Text = "Home";
             this.button11.UseVisualStyleBackColor = false;
@@ -486,10 +505,10 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(13, 678);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Location = new System.Drawing.Point(10, 551);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(307, 46);
+            this.button7.Size = new System.Drawing.Size(230, 37);
             this.button7.TabIndex = 44;
             this.button7.Text = "Admin Account";
             this.button7.UseVisualStyleBackColor = false;
@@ -504,10 +523,10 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(3, 288);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Location = new System.Drawing.Point(2, 234);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(345, 46);
+            this.button10.Size = new System.Drawing.Size(259, 37);
             this.button10.TabIndex = 46;
             this.button10.Text = "Fuel Cost Management";
             this.button10.UseVisualStyleBackColor = false;
@@ -522,10 +541,10 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(28, 400);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button9.Location = new System.Drawing.Point(21, 325);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(221, 46);
+            this.button9.Size = new System.Drawing.Size(166, 37);
             this.button9.TabIndex = 45;
             this.button9.Text = "Payment Billing";
             this.button9.UseVisualStyleBackColor = false;
@@ -534,41 +553,24 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel4.Controls.Add(this.btnReset);
             this.panel4.Controls.Add(this.pictureBoxID);
             this.panel4.Controls.Add(this.lblValidID);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.btnReject);
             this.panel4.Controls.Add(this.btnApprove);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(936, 122);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Location = new System.Drawing.Point(702, 99);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(567, 500);
+            this.panel4.Size = new System.Drawing.Size(425, 406);
             this.panel4.TabIndex = 15;
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.Crimson;
-            this.btnReset.Location = new System.Drawing.Point(404, 404);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(91, 34);
-            this.btnReset.TabIndex = 50;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // pictureBoxID
             // 
             this.pictureBoxID.Image = global::Fleet_Management_Rental.Properties.Resources.national_ID;
-            this.pictureBoxID.Location = new System.Drawing.Point(70, 118);
-            this.pictureBoxID.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxID.Location = new System.Drawing.Point(52, 96);
             this.pictureBoxID.Name = "pictureBoxID";
-            this.pictureBoxID.Size = new System.Drawing.Size(427, 260);
+            this.pictureBoxID.Size = new System.Drawing.Size(320, 211);
             this.pictureBoxID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxID.TabIndex = 49;
             this.pictureBoxID.TabStop = false;
@@ -579,9 +581,10 @@
             this.lblValidID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblValidID.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValidID.ForeColor = System.Drawing.Color.White;
-            this.lblValidID.Location = new System.Drawing.Point(256, 69);
+            this.lblValidID.Location = new System.Drawing.Point(192, 56);
+            this.lblValidID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValidID.Name = "lblValidID";
-            this.lblValidID.Size = new System.Drawing.Size(137, 29);
+            this.lblValidID.Size = new System.Drawing.Size(109, 23);
             this.lblValidID.TabIndex = 48;
             this.lblValidID.Text = "type of id---";
             // 
@@ -591,9 +594,10 @@
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(81, 69);
+            this.label10.Location = new System.Drawing.Point(61, 56);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 29);
+            this.label10.Size = new System.Drawing.Size(127, 23);
             this.label10.TabIndex = 47;
             this.label10.Text = "Valid ID Type:";
             // 
@@ -603,10 +607,10 @@
             this.btnReject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReject.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReject.ForeColor = System.Drawing.Color.Crimson;
-            this.btnReject.Location = new System.Drawing.Point(308, 404);
-            this.btnReject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReject.Location = new System.Drawing.Point(304, 328);
+            this.btnReject.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnReject.Name = "btnReject";
-            this.btnReject.Size = new System.Drawing.Size(91, 34);
+            this.btnReject.Size = new System.Drawing.Size(68, 28);
             this.btnReject.TabIndex = 26;
             this.btnReject.Text = "Reject";
             this.btnReject.UseVisualStyleBackColor = false;
@@ -618,10 +622,10 @@
             this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApprove.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApprove.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnApprove.Location = new System.Drawing.Point(212, 404);
-            this.btnApprove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnApprove.Location = new System.Drawing.Point(219, 328);
+            this.btnApprove.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(91, 34);
+            this.btnApprove.Size = new System.Drawing.Size(68, 28);
             this.btnApprove.TabIndex = 25;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = false;
@@ -633,40 +637,41 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Font = new System.Drawing.Font("Constantia", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(23, 26);
+            this.label8.Location = new System.Drawing.Point(17, 21);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(311, 35);
+            this.label8.Size = new System.Drawing.Size(247, 27);
             this.label8.TabIndex = 14;
             this.label8.Text = "Document Verification";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_2026_05_12_222623;
-            this.pictureBox3.Location = new System.Drawing.Point(327, 101);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(245, 82);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1435, 830);
+            this.pictureBox3.Size = new System.Drawing.Size(1076, 674);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 36;
             this.pictureBox3.TabStop = false;
             // 
             // dgvRentals
             // 
+            this.dgvRentals.AllowUserToAddRows = false;
             this.dgvRentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRentals.Location = new System.Drawing.Point(380, 638);
-            this.dgvRentals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvRentals.Location = new System.Drawing.Point(285, 518);
+            this.dgvRentals.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRentals.Name = "dgvRentals";
             this.dgvRentals.RowHeadersWidth = 62;
             this.dgvRentals.RowTemplate.Height = 28;
-            this.dgvRentals.Size = new System.Drawing.Size(1124, 193);
+            this.dgvRentals.Size = new System.Drawing.Size(843, 157);
             this.dgvRentals.TabIndex = 37;
             this.dgvRentals.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // BookingReq
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1538, 840);
+            this.ClientSize = new System.Drawing.Size(1154, 682);
             this.ControlBox = false;
             this.Controls.Add(this.dgvRentals);
             this.Controls.Add(this.panel2);
@@ -674,9 +679,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox3);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "BookingReq";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingReq";
             this.Load += new System.EventHandler(this.BookingReq_Load);
             this.panel2.ResumeLayout(false);
@@ -735,7 +741,6 @@
         private System.Windows.Forms.Label lblReturn;
         private System.Windows.Forms.Label lblPickUp;
         private System.Windows.Forms.Label lblMotorUnit;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DataGridView dgvRentals;
         private System.Windows.Forms.Button button4;
     }

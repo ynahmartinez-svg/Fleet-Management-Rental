@@ -17,7 +17,6 @@ namespace Fleet_Management_Rental
         public Payments_and_Billing()
         {
             InitializeComponent();
-            this.FormClosed += Payments_and_Billing_FormClosed;
         }
 
         private void Payments_and_Billing_FormClosed(object sender, FormClosedEventArgs e)

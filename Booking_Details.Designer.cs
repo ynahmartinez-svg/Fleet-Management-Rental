@@ -61,6 +61,7 @@
             this.pictureMotor = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblBanner = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panel3.SuspendLayout();
@@ -78,9 +79,9 @@
             this.panel1.Controls.Add(this.pictureBox13);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(2, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 1092);
+            this.panel1.Size = new System.Drawing.Size(225, 887);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -90,10 +91,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 204);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(0, 166);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(306, 68);
+            this.button2.Size = new System.Drawing.Size(230, 55);
             this.button2.TabIndex = 132;
             this.button2.Text = "Return Booking";
             this.button2.UseVisualStyleBackColor = false;
@@ -102,10 +103,10 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
-            this.pictureBox13.Location = new System.Drawing.Point(98, 98);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox13.Location = new System.Drawing.Point(74, 80);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(73, 57);
+            this.pictureBox13.Size = new System.Drawing.Size(55, 46);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 136;
             this.pictureBox13.TabStop = false;
@@ -115,20 +116,22 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(45, 38);
+            this.label7.Location = new System.Drawing.Point(34, 31);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
+            this.label7.Size = new System.Drawing.Size(160, 27);
             this.label7.TabIndex = 135;
             this.label7.Text = "Drive Sphere";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.lblBanner);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(297, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(223, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1485, 100);
+            this.panel3.Size = new System.Drawing.Size(1114, 81);
             this.panel3.TabIndex = 9;
             // 
             // label4
@@ -136,9 +139,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Constantia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(416, 26);
+            this.label4.Location = new System.Drawing.Point(312, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(326, 49);
+            this.label4.Size = new System.Drawing.Size(260, 39);
             this.label4.TabIndex = 7;
             this.label4.Text = "Booking Details";
             // 
@@ -158,10 +162,10 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.cmbLisense);
             this.panel4.Controls.Add(this.label11);
-            this.panel4.Location = new System.Drawing.Point(932, 122);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Location = new System.Drawing.Point(699, 99);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(498, 742);
+            this.panel4.Size = new System.Drawing.Size(374, 603);
             this.panel4.TabIndex = 11;
             // 
             // btnUpload
@@ -171,10 +175,10 @@
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Constantia", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnUpload.Location = new System.Drawing.Point(173, 505);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpload.Location = new System.Drawing.Point(130, 410);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(128, 36);
+            this.btnUpload.Size = new System.Drawing.Size(96, 29);
             this.btnUpload.TabIndex = 39;
             this.btnUpload.Text = "Upload ID";
             this.btnUpload.UseVisualStyleBackColor = false;
@@ -185,11 +189,11 @@
             this.timeReturn.Enabled = false;
             this.timeReturn.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeReturn.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeReturn.Location = new System.Drawing.Point(267, 144);
-            this.timeReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.timeReturn.Location = new System.Drawing.Point(200, 117);
+            this.timeReturn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.timeReturn.Name = "timeReturn";
             this.timeReturn.ShowUpDown = true;
-            this.timeReturn.Size = new System.Drawing.Size(150, 34);
+            this.timeReturn.Size = new System.Drawing.Size(114, 29);
             this.timeReturn.TabIndex = 38;
             this.timeReturn.Value = new System.DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
@@ -198,21 +202,20 @@
             this.timePickup.Enabled = false;
             this.timePickup.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timePickup.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePickup.Location = new System.Drawing.Point(267, 73);
-            this.timePickup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.timePickup.Location = new System.Drawing.Point(200, 59);
+            this.timePickup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.timePickup.Name = "timePickup";
             this.timePickup.ShowUpDown = true;
-            this.timePickup.Size = new System.Drawing.Size(150, 34);
+            this.timePickup.Size = new System.Drawing.Size(114, 29);
             this.timePickup.TabIndex = 37;
             this.timePickup.Value = new System.DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
             // pictureBoxID
             // 
             this.pictureBoxID.Image = global::Fleet_Management_Rental.Properties.Resources.national_ID;
-            this.pictureBoxID.Location = new System.Drawing.Point(83, 251);
-            this.pictureBoxID.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxID.Location = new System.Drawing.Point(62, 204);
             this.pictureBoxID.Name = "pictureBoxID";
-            this.pictureBoxID.Size = new System.Drawing.Size(307, 210);
+            this.pictureBoxID.Size = new System.Drawing.Size(230, 171);
             this.pictureBoxID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxID.TabIndex = 31;
             this.pictureBoxID.TabStop = false;
@@ -220,13 +223,13 @@
             // txtReturn
             // 
             this.txtReturn.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturn.Location = new System.Drawing.Point(56, 144);
-            this.txtReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtReturn.Location = new System.Drawing.Point(42, 117);
+            this.txtReturn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtReturn.MaxLength = 20;
             this.txtReturn.Multiline = true;
             this.txtReturn.Name = "txtReturn";
             this.txtReturn.ReadOnly = true;
-            this.txtReturn.Size = new System.Drawing.Size(193, 40);
+            this.txtReturn.Size = new System.Drawing.Size(146, 33);
             this.txtReturn.TabIndex = 29;
             this.txtReturn.Text = "none";
             // 
@@ -236,10 +239,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Constantia", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Crimson;
-            this.btnCancel.Location = new System.Drawing.Point(327, 677);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(245, 550);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 27);
+            this.btnCancel.Size = new System.Drawing.Size(68, 22);
             this.btnCancel.TabIndex = 26;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -251,10 +254,10 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Constantia", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnEdit.Location = new System.Drawing.Point(195, 677);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Location = new System.Drawing.Point(146, 550);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(91, 27);
+            this.btnEdit.Size = new System.Drawing.Size(68, 22);
             this.btnEdit.TabIndex = 25;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -266,10 +269,10 @@
             this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBook.Font = new System.Drawing.Font("Constantia", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnBook.Location = new System.Drawing.Point(67, 677);
-            this.btnBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBook.Location = new System.Drawing.Point(50, 550);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(91, 27);
+            this.btnBook.Size = new System.Drawing.Size(68, 22);
             this.btnBook.TabIndex = 24;
             this.btnBook.Text = "Book";
             this.btnBook.UseVisualStyleBackColor = false;
@@ -281,22 +284,23 @@
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label14.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(53, 117);
+            this.label14.Location = new System.Drawing.Point(40, 95);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(241, 24);
+            this.label14.Size = new System.Drawing.Size(194, 19);
             this.label14.TabIndex = 22;
             this.label14.Text = "Return Location and Time";
             // 
             // txtPick
             // 
             this.txtPick.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPick.Location = new System.Drawing.Point(56, 73);
-            this.txtPick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPick.Location = new System.Drawing.Point(42, 59);
+            this.txtPick.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPick.MaxLength = 20;
             this.txtPick.Multiline = true;
             this.txtPick.Name = "txtPick";
             this.txtPick.ReadOnly = true;
-            this.txtPick.Size = new System.Drawing.Size(193, 40);
+            this.txtPick.Size = new System.Drawing.Size(146, 33);
             this.txtPick.TabIndex = 21;
             this.txtPick.Text = "none";
             // 
@@ -306,9 +310,10 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(53, 34);
+            this.label6.Location = new System.Drawing.Point(40, 28);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(240, 24);
+            this.label6.Size = new System.Drawing.Size(194, 19);
             this.label6.TabIndex = 16;
             this.label6.Text = "Pickup Location and Time";
             // 
@@ -328,10 +333,10 @@
             "Voter’s ID",
             "Postal ID",
             "Company ID"});
-            this.cmbLisense.Location = new System.Drawing.Point(67, 594);
-            this.cmbLisense.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbLisense.Location = new System.Drawing.Point(50, 483);
+            this.cmbLisense.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbLisense.Name = "cmbLisense";
-            this.cmbLisense.Size = new System.Drawing.Size(172, 24);
+            this.cmbLisense.Size = new System.Drawing.Size(130, 21);
             this.cmbLisense.TabIndex = 16;
             this.cmbLisense.Text = "License type";
             this.cmbLisense.SelectedIndexChanged += new System.EventHandler(this.cmbLisense_SelectedIndexChanged);
@@ -342,9 +347,10 @@
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label11.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(168, 206);
+            this.label11.Location = new System.Drawing.Point(126, 167);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 24);
+            this.label11.Size = new System.Drawing.Size(88, 19);
             this.label11.TabIndex = 16;
             this.label11.Text = "VALID ID*";
             // 
@@ -361,10 +367,10 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureMotor);
-            this.panel2.Location = new System.Drawing.Point(353, 122);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(265, 99);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(498, 742);
+            this.panel2.Size = new System.Drawing.Size(374, 603);
             this.panel2.TabIndex = 12;
             // 
             // lblPlate
@@ -373,9 +379,10 @@
             this.lblPlate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPlate.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlate.ForeColor = System.Drawing.Color.White;
-            this.lblPlate.Location = new System.Drawing.Point(44, 324);
+            this.lblPlate.Location = new System.Drawing.Point(33, 263);
+            this.lblPlate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlate.Name = "lblPlate";
-            this.lblPlate.Size = new System.Drawing.Size(31, 24);
+            this.lblPlate.Size = new System.Drawing.Size(27, 19);
             this.lblPlate.TabIndex = 37;
             this.lblPlate.Text = "---";
             // 
@@ -385,9 +392,10 @@
             this.lblPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPrice.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(276, 313);
+            this.lblPrice.Location = new System.Drawing.Point(207, 254);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(31, 24);
+            this.lblPrice.Size = new System.Drawing.Size(27, 19);
             this.lblPrice.TabIndex = 35;
             this.lblPrice.Text = "---";
             // 
@@ -397,9 +405,10 @@
             this.lblBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblBrand.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrand.ForeColor = System.Drawing.Color.White;
-            this.lblBrand.Location = new System.Drawing.Point(276, 270);
+            this.lblBrand.Location = new System.Drawing.Point(207, 219);
+            this.lblBrand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(31, 24);
+            this.lblBrand.Size = new System.Drawing.Size(27, 19);
             this.lblBrand.TabIndex = 34;
             this.lblBrand.Text = "---";
             // 
@@ -409,9 +418,10 @@
             this.lblModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblModel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModel.ForeColor = System.Drawing.Color.White;
-            this.lblModel.Location = new System.Drawing.Point(44, 270);
+            this.lblModel.Location = new System.Drawing.Point(33, 219);
+            this.lblModel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(31, 24);
+            this.lblModel.Size = new System.Drawing.Size(27, 19);
             this.lblModel.TabIndex = 32;
             this.lblModel.Text = "---";
             // 
@@ -419,10 +429,10 @@
             // 
             this.dtpEnd.Enabled = false;
             this.dtpEnd.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEnd.Location = new System.Drawing.Point(50, 583);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpEnd.Location = new System.Drawing.Point(38, 474);
+            this.dtpEnd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(348, 34);
+            this.dtpEnd.Size = new System.Drawing.Size(262, 29);
             this.dtpEnd.TabIndex = 13;
             this.dtpEnd.Value = new System.DateTime(2026, 5, 2, 0, 0, 0, 0);
             // 
@@ -430,10 +440,10 @@
             // 
             this.dtpStart.Enabled = false;
             this.dtpStart.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStart.Location = new System.Drawing.Point(50, 505);
-            this.dtpStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpStart.Location = new System.Drawing.Point(38, 410);
+            this.dtpStart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(348, 34);
+            this.dtpStart.Size = new System.Drawing.Size(262, 29);
             this.dtpStart.TabIndex = 12;
             this.dtpStart.Value = new System.DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
@@ -443,9 +453,10 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(39, 548);
+            this.label5.Location = new System.Drawing.Point(29, 445);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 24);
+            this.label5.Size = new System.Drawing.Size(74, 19);
             this.label5.TabIndex = 11;
             this.label5.Text = "End Date";
             // 
@@ -455,9 +466,10 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(39, 473);
+            this.label3.Location = new System.Drawing.Point(29, 384);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 24);
+            this.label3.Size = new System.Drawing.Size(81, 19);
             this.label3.TabIndex = 10;
             this.label3.Text = "Start Date";
             // 
@@ -467,19 +479,20 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(39, 439);
+            this.label2.Location = new System.Drawing.Point(29, 357);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 22);
+            this.label2.Size = new System.Drawing.Size(131, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "BOOKING DATES:";
             // 
             // pictureMotor
             // 
             this.pictureMotor.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_231433_www_canva_com;
-            this.pictureMotor.Location = new System.Drawing.Point(116, 14);
-            this.pictureMotor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureMotor.Location = new System.Drawing.Point(87, 11);
+            this.pictureMotor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureMotor.Name = "pictureMotor";
-            this.pictureMotor.Size = new System.Drawing.Size(261, 229);
+            this.pictureMotor.Size = new System.Drawing.Size(196, 186);
             this.pictureMotor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureMotor.TabIndex = 0;
             this.pictureMotor.TabStop = false;
@@ -492,32 +505,44 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_2026_05_12_222623;
-            this.pictureBox2.Location = new System.Drawing.Point(297, 98);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(223, 80);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1191, 904);
+            this.pictureBox2.Size = new System.Drawing.Size(893, 734);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
+            // lblBanner
+            // 
+            this.lblBanner.AutoSize = true;
+            this.lblBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblBanner.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBanner.ForeColor = System.Drawing.Color.White;
+            this.lblBanner.Location = new System.Drawing.Point(286, 50);
+            this.lblBanner.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBanner.Name = "lblBanner";
+            this.lblBanner.Size = new System.Drawing.Size(23, 18);
+            this.lblBanner.TabIndex = 38;
+            this.lblBanner.Text = "---";
+            // 
             // Booking_Details
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1489, 844);
+            this.ClientSize = new System.Drawing.Size(1117, 686);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Booking_Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Return";
+            this.Text = "BOOKING DETAILS";
             this.Load += new System.EventHandler(this.Booking_Details_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -570,5 +595,6 @@
         private System.Windows.Forms.DateTimePicker timeReturn;
         private System.Windows.Forms.DateTimePicker timePickup;
         private System.Windows.Forms.Label lblPlate;
+        private System.Windows.Forms.Label lblBanner;
     }
 }

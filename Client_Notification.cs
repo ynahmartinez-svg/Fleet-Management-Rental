@@ -16,7 +16,6 @@ namespace Fleet_Management_Rental
         public Client_Notification()
         {
             InitializeComponent();
-            this.FormClosed += Client_Notification_FormClosed;
         }
         private void Client_Notification_FormClosed(object sender, FormClosedEventArgs e)
         {

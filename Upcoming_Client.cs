@@ -16,13 +16,10 @@ namespace Fleet_Management_Rental
         public Upcoming_Client()
         {
             InitializeComponent();
-            this.FormClosed += Upcoming_Client_FormClosed;
         }
         private void Upcoming_Client_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Client_Dashboard cd = new Client_Dashboard();
-            cd.Show();
-            this.Hide();
+
         }
 
 

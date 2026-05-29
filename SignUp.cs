@@ -15,24 +15,6 @@ namespace Fleet_Management_Rental
 {
     public partial class SignUp : Form
     {
-        public static class DbHelper
-        {
-            public static NpgsqlConnection GetConnection()
-            {
-                return new NpgsqlConnection(DbConfig.ConnectionString);
-            }
-        }
-
-        public static class DbConfig
-        {
-            public static string ConnectionString = "Host=fmsrental-26507.j77.aws-ap-southeast-1.cockroachlabs.cloud;" +  // ✅ updated host
-            "Port=26257;" +
-            "Database=fms_rental;" +
-            "Username=stephen;" +
-            "Password=jQPj8FQl2JF4afGOR37QxQ;" +  // ✅ updated password
-            "SSL Mode=VerifyFull;" +
-            "Trust Server Certificate=true";
-        }
         public SignUp()
         {
             InitializeComponent();
@@ -76,7 +58,23 @@ namespace Fleet_Management_Rental
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
+            // ✅ Email validation: must end with @gmail.com
+            if (!email.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Email must be a valid Gmail address (e.g., user@gmail.com).",
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // ✅ Password validation: at least 6 characters + 1 special character
+            if (password.Length < 6 || !password.Any(ch => !char.IsLetterOrDigit(ch)))
+            {
+                MessageBox.Show("Password must be at least 6 characters long and contain at least one special character.",
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 using (var conn = DbHelper.GetConnection())

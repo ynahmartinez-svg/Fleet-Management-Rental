@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Fleet_Management_Rental
 {
@@ -17,7 +18,6 @@ namespace Fleet_Management_Rental
         public My_rentals()
         {
             InitializeComponent();
-            this.FormClosed += My_rentals_FormClosed;
 
         }
         private void My_rentals_FormClosed(object sender, FormClosedEventArgs e)
@@ -37,18 +37,42 @@ namespace Fleet_Management_Rental
 
         private void My_rentals_Load(object sender, EventArgs e)
         {
-            long clientId = SessionData.LoggedInClientId; // ✅ use shared SessionData.cs
+            long clientId = SessionData.LoggedInClientId;
 
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
 
+                // ✅ Auto-update expired rentals to Completed
+                string sqlUpdate = @"UPDATE rentals
+                             SET status = 'Completed'
+                             WHERE client_id = @cid
+                               AND status IN ('Active','Approved')
+                               AND return_date < CURRENT_DATE;
+
+                            UPDATE motorcycle_management
+                            SET status = 'Available'
+                            WHERE motorcycle_id IN(
+                            SELECT motorcycle_id
+                            FROM rentals
+                            WHERE client_id = @cid
+                           AND status = 'Completed'
+                           AND return_date < CURRENT_DATE
+                     ); ";
+
+                using (var cmdUpdate = new NpgsqlCommand(sqlUpdate, conn))
+                {
+                    cmdUpdate.Parameters.AddWithValue("@cid", clientId);
+                    cmdUpdate.ExecuteNonQuery();
+                }
+
+                // ✅ Now fetch rentals with corrected statuses
                 string sql = @"SELECT m.motorcycle_id, m.model_name, m.plate_num, m.image_path,
-                                      r.rental_id, r.start_date, r.return_date, r.duration_days, r.status AS rental_status
-                               FROM rentals r
-                               JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                               WHERE r.client_id = @cid
-                               ORDER BY r.start_date DESC";
+                              r.rental_id, r.start_date, r.return_date, r.duration_days, r.status AS rental_status
+                       FROM rentals r
+                       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+                       WHERE r.client_id = @cid
+                       ORDER BY r.start_date DESC";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -109,7 +133,7 @@ namespace Fleet_Management_Rental
                             {
                                 Text = rentalId > 0 ? "Extend Rental" : "Rent Now",
                                 Dock = DockStyle.Bottom,
-                                Enabled = true
+                                Enabled = rentalStatus == "Active" || rentalStatus == "Approved"
                             };
                             btnAction.Tag = new { MotorcycleId = motorcycleId, RentalId = rentalId };
                             btnAction.Click += BtnExtend_Click_1;
@@ -126,18 +150,13 @@ namespace Fleet_Management_Rental
         }
 
 
+
         private void button12_Click(object sender, EventArgs e)
         {
             My_rentals r = new My_rentals();
             r.Show();
             this.Hide();
         }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-           
-        }
-
 
 
         private void button5_Click(object sender, EventArgs e)
@@ -161,10 +180,6 @@ namespace Fleet_Management_Rental
             this.Hide();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
@@ -222,25 +237,7 @@ namespace Fleet_Management_Rental
             }
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -254,11 +251,13 @@ namespace Fleet_Management_Rental
             long rentalId = tag.RentalId;
             long clientId = SessionData.LoggedInClientId;
 
-            Booking_Details bd = new Booking_Details(motorcycleId, clientId, rentalId);
+            Booking_Details bd = new Booking_Details(motorcycleId, clientId, rentalId, true);
             bd.Show();
             this.Hide();
 
         }
+
+
 
         private void btnNotification_Click(object sender, EventArgs e)
         {

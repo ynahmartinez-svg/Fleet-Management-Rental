@@ -20,7 +20,6 @@ namespace Fleet_Management_Rental
         public Motorcycle_Management()
         {
             InitializeComponent();
-            this.Load += Motorcycle_Management_Load;
 
         }
         private void Motorcycle_Management_FormClosed(object sender, FormClosedEventArgs e)
@@ -30,6 +29,26 @@ namespace Fleet_Management_Rental
 
         private void Motorcycle_Management_Load(object sender, EventArgs e)
         {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+
+                // ✅ Auto-reset motorcycles that are marked as Rented but have no active rentals
+                string sqlUpdate = @"UPDATE motorcycle_management m
+                             SET status = 'Available'
+                             WHERE m.status = 'Rented'
+                               AND NOT EXISTS (
+                                   SELECT 1 FROM rentals r
+                                   WHERE r.motorcycle_id = m.motorcycle_id
+                                     AND r.status IN ('Active','Approved')
+                               );";
+
+                using (var cmdUpdate = new NpgsqlCommand(sqlUpdate, conn))
+                {
+                    cmdUpdate.ExecuteNonQuery();
+                }
+            }
+
             LoadMotorcycles();
         }
         private void LoadMotorcycles()
@@ -106,7 +125,7 @@ namespace Fleet_Management_Rental
                             else
                             {
                                 // Clear previous selection
-                                foreach (Panel p in flowLayoutPanel2.Controls)
+                                foreach (Panel p in flowLayoutPanel1.Controls)
                                     p.BackColor = Color.White;
 
                                 // Select new card
@@ -251,6 +270,12 @@ namespace Fleet_Management_Rental
                 MessageBox.Show("Please select a motorcycle first.");
                 return;
             }
+            // Prevent deletion if motorcycle is rented
+            if (selectedStatus == "Rented")
+            {
+                MessageBox.Show("You cannot delete this vehicle because it is currently rented.");
+                return;
+            }
 
             var result = MessageBox.Show(
                 "Do you want to delete this vehicle permanently from the database?",
@@ -264,8 +289,24 @@ namespace Fleet_Management_Rental
                 using (var conn = DbHelper.GetConnection())
                 {
                     conn.Open();
-                    string sql = "DELETE FROM motorcycle_management WHERE motorcycle_id = @id";
 
+                    // Check if motorcycle has rental history
+                    string checkSql = "SELECT COUNT(*) FROM rentals WHERE motorcycle_id = @id";
+                    using (var checkCmd = new NpgsqlCommand(checkSql, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@id", selectedMotorcycleId);
+                        int rentalCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (rentalCount > 0)
+                        {
+                            MessageBox.Show("This motorcycle cannot be deleted because it has rental records.",
+                                "Delete Blocked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Safe delete
+                    string sql = "DELETE FROM motorcycle_management WHERE motorcycle_id = @id";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", selectedMotorcycleId);

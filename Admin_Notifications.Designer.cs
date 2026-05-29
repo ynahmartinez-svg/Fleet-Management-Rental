@@ -56,10 +56,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(302, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(226, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(944, 103);
+            this.panel2.Size = new System.Drawing.Size(708, 84);
             this.panel2.TabIndex = 24;
             // 
             // label2
@@ -67,21 +67,24 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Constantia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(347, 22);
+            this.label2.Location = new System.Drawing.Point(260, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 49);
+            this.label2.Size = new System.Drawing.Size(155, 39);
             this.label2.TabIndex = 8;
             this.label2.Text = "Welcome";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(368, 140);
+            this.dataGridView1.Location = new System.Drawing.Point(276, 114);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 455);
+            this.dataGridView1.Size = new System.Drawing.Size(616, 370);
             this.dataGridView1.TabIndex = 26;
             // 
             // panel1
@@ -98,10 +101,10 @@
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Location = new System.Drawing.Point(-3, -78);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(-2, -63);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 1030);
+            this.panel1.Size = new System.Drawing.Size(230, 837);
             this.panel1.TabIndex = 27;
             // 
             // button4
@@ -111,10 +114,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-56, 562);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Location = new System.Drawing.Point(-42, 457);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(307, 46);
+            this.button4.Size = new System.Drawing.Size(230, 37);
             this.button4.TabIndex = 43;
             this.button4.Text = "Notifications";
             this.button4.UseVisualStyleBackColor = false;
@@ -125,9 +128,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(48, 132);
+            this.label4.Location = new System.Drawing.Point(36, 107);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 32);
+            this.label4.Size = new System.Drawing.Size(160, 27);
             this.label4.TabIndex = 42;
             this.label4.Text = "Drive Sphere";
             // 
@@ -138,10 +142,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-37, 453);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(-28, 368);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(307, 46);
+            this.button1.Size = new System.Drawing.Size(230, 37);
             this.button1.TabIndex = 41;
             this.button1.Text = "Booking Request";
             this.button1.UseVisualStyleBackColor = false;
@@ -154,10 +158,10 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(-37, 512);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Location = new System.Drawing.Point(-28, 416);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(307, 46);
+            this.button5.Size = new System.Drawing.Size(230, 37);
             this.button5.TabIndex = 33;
             this.button5.Text = "Payment Billing";
             this.button5.UseVisualStyleBackColor = false;
@@ -166,10 +170,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Fleet_Management_Rental.Properties.Resources.Screenshot_21_4_2026_23217_www_canva_com;
-            this.pictureBox3.Location = new System.Drawing.Point(108, 222);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(81, 180);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 57);
+            this.pictureBox3.Size = new System.Drawing.Size(56, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 39;
             this.pictureBox3.TabStop = false;
@@ -181,10 +185,10 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(-37, 353);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button11.Location = new System.Drawing.Point(-28, 287);
+            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(395, 46);
+            this.button11.Size = new System.Drawing.Size(296, 37);
             this.button11.TabIndex = 35;
             this.button11.Text = "Motorcycle Management";
             this.button11.UseVisualStyleBackColor = false;
@@ -195,9 +199,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(67, 36);
+            this.label1.Location = new System.Drawing.Point(50, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 32);
+            this.label1.Size = new System.Drawing.Size(160, 27);
             this.label1.TabIndex = 38;
             this.label1.Text = "Drive Sphere";
             // 
@@ -208,10 +213,10 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(-92, 303);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Location = new System.Drawing.Point(-69, 246);
+            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(307, 46);
+            this.button10.Size = new System.Drawing.Size(230, 37);
             this.button10.TabIndex = 36;
             this.button10.Text = "Home";
             this.button10.UseVisualStyleBackColor = false;
@@ -224,10 +229,10 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(101, 791);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Location = new System.Drawing.Point(76, 643);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(117, 46);
+            this.button8.Size = new System.Drawing.Size(88, 37);
             this.button8.TabIndex = 31;
             this.button8.Text = "Logout";
             this.button8.UseVisualStyleBackColor = false;
@@ -240,10 +245,10 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(-3, 403);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button9.Location = new System.Drawing.Point(-2, 327);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(307, 46);
+            this.button9.Size = new System.Drawing.Size(230, 37);
             this.button9.TabIndex = 34;
             this.button9.Text = "Fuel Cost Management";
             this.button9.UseVisualStyleBackColor = false;
@@ -256,10 +261,10 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Constantia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(8, 740);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Location = new System.Drawing.Point(6, 601);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(307, 46);
+            this.button7.Size = new System.Drawing.Size(230, 37);
             this.button7.TabIndex = 32;
             this.button7.Text = "Admin Account";
             this.button7.UseVisualStyleBackColor = false;
@@ -269,9 +274,10 @@
             // 
             this.btnNotify.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotify.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btnNotify.Location = new System.Drawing.Point(884, 601);
+            this.btnNotify.Location = new System.Drawing.Point(663, 488);
+            this.btnNotify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNotify.Name = "btnNotify";
-            this.btnNotify.Size = new System.Drawing.Size(143, 46);
+            this.btnNotify.Size = new System.Drawing.Size(107, 37);
             this.btnNotify.TabIndex = 28;
             this.btnNotify.Text = "Notify";
             this.btnNotify.UseVisualStyleBackColor = true;
@@ -281,9 +287,10 @@
             // 
             this.btnNotifyAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotifyAll.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnNotifyAll.Location = new System.Drawing.Point(1046, 601);
+            this.btnNotifyAll.Location = new System.Drawing.Point(784, 488);
+            this.btnNotifyAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNotifyAll.Name = "btnNotifyAll";
-            this.btnNotifyAll.Size = new System.Drawing.Size(143, 46);
+            this.btnNotifyAll.Size = new System.Drawing.Size(107, 37);
             this.btnNotifyAll.TabIndex = 29;
             this.btnNotifyAll.Text = "Notify All";
             this.btnNotifyAll.UseVisualStyleBackColor = true;
@@ -292,17 +299,18 @@
             // txtMessage
             // 
             this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMessage.Location = new System.Drawing.Point(368, 607);
+            this.txtMessage.Location = new System.Drawing.Point(276, 493);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(501, 34);
+            this.txtMessage.Size = new System.Drawing.Size(377, 28);
             this.txtMessage.TabIndex = 30;
             // 
             // Admin_Notifications
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1235, 784);
+            this.ClientSize = new System.Drawing.Size(926, 637);
             this.ControlBox = false;
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.btnNotifyAll);
@@ -310,6 +318,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Admin_Notifications";

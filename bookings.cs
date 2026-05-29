@@ -180,9 +180,8 @@ namespace Fleet_Management_Rental
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
-                string sql = @"SELECT motorcycle_id, model_name, plate_num, brand, price_per_day, image_path 
-                               FROM motorcycle_management 
-                               WHERE status = 'Available'";
+                string sql = @"SELECT motorcycle_id, model_name, plate_num, brand, price_per_day, image_path, status 
+                       FROM motorcycle_management";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 using (var reader = cmd.ExecuteReader())
@@ -196,21 +195,23 @@ namespace Fleet_Management_Rental
                         string brand = reader.GetString(3);
                         decimal price = reader.GetDecimal(4);
                         string imagePath = reader.GetString(5);
+                        string status = reader.GetString(6);
 
-                        AddMotorcycleCard(id, model, plate, brand, price, imagePath);
+                        AddMotorcycleCard(id, model, plate, brand, price, imagePath, status);
                         count++;
                     }
 
                     if (count == 0)
-                        MessageBox.Show("No available motorcycles found.");
+                        MessageBox.Show("No motorcycles found.");
                 }
             }
         }
-        private void AddMotorcycleCard(long id, string model, string plate, string brand, decimal price, string imagePath)
+
+        private void AddMotorcycleCard(long id, string model, string plate, string brand, decimal price, string imagePath, string status)
         {
             Panel card = new Panel
             {
-                Size = new Size(220, 280),
+                Size = new Size(220, 300),
                 Margin = new Padding(10),
                 BorderStyle = BorderStyle.FixedSingle
             };
@@ -235,30 +236,47 @@ namespace Fleet_Management_Rental
                 pic.BackColor = Color.LightGray;
             }
 
-            Label lblModel = new Label { Text = "Model: " + model, Top = 130, Left = 10, Width = 200 };
-            Label lblPlate = new Label { Text = "Plate: " + plate, Top = 160, Left = 10, Width = 200 };
-            Label lblBrand = new Label { Text = "Brand: " + brand, Top = 180, Left = 10, Width = 200 };
-            Label lblPrice = new Label { Text = "₱" + price.ToString("0.00") + "/Day", Top = 210, Left = 10, Width = 200 };
+                Label lblModel = new Label { Text = "Model: " + model, Top = 130, Left = 10, Width = 200 };
+                Label lblPlate = new Label { Text = "Plate: " + plate, Top = 155, Left = 10, Width = 200 };
+                Label lblBrand = new Label { Text = "Brand: " + brand, Top = 180, Left = 10, Width = 200 };
+                Label lblPrice = new Label { Text = "₱" + price.ToString("0.00") + "/Day", Top = 205, Left = 10, Width = 200 };
+                Label lblStatus = new Label { Text = "Status: " + status, Top = 230, Left = 10, Width = 200 };
+                Button btnAction = new Button { Top = 260, Left = 10, Width = 120, Tag = id };
 
-            Button btnRent = new Button
+            // ✅ Change button text depending on status
+            if (status == "Available")
             {
-                Text = "Rent Now",
-                Top = 230,
-                Left = 10,
-                Width = 100,
-                Tag = id
-            };
-            btnRent.Click += button15_Click;
+                btnAction.Text = "Rent Now";
+                btnAction.Enabled = true;
+                btnAction.Click += button15_Click;
+            }
+            else if (status == "Rented")
+            {
+                btnAction.Text = "Currently Rented";
+                btnAction.Enabled = false;
+            }
+            else if (status == "Extended")
+            {
+                btnAction.Text = "Extended Rental";
+                btnAction.Enabled = false;
+            }
+            else
+            {
+                btnAction.Text = "Unavailable";
+                btnAction.Enabled = false;
+            }
 
             card.Controls.Add(pic);
             card.Controls.Add(lblModel);
             card.Controls.Add(lblPlate);
             card.Controls.Add(lblBrand);
             card.Controls.Add(lblPrice);
-            card.Controls.Add(btnRent);
+            card.Controls.Add(lblStatus);
+            card.Controls.Add(btnAction);
 
             flowLayoutPanel2.Controls.Add(card);
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {

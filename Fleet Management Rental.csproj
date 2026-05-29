@@ -175,6 +175,12 @@
     <Compile Include="Client_Map.Designer.cs">
       <DependentUpon>Client_Map.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client_NewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_NewAccount.Designer.cs">
+      <DependentUpon>Client_NewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client_Notification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Map.resx">
       <DependentUpon>Client_Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client_NewAccount.resx">
+      <DependentUpon>Client_NewAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Notification.resx">
       <DependentUpon>Client_Notification.cs</DependentUpon>

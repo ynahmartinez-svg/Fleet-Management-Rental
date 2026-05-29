@@ -24,7 +24,7 @@ namespace Fleet_Management_Rental
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-           Application.Exit();
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -77,12 +77,24 @@ namespace Fleet_Management_Rental
             }
             else if (role == "Client")
             {
-                MessageBox.Show("Client login successful!", "Success",
+                if (IsClientProfileComplete(SessionData.LoggedInClientId))
+                {
+                    MessageBox.Show("Client login successful!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Client_Dashboard Dashboard = new Client_Dashboard();
-                Dashboard.Show();
-                this.Hide();
+                    Client_Dashboard Dashboard = new Client_Dashboard();
+                    Dashboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Login successful! Please complete your profile first before accessing the dashboard.",
+                    "Profile Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Client_NewAccount newAccForm = new Client_NewAccount();
+                    newAccForm.Show();
+                    this.Hide();
+                }
             }
             else
             {
@@ -92,6 +104,39 @@ namespace Fleet_Management_Rental
                 txtPass.Clear();
                 txtPass.Focus();
             }
+        }
+        private bool IsClientProfileComplete(long clientId)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = @"SELECT first_name, last_name, phone_no, date_of_birth, valid_id,
+                              street, city, postal_code
+                       FROM clientprofile
+                       WHERE client_id = @cid";
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", clientId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // If any required field is NULL or empty, profile is incomplete
+                            return !(reader.IsDBNull(0) || string.IsNullOrWhiteSpace(reader.GetString(0)) ||
+                                     reader.IsDBNull(1) || string.IsNullOrWhiteSpace(reader.GetString(1)) ||
+                                     reader.IsDBNull(2) || string.IsNullOrWhiteSpace(reader.GetString(2)) ||
+                                     reader.IsDBNull(3) ||
+                                     reader.IsDBNull(4) || string.IsNullOrWhiteSpace(reader.GetString(4)) ||
+                                     reader.IsDBNull(5) || string.IsNullOrWhiteSpace(reader.GetString(5)) ||
+                                     reader.IsDBNull(6) || string.IsNullOrWhiteSpace(reader.GetString(6)) ||
+                                     reader.IsDBNull(7) || string.IsNullOrWhiteSpace(reader.GetString(7)));
+                        }
+                    }
+                }
+            }
+            return false;
         }
 
         private string ValidateUserRole(string email, string password)
@@ -161,3 +206,4 @@ namespace Fleet_Management_Rental
         }
     }
 }
+

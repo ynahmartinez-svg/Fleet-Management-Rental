@@ -16,7 +16,6 @@ namespace Fleet_Management_Rental
         public Payment_Billing()
         {
             InitializeComponent();
-            this.FormClosed += Payment_Billing_FormClosed;
         }
         private void Payment_Billing_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -30,157 +29,75 @@ namespace Fleet_Management_Rental
 
         private void Payment_Billing_Load(object sender, EventArgs e)
         {
-            long clientId = SessionData.LoggedInClientId;
-
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
 
+                // ✅ Show all completed rentals for admin
                 string sql = @"SELECT r.start_date AS transaction_date,
-                                      (m.price_per_day * r.duration_days) AS motorcycle_price,
-                                      m.model_name AS motorcycle_unit,
-                                      r.duration_days AS duration, 
-                                      r.status AS rental_status
-                               FROM rentals r
-                               JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                               WHERE r.client_id = @cid
-                               ORDER BY r.start_date DESC";
-
+                              (m.price_per_day * r.duration_days) AS motorcycle_price,
+                              m.model_name AS motorcycle_unit,
+                              r.duration_days AS duration, 
+                              r.status AS rental_status,
+                              (c.first_name || ' ' || c.last_name) AS client_name
+                       FROM rentals r
+                       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+                       JOIN clientprofile c ON r.client_id = c.client_id
+                       WHERE r.status = 'Completed'
+                       ORDER BY r.start_date DESC";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
                 {
-                    cmd.Parameters.AddWithValue("@cid", clientId);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvPmt.DataSource = dt;
 
-                    using (var adapter = new NpgsqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        dgvPmt.DataSource = dt; // bind to DataGridView
-                    }
                     dgvPmt.Columns["transaction_date"].HeaderText = "Transaction Date";
                     dgvPmt.Columns["motorcycle_price"].HeaderText = "Total Price";
                     dgvPmt.Columns["motorcycle_unit"].HeaderText = "Motorcycle Unit";
                     dgvPmt.Columns["duration"].HeaderText = "Duration (Days)";
                     dgvPmt.Columns["rental_status"].HeaderText = "Status";
+                    dgvPmt.Columns["client_name"].HeaderText = "Client";
                 }
 
                 // --- Annual Revenue ---
                 string sqlAnnual = @"
-           SELECT COALESCE(SUM(m.price_per_day * (r.return_date - r.start_date)), 0)
-           FROM rentals r
-           JOIN motorcycle_management m 
-           ON r.motorcycle_id = m.motorcycle_id
-           WHERE r.status = 'Completed'
-           AND EXTRACT(YEAR FROM r.start_date) = EXTRACT(YEAR FROM CURRENT_DATE)";
+            SELECT COALESCE(SUM(m.price_per_day * r.duration_days), 0)
+            FROM rentals r
+            JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+            WHERE r.status = 'Completed'
+              AND EXTRACT(YEAR FROM r.start_date) = EXTRACT(YEAR FROM CURRENT_DATE)";
 
                 decimal annualRevenue = 0;
-
                 using (var cmdAnnual = new NpgsqlCommand(sqlAnnual, conn))
                 {
-                    using (var reader = cmdAnnual.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            annualRevenue = Convert.ToDecimal(reader[0]);
-                        }
-                    }
-                    lblAnnualRev.Text = annualRevenue.ToString("₱ "); // Currency format
+                    annualRevenue = Convert.ToDecimal(cmdAnnual.ExecuteScalar());
+                    lblAnnualRev.Text = annualRevenue.ToString("₱#,##0.00");
                 }
 
-                // Monthly Revenue (current month only) 
+                // --- Monthly Revenue ---
                 string sqlMonthly = @"
-        SELECT COALESCE(SUM(m.price_per_day * (r.return_date - r.start_date)), 0)
-        FROM rentals r
-        JOIN motorcycle_management m 
-        ON r.motorcycle_id = m.motorcycle_id
-        WHERE r.status = 'Completed'
-        AND EXTRACT(YEAR FROM r.start_date) = EXTRACT(YEAR FROM CURRENT_DATE)
-        AND EXTRACT(MONTH FROM r.start_date) = EXTRACT(MONTH FROM CURRENT_DATE)";
+            SELECT COALESCE(SUM(m.price_per_day * r.duration_days), 0)
+            FROM rentals r
+            JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+            WHERE r.status = 'Completed'
+              AND EXTRACT(YEAR FROM r.start_date) = EXTRACT(YEAR FROM CURRENT_DATE)
+              AND EXTRACT(MONTH FROM r.start_date) = EXTRACT(MONTH FROM CURRENT_DATE)";
 
                 decimal monthlyRevenue = 0;
-
                 using (var cmdMonthly = new NpgsqlCommand(sqlMonthly, conn))
                 {
-                    using (var reader = cmdMonthly.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            monthlyRevenue = Convert.ToDecimal(reader[0]);
-                        }
-                    }
-                    lblMonthlyRev.Text = monthlyRevenue.ToString("₱ "); // Currency format
+                    monthlyRevenue = Convert.ToDecimal(cmdMonthly.ExecuteScalar());
+                    lblMonthlyRev.Text = monthlyRevenue.ToString("₱#,##0.00");
                 }
-
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Admin_DashBoard ad = new Admin_DashBoard();
-            ad.Show();
-            this.Hide();
-        }
 
-        private void button12_Click(object sender, EventArgs e)
-        {     
-        }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Motorcycle_Management mm = new Motorcycle_Management();
-            mm.Show();
-            this.Hide();
-        }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Fuel_Cost_Management fcm = new Fuel_Cost_Management();
-            fcm.Show();
-            this.Hide();
-        }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Payment_Billing pb = new Payment_Billing(); 
-            pb.Show();
-            this.Hide();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Admin_Accounts aa = new Admin_Accounts();
-            aa.Show();
-            this.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(
-              "Do you want to log out?",
-              "Logout Confirmation",
-              MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                MessageBox.Show("Logged out successfully!");
-                this.Close();
-
-                Login loginForm = new Login();
-                loginForm.ShowDialog();
-                this.Hide();
-            }
-        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

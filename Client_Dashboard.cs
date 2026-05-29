@@ -60,9 +60,9 @@ namespace Fleet_Management_Rental
 
                 // Total rentals for this client (exclude deleted/cancelled if needed)
                 string sqlTotal = @"SELECT COUNT(*) 
-            FROM rentals 
-            WHERE client_id = @cid 
-              AND status = 'Active'";
+                    FROM rentals 
+                    WHERE client_id = @cid 
+                    AND status = 'Active'";
                 using (var cmdTotal = new NpgsqlCommand(sqlTotal, conn))
                 {
                     cmdTotal.Parameters.AddWithValue("@cid", clientId);
@@ -76,6 +76,27 @@ namespace Fleet_Management_Rental
                     lblActive.Text = Convert.ToInt32(cmdAvail.ExecuteScalar()).ToString();
                 }
 
+                string sqlComplete = @"UPDATE rentals
+                       SET status = 'Completed'
+                       WHERE client_id = @cid
+                         AND status = 'Active'
+                         AND return_date < CURRENT_DATE;
+
+                       UPDATE motorcycle_management
+                       SET status = 'Available'
+                       WHERE motorcycle_id IN (
+                           SELECT motorcycle_id
+                           FROM rentals
+                           WHERE client_id = @cid
+                             AND status = 'Completed'
+                             AND return_date < CURRENT_DATE
+                       );";
+
+                using (var cmdComplete = new NpgsqlCommand(sqlComplete, conn))
+                {
+                    cmdComplete.Parameters.AddWithValue("@cid", clientId);
+                    cmdComplete.ExecuteNonQuery();
+                }
 
 
                 // Current rental (Active today)
@@ -209,6 +230,11 @@ namespace Fleet_Management_Rental
                                 "Profile Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            long motorcycleId = 0;
+            long rentalId = 0;
+            bool isExtension = false;
+
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
@@ -219,17 +245,35 @@ namespace Fleet_Management_Rental
                 {
                     var result = cmdMio.ExecuteScalar();
                     if (result != null)
+                        motorcycleId = Convert.ToInt64(result);
+                }
+
+                if (motorcycleId > 0)
+                {
+                    // Check if client already has an active rental for this motorcycle
+                    string sqlRental = @"SELECT rental_id 
+                                 FROM rentals 
+                                 WHERE client_id = @cid 
+                                   AND motorcycle_id = @mid 
+                                   AND status = 'Approved'";
+                    using (var cmdRental = new NpgsqlCommand(sqlRental, conn))
                     {
-                        ((Button)sender).Tag = Convert.ToInt64(result);
+                        cmdRental.Parameters.AddWithValue("@cid", clientId);
+                        cmdRental.Parameters.AddWithValue("@mid", motorcycleId);
+
+                        var result = cmdRental.ExecuteScalar();
+                        if (result != null)
+                        {
+                            rentalId = Convert.ToInt64(result);
+                            isExtension = true;
+                        }
                     }
                 }
             }
 
-            if (((Button)sender).Tag != null)
+            if (motorcycleId > 0)
             {
-                long motorcycleId = Convert.ToInt64(((Button)sender).Tag);
-
-                Booking_Details bd = new Booking_Details(motorcycleId, clientId);
+                Booking_Details bd = new Booking_Details(motorcycleId, clientId, rentalId, isExtension);
                 bd.Show();
                 this.Hide();
             }
@@ -327,27 +371,49 @@ namespace Fleet_Management_Rental
                 return;
             }
 
+            long motorcycleId = 0;
+            long rentalId = 0;
+            bool isExtension = false;
+
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
 
                 // Query Keeway motorcycle_id
-                string sqlKeeway = "SELECT motorcycle_id FROM motorcycle_management WHERE model_name ILIKE '%KEEWAY%' LIMIT 1";
+                string sqlKeeway = "SELECT motorcycle_id FROM motorcycle_management WHERE model_name ILIKE '%Keeway%' LIMIT 1";
                 using (var cmdKeeway = new NpgsqlCommand(sqlKeeway, conn))
                 {
                     var result = cmdKeeway.ExecuteScalar();
                     if (result != null)
+                        motorcycleId = Convert.ToInt64(result);
+                }
+
+                if (motorcycleId > 0)
+                {
+                    // Check if client already has an active rental for this motorcycle
+                    string sqlRental = @"SELECT rental_id 
+                                 FROM rentals 
+                                 WHERE client_id = @cid 
+                                   AND motorcycle_id = @mid 
+                                   AND status = 'Approved'";
+                    using (var cmdRental = new NpgsqlCommand(sqlRental, conn))
                     {
-                        ((Button)sender).Tag = Convert.ToInt64(result);
+                        cmdRental.Parameters.AddWithValue("@cid", clientId);
+                        cmdRental.Parameters.AddWithValue("@mid", motorcycleId);
+
+                        var result = cmdRental.ExecuteScalar();
+                        if (result != null)
+                        {
+                            rentalId = Convert.ToInt64(result);
+                            isExtension = true;
+                        }
                     }
                 }
             }
 
-            if (((Button)sender).Tag != null)
+            if (motorcycleId > 0)
             {
-                long motorcycleId = Convert.ToInt64(((Button)sender).Tag);
-
-                Booking_Details bd = new Booking_Details(motorcycleId, clientId);
+                Booking_Details bd = new Booking_Details(motorcycleId, clientId, rentalId, isExtension);
                 bd.Show();
                 this.Hide();
             }

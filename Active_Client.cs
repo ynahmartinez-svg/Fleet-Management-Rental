@@ -16,7 +16,6 @@ namespace Fleet_Management_Rental
         public Active_Client()
         {
             InitializeComponent();
-            this.FormClosed += Active_Client_FormClosed;
         }
         private void Active_Client_FormClosed(object sender, FormClosedEventArgs e)
         {

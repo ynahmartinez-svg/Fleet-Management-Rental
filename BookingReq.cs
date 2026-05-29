@@ -15,10 +15,12 @@ namespace Fleet_Management_Rental
 {
     public partial class BookingReq : Form
     {
+        private long currentRentalId;
         private long currentClientId;
         private long currentMotorcycleId;
         private DateTime currentStartDate;
         private DateTime currentReturnDate;
+
         public BookingReq()
         {
             InitializeComponent();
@@ -115,15 +117,19 @@ namespace Fleet_Management_Rental
             {
                 conn.Open();
                 string sql = @"SELECT r.rental_id, r.client_id, r.motorcycle_id,
-                              r.start_date, r.return_date, r.duration_days,
-                              r.valid_id, r.pickup_location, r.return_location, r.id_image_path,
-                              c.first_name, c.last_name, c.phone_no, c.email,
-                              c.street, c.city, c.postal_code,
-                              m.model_name
-                       FROM rentals r
-                       JOIN clientprofile c ON r.client_id = c.client_id
-                       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                       WHERE r.status = 'Pending'";
+       r.start_date, r.return_date, r.duration_days,
+       r.valid_id, r.pickup_location, r.return_location, r.id_image_path,
+       c.first_name, c.last_name, c.phone_no, c.email,
+       c.street, c.city, c.postal_code,
+       m.model_name,
+       CASE 
+           WHEN r.status = 'Pending' AND r.return_date > CURRENT_DATE THEN 'Extension Request'
+           ELSE 'New Booking'
+       END AS request_type
+       FROM rentals r
+       JOIN clientprofile c ON r.client_id = c.client_id
+       JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
+       WHERE r.status = 'Pending';";
 
                 using (var da = new NpgsqlDataAdapter(sql, conn))
                 {
@@ -140,6 +146,12 @@ namespace Fleet_Management_Rental
 
         private void btnApprove_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Approve this booking request?",
+                                         "Confirm Approval",
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
                 long clientId = currentClientId;
                 long motorcycleId = currentMotorcycleId;
@@ -150,35 +162,31 @@ namespace Fleet_Management_Rental
                 {
                     conn.Open();
 
-                    // Update rentals status to Approved
+                    // ✅ Update rental status
                     string sqlRental = @"UPDATE rentals 
-                           SET status = 'Approved'
-                           WHERE client_id = @cid 
-                             AND motorcycle_id = @mid 
-                             AND start_date = @start 
-                             AND return_date = @return";
+                     SET status = 'Approved'
+                     WHERE rental_id = @rid";
                     using (var cmdRental = new NpgsqlCommand(sqlRental, conn))
                     {
-                        cmdRental.Parameters.AddWithValue("@cid", clientId);
-                        cmdRental.Parameters.AddWithValue("@mid", motorcycleId);
-                        cmdRental.Parameters.AddWithValue("@start", startDate);
-                        cmdRental.Parameters.AddWithValue("@return", returnDate);
+                        cmdRental.Parameters.AddWithValue("@rid", currentRentalId);
                         cmdRental.ExecuteNonQuery();
                     }
 
-                    // Mark motorcycle as Rented once approved
+
+                    // ✅ Motorcycle stays Available until rental actually starts
+                    // (optional: mark as Rented immediately if that’s your business rule)
                     string sqlMotor = @"UPDATE motorcycle_management
-                          SET status = 'Rented'
-                          WHERE motorcycle_id = @mid";
+                                SET status = 'Rented'
+                                WHERE motorcycle_id = @mid";
                     using (var cmdMotor = new NpgsqlCommand(sqlMotor, conn))
                     {
                         cmdMotor.Parameters.AddWithValue("@mid", motorcycleId);
                         cmdMotor.ExecuteNonQuery();
                     }
 
-                    // Insert notification
+                    // ✅ Notify client
                     string sqlNotif = @"INSERT INTO notifications (client_id, message)
-                          VALUES (@cid, 'Your booking has been approved!')";
+                                VALUES (@cid, 'Your booking has been approved!')";
                     using (var cmdNotif = new NpgsqlCommand(sqlNotif, conn))
                     {
                         cmdNotif.Parameters.AddWithValue("@cid", clientId);
@@ -187,63 +195,92 @@ namespace Fleet_Management_Rental
                 }
 
                 MessageBox.Show("Booking approved and client notified.");
-                LoadPendingRentals(); // Refresh the DataGridView to show updated status
+                LoadPendingRentals();
             }
         }
 
 
         private void btnReject_Click(object sender, EventArgs e)
         {
-            long clientId = currentClientId;
-            long motorcycleId = currentMotorcycleId;
-            DateTime startDate = currentStartDate;
-            DateTime returnDate = currentReturnDate;
+            var result = MessageBox.Show("Reject this booking request?",
+                                         "Confirm Rejection",
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Warning);
 
-            using (var conn = DbHelper.GetConnection())
+            if (result == DialogResult.Yes)
             {
-                conn.Open();
+                long clientId = currentClientId;
+                long motorcycleId = currentMotorcycleId;
+                long rentalId = currentRentalId;   // ✅ use rental_id directly
 
-                // Update rentals status to Rejected
-                string sqlRental = @"UPDATE rentals 
-                           SET status = 'Rejected'
-                           WHERE client_id = @cid 
-                             AND motorcycle_id = @mid 
-                             AND start_date = @start 
-                             AND return_date = @return";
-
-                using (var cmdRental = new NpgsqlCommand(sqlRental, conn))
+                using (var conn = DbHelper.GetConnection())
                 {
-                    cmdRental.Parameters.AddWithValue("@cid", clientId);
-                    cmdRental.Parameters.AddWithValue("@mid", motorcycleId);
-                    cmdRental.Parameters.AddWithValue("@start", startDate);
-                    cmdRental.Parameters.AddWithValue("@return", returnDate);
-                    cmdRental.ExecuteNonQuery();
+                    conn.Open();
+
+                    // ✅ Reject only this request
+                    string sqlRental = @"UPDATE rentals 
+                     SET status = 'Rejected'
+                     WHERE rental_id = @rid";
+                    using (var cmdRental = new NpgsqlCommand(sqlRental, conn))
+                    {
+                        cmdRental.Parameters.AddWithValue("@rid", currentRentalId);
+                        cmdRental.ExecuteNonQuery();
+                    }
+
+                    // ✅ Check if this was a NEW booking or an extension
+                    string sqlCheck = @"SELECT request_type 
+                                FROM (
+                                    SELECT rental_id,
+                                           CASE 
+                                               WHEN status = 'Pending' 
+                                                    AND return_date > CURRENT_DATE 
+                                               THEN 'Extension Request'
+                                               ELSE 'New Booking'
+                                           END AS request_type
+                                    FROM rentals
+                                    WHERE rental_id = @rid
+                                ) sub";
+                    string requestType;
+                    using (var cmdCheck = new NpgsqlCommand(sqlCheck, conn))
+                    {
+                        cmdCheck.Parameters.AddWithValue("@rid", rentalId);
+                        requestType = cmdCheck.ExecuteScalar()?.ToString();
+                    }
+
+                    if (requestType == "New Booking")
+                    {
+                        // ✅ Reset motorcycle only for new bookings
+                        string sqlReset = @"UPDATE motorcycle_management
+                                    SET status = 'Available'
+                                    WHERE motorcycle_id = @mid";
+                        using (var cmdReset = new NpgsqlCommand(sqlReset, conn))
+                        {
+                            cmdReset.Parameters.AddWithValue("@mid", motorcycleId);
+                            cmdReset.ExecuteNonQuery();
+                        }
+                    }
+                    // For extension requests → do NOT reset motorcycle, keep it Rented
+
+                    // ✅ Notify client with proper message
+                    string message = (requestType == "Extension Request")
+                        ? "Your extension request has been rejected."
+                        : "Your booking request has been rejected.";
+
+                    string sqlNotif = @"INSERT INTO notifications (client_id, message)
+                                VALUES (@cid, @msg)";
+                    using (var cmdNotif = new NpgsqlCommand(sqlNotif, conn))
+                    {
+                        cmdNotif.Parameters.AddWithValue("@cid", clientId);
+                        cmdNotif.Parameters.AddWithValue("@msg", message);
+                        cmdNotif.ExecuteNonQuery();
+                    }
                 }
 
-                // Reset motorcycle status to Available when rejected
-                string sqlReset = @"UPDATE motorcycle_management
-                          SET status = 'Available'
-                          WHERE motorcycle_id = @mid";
-                using (var cmdReset = new NpgsqlCommand(sqlReset, conn))
-                {
-                    cmdReset.Parameters.AddWithValue("@mid", motorcycleId);
-                    cmdReset.ExecuteNonQuery();
-                }
-
-                // Insert notification
-                string sqlNotif = @"INSERT INTO notifications (client_id, message)
-                          VALUES (@cid, 'Your booking request has been rejected.')";
-                using (var cmdNotif = new NpgsqlCommand(sqlNotif, conn))
-                {
-                    cmdNotif.Parameters.AddWithValue("@cid", clientId);
-                    cmdNotif.ExecuteNonQuery();
-                }
+                MessageBox.Show("Booking rejected and client notified.");
+                LoadPendingRentals(); // Refresh grid
             }
-
-            MessageBox.Show("Booking rejected and client notified.");
-            LoadPendingRentals(); // Refresh the DataGridView to show updated status
-
         }
+
 
         private void button11_Click(object sender, EventArgs e)
         {
@@ -305,58 +342,6 @@ namespace Fleet_Management_Rental
 
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            using (var conn = DbHelper.GetConnection())
-            {
-                conn.Open();
-
-                //reset all available motorcycles
-                string sqlResetAll = @"UPDATE motorcycle_management
-                          SET status = 'Available'
-                         WHERE status <> 'Available'";
-               using (var cmdResetAll = new NpgsqlCommand(sqlResetAll, conn))
-               {
-                  cmdResetAll.ExecuteNonQuery();
-                }
-
-                // delete rejected rentals
-                string sqlClearRejected = @"DELETE FROM rentals WHERE status = 'Rejected'";
-                using (var cmdClearRejected = new NpgsqlCommand(sqlClearRejected, conn))
-                {
-                    cmdClearRejected.ExecuteNonQuery();
-                }
-
-                // Clear notifications (optional, depends if you want a clean slate)
-                string sqlClearNotif = @"TRUNCATE TABLE notifications";
-                using (var cmdClearNotif = new NpgsqlCommand(sqlClearNotif, conn))
-                {
-                    cmdClearNotif.ExecuteNonQuery();
-                }
-
-                // Refresh DataGridView with updated rentals (only Pending + Approved remain)
-                string sqlReload = @"SELECT r.rental_id, r.client_id, r.motorcycle_id,
-                                    r.start_date, r.return_date, r.duration_days,
-                                    r.valid_id, r.pickup_location, r.return_location, r.id_image_path,
-                                    c.first_name, c.last_name, c.phone_no, c.email,
-                                    c.street, c.city, c.postal_code,
-                                    m.model_name
-                             FROM rentals r
-                             JOIN clientprofile c ON r.client_id = c.client_id
-                             JOIN motorcycle_management m ON r.motorcycle_id = m.motorcycle_id
-                             WHERE r.status = 'Pending'"; // show only pending requests
-
-                using (var da = new NpgsqlDataAdapter(sqlReload, conn))
-                {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgvRentals.DataSource = dt;
-                }
-            }
-            MessageBox.Show("Fleet reset: all motorcycles are now Available.");
-           
-
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -364,6 +349,7 @@ namespace Fleet_Management_Rental
             {
                 DataGridViewRow row = dgvRentals.CurrentRow;
 
+                currentRentalId = (long)row.Cells["rental_id"].Value;
                 currentClientId = (long)row.Cells["client_id"].Value;
                 currentMotorcycleId = (long)row.Cells["motorcycle_id"].Value;
                 currentStartDate = (DateTime)row.Cells["start_date"].Value;
